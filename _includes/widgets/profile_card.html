@@ -49,8 +49,11 @@
                 <hr />
                 <div class="row">
                     <div class="col">
-                        <a class="pr-3 no-break" href="mailto:{{ site.data.profile.email | encode_email }}">
+                        <!-- <a class="pr-3 no-break" href="mailto:{{ site.data.profile.email | encode_email }}">
                             <i class="fas fa-at"></i> <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)" }}</span>
+                        </a> -->
+                        <a class="pr-3 no-break" href="mailto:{{ site.data.profile.email | encode_email }}">
+                            <i class="fas fa-at"></i> Email
                         </a>
 
                         {% if site.data.profile.gscholar %}
@@ -88,6 +91,18 @@
                             <i class="fab fa-orcid"></i> ORCID
                         </a>
                         {% endif %}
+
+                        {% if site.data.profile.flickr %}
+                        <a class="pr-3 no-break" target="_blank" href="https://www.flickr.com/photos/{{ site.data.profile.flickr }}">
+                            <i class="fa-brands fa-flickr" style="color: #007bff;"></i> flickr
+                        </a>
+                        {% endif %}
+
+                        <!-- {% if site.data.profile.zhihu %}
+                        <a class="pr-3 no-break" target="_blank" href="https://www.zhihu.com/people/{{ site.data.profile.orcid }}">
+                            <i class="fa-brands fa-zhihu" style="color: #1772f6;"></i> zhihu
+                        </a>
+                        {% endif %} -->
                     </div>
                 </div>
             </div>
