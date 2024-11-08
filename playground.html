@@ -1,7 +1,7 @@
 ---
 layout: default
-title : Showcase
-navbar_title: Showcase
+title : Playground
+navbar_title: Playground
 ---
 
 {% assign cards_by_group = site.showcase | sort: "date" | reverse | where: "show", true | group_by_exp: "item", "item.group" %}
