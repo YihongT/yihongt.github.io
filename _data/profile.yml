@@ -36,6 +36,10 @@ short_bio: >-
     I've just completed my summer research internship at <a href="https://www.mit.edu/" target="_blank">MIT</a>, working with <a href="https://zhuangdingyi.github.io/" target="_blank">Dingyi Zhuang</a> under the supervision of <a href="https://dusp.mit.edu/people/jinhua-zhao" target="_blank">Jinhua Zhao</a>, <a href="https://dcp.ufl.edu/urp/people_wang_s/" target="_blank">Shenhao Wang</a>, and <a href="https://coe.northeastern.edu/people/koutsopoulos-haris/" target="_blank">Haris N. Koutsopoulos</a>.  
     Prior to that, I worked with <a href="https://dajiangsuo.github.io/" target="_blank">Dajiang Suo</a> as a part-time research assistant at <a href="https://www.asu.edu/" target="_blank">ASU</a>.  
     I am currently seeking a Ph.D. position starting in Winter or Fall 2025.
+  <p>
+    <i class="fa-solid fa-rectangle-ad" style="color: #d60000;"></i> <span style="color: #d60000;">I am looking for collaborators and interns</span> interested in AI/ML, MLLMs, and their applications in urban computing and intelligent transportation systems, with the goal of conducting impactful research and publishing in top AI conferences and leading urban and transportation journals.
+    If you are interested in collaborating, please feel free to reach out via email or WeChat. Before contacting me, kindly review 
+    <a href="#" data-toggle="modal" data-target="#modal-info">this</a>.
   </p>
 
 portrait_url: /assets/images/photos/tyh.jpg
