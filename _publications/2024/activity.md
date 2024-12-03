@@ -1,6 +1,6 @@
 ---
 title:          "Activity-aware human mobility prediction with hierarchical graph attention recurrent network"
-date:           2023-10-1 00:01:00 +0800
+date:           2024-12-15 00:01:00 +0800
 selected:       true
 pub:            "IEEE Transactions on Intelligent Transportation Systems"
 # pub_pre:        "Submitted to "
