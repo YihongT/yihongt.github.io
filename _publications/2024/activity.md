@@ -12,7 +12,7 @@ cover:          /assets/images/covers/activity_cover.png
 authors:
   - Yihong Tang*
   - Junlin He*
-  - Wei Ma#
+  - Zhan Zhao#
 links:
   Paper: https://arxiv.org/pdf/2210.07765
   Code: https://github.com/YihongT/HGARN
