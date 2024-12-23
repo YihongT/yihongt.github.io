@@ -27,7 +27,7 @@ short_bio: >-
   <p>
     I'm an interdisciplinary researcher interested in applying data-driven, statistical, and AI methods to build more connected, autonomous, intelligent, and user-centered urban and transportation systems for broad social good.
   <p>
-    I obtained my Master of Philosophy (M.Phil.) in Urban Analytics and Smart Cities from <a href="https://www.hku.hk/" target="_blank">HKU</a>, 
+    I will be joining <a href="https://www.mcgill.ca/" target="_blank">McGill University</a> as a doctoral student under the supervision of Prof. <a href="https://lijunsun.github.io/" target="_blank">Lijun Sun</a>. Prior to this, I obtained my Master of Philosophy (M.Phil.) in Urban Analytics and Smart Cities from <a href="https://www.hku.hk/" target="_blank">HKU</a>, 
     supported by the HKU <a href="https://gradsch.hku.hk/prospective_students/fees_scholarships_and_financial_support/postgraduate_scholarships" target="_blank">Postgraduate Scholarship</a> 
     and advised by <a href="https://zhanzhaowf.github.io/" target="_blank">Zhan Zhao</a>. 
     Before joining HKU, I worked as a full-time research assistant at <a href="https://www.polyu.edu.hk/" target="_blank">The Hong Kong Polytechnic University</a> under the supervision of <a href="http://polyu-mobility-ai-lab.com/" target="_blank">Wei Ma</a>. 
@@ -35,7 +35,6 @@ short_bio: >-
   <p>
     I've just completed my summer research internship at <a href="https://www.mit.edu/" target="_blank">MIT</a>, working with <a href="https://zhuangdingyi.github.io/" target="_blank">Dingyi Zhuang</a> under the supervision of <a href="https://dusp.mit.edu/people/jinhua-zhao" target="_blank">Jinhua Zhao</a>, <a href="https://dcp.ufl.edu/urp/people_wang_s/" target="_blank">Shenhao Wang</a>, and <a href="https://coe.northeastern.edu/people/koutsopoulos-haris/" target="_blank">Haris N. Koutsopoulos</a>.  
     Prior to that, I worked with <a href="https://dajiangsuo.github.io/" target="_blank">Dajiang Suo</a> as a part-time research assistant at <a href="https://www.asu.edu/" target="_blank">ASU</a>.  
-    I am currently seeking a Ph.D. position starting in Winter or Fall 2025.
   <p>
     <i class="fa-solid fa-rectangle-ad" style="color: #d60000;"></i> <span style="color: #d60000;">I am looking for collaborators and interns</span> interested in AI/ML, MLLMs, and their applications in urban computing and intelligent transportation systems, with the goal of conducting impactful research and publishing in top AI conferences and leading urban and transportation journals.
     If you are interested in collaborating, please feel free to reach out via email or WeChat. Before contacting me, kindly review 
@@ -51,6 +50,10 @@ portrait_caption: >-
 
 
 education:
+- name: McGill University
+  logo: /assets/images/badges/mcgill-logo.png
+  position: Ph.D. in Transportation Engineering
+  date: Jan. 2025 - present
 - name: The University of Hong Kong #Massachusetts Institute of Technology
   logo: /assets/images/badges/hku_removebg.png
   position: M.Phil. in Urban Analytics and Smart Cities
@@ -81,6 +84,11 @@ experience:
   logo: /assets/images/badges/hkpolyu.png
   position: Research Assistant
   date: Apr. 2021 - Aug. 2022
+
+- name: Xiaomi Corporation
+  logo: /assets/images/badges/xiaomi_logo.png
+  position: Recommendation Algorithm Intern
+  date: Jul. 2020 - Sept. 2020
 
 
 
