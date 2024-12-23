@@ -1,10 +1,10 @@
 primary_name: "Yihong Tang"
 secondary_name: ""
-navbar_name: "Yihong Tang"
+navbar_name: "Homepage"
 
-# positions:
-# - logo: /assets/images/badges/MIT_Social_circle.png  # Logo is optional
-#   name: Position 1 with logo
+positions:
+- logo: /assets/images/badges/mcgill-logo.png  # Logo is optional
+  name: Ph.D. Student
 # - name: Position 2 without logo
 
 
