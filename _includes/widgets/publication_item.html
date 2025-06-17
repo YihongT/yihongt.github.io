@@ -71,56 +71,67 @@
   </div>
 </div>
 
-<!-- 移动端条目（保持原样） -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 移动端条目：完整替换以下内容 -->
 <div
-  class="publication-item row no-gutters d-md-none {% unless include.hide_bottom_border %}border-bottom{% endunless %} border-gray {% if include.first %}rounded-top{% endif %} {% if include.last %}rounded-bottom{% endif %}"
+  class="publication-item d-md-none {% unless include.hide_bottom_border %}border-bottom{% endunless %} border-gray {% if include.first %}rounded-top{% endif %} {% if include.last %}rounded-bottom{% endif %}"
   data-topics="{{ topics }}"
   data-selected="{{ selected }}"
-  data-src="{{ item.cover | relative_url }}"
 >
-  <div class="w-100" style="background-color: rgba(255,255,255,0.9);">
-    <div class="d-flex align-items-start flex-column py-3 px-4">
-      <div class="mb-auto"></div>
-      <div>
-        <h5 class="mt-0 mb-1 font-weight-normal">{{ item.title }}</h5>
-        
-        {% if item.topics %}
-        <div class="mb-2">
-          {% for topic in item.topics %}
-            {% assign meta = site.data.topics[topic] %}
-            <span
-              class="badge badge-light border mr-1 d-inline-flex align-items-center"
-              style="background: #fff;"
-            >
-              <span style="
-                display: inline-block;
-                width: .5em; height: .5em;
-                border-radius: 50%;
-                background: {{ meta.color }};
-                margin-right: .25em;
-              "></span>
-              {{ meta.label }}
-            </span>
-          {% endfor %}
-        </div>
-        {% endif %}
-        
-        <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
-        <p class="mt-0 mb-0 small">
-          {{ item.pub_pre }}<i>{{ item.pub }}</i>{{ item.pub_post }}
-          {{ item.pub_date }} {{ item.pub_last }}
-        </p>
-        <p class="mt-0 mb-0 small text-muted">{{ item.abstract }}</p>
-        <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
-          {% for link in item.links %}
-            {% if link[1].url %}
-              <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>
-            {% else %}
-              <a target="_blank" href="{{ link[1] }}">[{{ link[0] }}]</a>
-            {% endif %}
-          {% endfor %}
-        </p>
-      </div>
+  <!-- 1. 封面图：直接放在最外层，width:90% !important -->
+  {% if item.cover %}
+  <img
+    src="{{ item.cover | relative_url }}"
+    alt="{{ item.title }}"
+    class="rounded-sm shadow mb-2 mx-auto"
+    style="width: 90% !important; margin: 0 auto; display: block; height: auto; object-fit: cover;"
+  >
+  {% endif %}
+
+  <!-- 2. 正文：紧跟封面，统一内边距 -->
+  <div class="px-3 pb-3 bg-white">
+    <h5 class="mt-0 mb-2 font-weight-normal">{{ item.title }}</h5>
+    
+    {% if item.topics %}
+    <div class="mb-2">
+      {% for topic in item.topics %}
+        {% assign meta = site.data.topics[topic] %}
+        <span class="badge badge-light border mr-1 d-inline-flex align-items-center" style="background:#fff;">
+          <span style="
+            display:inline-block;
+            width:.5em; height:.5em;
+            border-radius:50%;
+            background: {{ meta.color }};
+            margin-right:.25em;
+          "></span>
+          {{ meta.label }}
+        </span>
+      {% endfor %}
     </div>
+    {% endif %}
+    
+    <p class="mb-1 small">{% include widgets/author_list.html authors=item.authors %}</p>
+    <p class="mb-1 small">
+      {{ item.pub_pre }}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}
+    </p>
+    <p class="mb-1 small text-muted">{{ item.abstract }}</p>
+    <p class="small lh-125 text-muted mb-0">
+      {% for link in item.links %}
+        {% assign url = link[1].url or link[1] %}
+        <a target="_blank" href="{{ url }}">[{{ link[0] }}]</a>
+      {% endfor %}
+    </p>
   </div>
 </div>

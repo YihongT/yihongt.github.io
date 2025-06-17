@@ -2,59 +2,71 @@
 
 <div class="my-3 p-0 bg-white shadow-sm rounded-sm">
 
-  <!-- 全局隐藏类，必须放在最前面 -->
+  <!-- 全局隐藏类 & Filter 样式 -->
   <style>
     .hidden-by-filter { display: none !important; }
 
-    /* 1. Filter 样式：首项 auto 宽度，其它平均分布，带边框框选 */
     #pub-filters {
       display: flex;
       align-items: center;
       padding: 1rem;
       margin-bottom: 1rem;
+      white-space: nowrap;
     }
     #pub-filters li { list-style: none; }
-    /* “All” 贴左，不等分 */
     #pub-filters li:first-child {
       flex: 0 0 auto;
       margin-right: 1rem;
     }
-    /* 其余按钮平分剩余空间 */
     #pub-filters li:not(:first-child) {
       flex: 1;
       margin-right: 1rem;
     }
     #pub-filters li:last-child { margin-right: 0; }
+
+    /* 去掉边框，改用阴影 */
     #pub-filters .filter {
       display: block;
       text-align: center;
       padding: 0.5rem 0.75rem;
-      border: 1px solid #ccc;
+      border: none;
       border-radius: .25rem;
+      background-color: #fff;
+      box-shadow: 0 .125rem .25rem rgba(0,0,0,0.075);
       text-decoration: none;
       color: inherit;
       transition: all .2s;
     }
     #pub-filters .filter:hover {
-      border-color: #007bff;
+      box-shadow: 0 .25rem .5rem rgba(0,0,0,0.1);
       color: #007bff;
     }
     #pub-filters .filter.active {
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,0.15);
       background-color: #007bff;
-      border-color: #0056b3;
       color: #fff;
       font-weight: bold;
     }
+
     #pub-filters .filter-badge {
-        display: inline-block;
-        width: .5em;
-        height: .5em;
-        border-radius: 50%;
-        margin-right: .5em;
-        vertical-align: middle;
+      display: inline-block;
+      width: .5em;
+      height: .5em;
+      border-radius: 50%;
+      margin-right: .5em;
+      vertical-align: middle;
     }
 
-
+    @media (max-width: 576px) {
+      #pub-filters .filter-label { display: none; }
+      #pub-filters .filter {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 3.5rem;
+        display: inline-block;
+      }
+    }
   </style>
 
   <!-- 标题 -->
@@ -69,17 +81,14 @@
     </a>
   </h6>
 
-  <!-- 2. 点击筛选按钮
-  <ul id="pub-filters">
-    <li><a href="#" class="filter active" data-filter="all">All</a></li>
-    <li><a href="#" class="filter" data-filter="DS">Human-centered Modeling</a></li>
-    <li><a href="#" class="filter" data-filter="LLM4US">LLM for Urban Science</a></li>
-    <li><a href="#" class="filter" data-filter="trs">Multimodal Transportation</a></li>
-    <li><a href="#" class="filter" data-filter="st">Spatio-temporal Modeling</a></li>
-  </ul> -->
+  
+  
   <ul id="pub-filters">
     <li>
-      <a href="#" class="filter active" data-filter="all">All</a>
+      <a href="#" class="filter active" data-filter="all">
+        <span class="filter-badge" style="background: #888;"></span>
+        <span class="filter-label">All</span>
+      </a>
     </li>
     {% for topic in site.data.topics %}
       {% assign key  = topic[0] %}
@@ -87,13 +96,11 @@
       <li>
         <a href="#" class="filter" data-filter="{{ key }}">
           <span class="filter-badge" style="background: {{ meta.color }};"></span>
-          {{ meta.label }}
+          <span class="filter-label">{{ meta.label }}</span>
         </a>
       </li>
     {% endfor %}
   </ul>
-  
-  
 
   
   <!-- 3. Publications 列表（hide_bottom_border 已加） -->

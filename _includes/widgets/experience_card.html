@@ -72,37 +72,29 @@
                     <div class="mx-2 my-1">
                         <h6>Academic Services</h6>
 
-                        <!-- Journals 列表，沿用 Honors & Awards 的格式 -->
+                        
 
-                        <!-- <ul class="list small pl-3 mb-1">
-                        <strong>Journal Referees:</strong>
-                        {% for jr in site.data.profile.academic_services.journal_referees %}
-                        <li>{{ jr }}</li>
-                        {% endfor %}
-                        </ul> -->
-                        <div class="small d-flex">
-                            <!-- <strong style="min-width: 160px;">Journal Referees:</strong> -->
-                            <span style="min-width: 160px;">Journal Referees:</span>
+                          <div class="small d-flex flex-column flex-md-row">
+                            <span style="min-width: 160px;"><strong>Journal Referees:</strong></span>
                             <div style="flex: 1;">
                               {{ site.data.profile.academic_services.journal_referees | join: ", " }}
                             </div>
                           </div>
                           
-                          <div class="small d-flex">
-                            <!-- <strong style="min-width: 160px;">Conference Referees:</strong> -->
-                            <span style="min-width: 160px;">Conference Referees:</span>
+                          <div class="small d-flex flex-column flex-md-row">
+                            <span style="min-width: 160px;"><strong>Conference Referees:</strong></span>
                             <div style="flex: 1;">
                               {{ site.data.profile.academic_services.conference_referees | join: ", " }}
                             </div>
                           </div>
                           
-                          <div class="small d-flex">
-                            <!-- <strong style="min-width: 160px;">Conference Referees:</strong> -->
-                            <span style="min-width: 160px;">Mentor:</span>
+                          <div class="small d-flex flex-column flex-md-row">
+                            <span style="min-width: 160px;"><strong>Mentor:</strong></span>
                             <div style="flex: 1;">
                               {{ site.data.profile.academic_services.mentor | join: ", " }}
                             </div>
                           </div>
+                          
                           
                           
                     </div>
