@@ -1,0 +1,13 @@
+# _data/topics.yml
+DS:
+  label: "Human-centered Modeling"
+  color: "#ffb05b"
+LLM4US:
+  label: "LLM for Urban Science"
+  color: "#41A0FF"
+trs:
+  label: "Multimodal Transportation"
+  color: "#E91E63"
+st:
+  label: "Spatio-temporal Modeling"
+  color: "#4CAF50"

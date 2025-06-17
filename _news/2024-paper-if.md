@@ -1,4 +1,6 @@
 ---
-title: One paper on AI-driven bike sharing planning was published in Information Fusion.
+title: |
+    Paper "Time-dependent trip generation for bike sharing planning: 
+    A multi-task memory-augmented graph neural network" is published in <strong>Information Fusion</strong>.
 date: 2024-06-01 
 ---

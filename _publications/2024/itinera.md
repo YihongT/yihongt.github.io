@@ -29,4 +29,10 @@ links:
   Poster: https://raw.githubusercontent.com/YihongT/ITINERA/refs/heads/main/imgs/Poster.png
   Best Paper Award: https://raw.githubusercontent.com/YihongT/ITINERA/refs/heads/main/imgs/urbcomp.jpg
   WeChat Official Accounts Report (Chinese): https://mp.weixin.qq.com/s/44mtENyqrHiNEEcWS61COg
+
+topics:
+  - DS
+  - LLM4US
+  - trs
+  - st
 ---

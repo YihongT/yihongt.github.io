@@ -4,46 +4,51 @@ navbar_name: "Homepage"
 
 positions:
 - logo: /assets/images/badges/mcgill-logo.png  # Logo is optional
-  name: Ph.D. Student
-# - name: Position 2 without logo
+  name: Ph.D. Student &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;INTJ
+# - name: INTJ
 
 
-email: "yihongt@connect.hku.hk"
+email: "yihong.tang@mail.mcgill.ca"
 # cv_link: link-to-your-cv-file
 gscholar: 9NyWAjAAAAAJ  # This is an example, replace it with your own Google Scholar ID
+researchgate: Yihong-Tang-2 # This is an example, replace it with your own Google Scholar ID
 github: YihongT
-# twitter: your_twitter_id  # Do not include the '@' symbol
+twitter: TYHYT_  # Do not include the '@' symbol
 wechat_qrcode: /assets/images/etc/tyh_wechat.jpg
 wechat_prompt: >-
   Please let me know your <strong>name</strong>, <strong>affiliation</strong> (current or previous), and your <strong>reason</strong> for adding me on WeChat. Thanks!
 linkedin: yihong-tang-6981331b2
-orcid: 0000-0002-3684-3072
-zhihu: tang-yi-hong-27
-flickr: 196532734@N06
+# orcid: 0000-0002-3684-3072
+# zhihu: tang-yi-hong-27
+# flickr: 196532734@N06
 
 
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    I'm an interdisciplinary researcher interested in applying data-driven, statistical, and AI methods to build more connected, autonomous, intelligent, and user-centered urban and transportation systems for broad social good.
+    I'm a doctoral student at <a href="https://www.mcgill.ca/" target="_blank">McGill University</a>, supervised by Prof. <a href="https://lijunsun.github.io/" target="_blank">Lijun Sun</a>. 
+    Before joining McGill, I obtained my M.Phil. in Urban Analytics and Smart Cities from <a href="https://www.hku.hk/" target="_blank">The University of Hong Kong</a> and my B.Eng. in Computer Science and Technology from <a href="https://ois.bupt.edu.cn/About_Us.htm" target="_blank">BUPT</a>. 
+    I have also held research positions at institutions including <a href="http://polyu-mobility-ai-lab.com/" target="_blank">Mobility AI Lab</a> at The Hong Kong Polytechnic University (<a href="https://www.polyu.edu.hk/" target="_blank">HK PolyU</a>), <a href="https://mobility.mit.edu/" target="_blank">JTL Transit Lab</a> at Massachusetts Institute of Technology (<a href="https://www.mit.edu/" target="_blank">MIT</a>), and <a href="https://dajiangsuo.github.io/" target="_blank">Suo Lab</a> at Arizona State University (<a href="https://www.asu.edu/" target="_blank">ASU</a>).
   <p>
-    I will be joining <a href="https://www.mcgill.ca/" target="_blank">McGill University</a> as a doctoral student under the supervision of Prof. <a href="https://lijunsun.github.io/" target="_blank">Lijun Sun</a>. Prior to this, I obtained my Master of Philosophy (M.Phil.) in Urban Analytics and Smart Cities from <a href="https://www.hku.hk/" target="_blank">HKU</a>, 
-    supported by the HKU <a href="https://gradsch.hku.hk/prospective_students/fees_scholarships_and_financial_support/postgraduate_scholarships" target="_blank">Postgraduate Scholarship</a> 
-    and advised by <a href="https://zhanzhaowf.github.io/" target="_blank">Zhan Zhao</a>. 
-    Before joining HKU, I worked as a full-time research assistant at <a href="https://www.polyu.edu.hk/" target="_blank">The Hong Kong Polytechnic University</a> under the supervision of <a href="http://polyu-mobility-ai-lab.com/" target="_blank">Wei Ma</a>. 
-    I received my Bachelor of Engineering (B.Eng.) degree in Computer Science and Technology from <a href="https://ois.bupt.edu.cn/About_Us.htm" target="_blank">BUPT</a>.
+    My research focuses on innovating data-driven, statistical, and AI methods to develop more connected, autonomous, intelligent, and human-centered urban and transportation systems, and to uncover the social dynamics they embody. 
+    My primary research interests span four interrelated areas: 
+    <span style="display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:#ffb05b; margin-right:0.1em;"></span><strong>
+    Human-centered Modeling and Synthesis</strong>, focusing on population and mobility data with equity, privacy, and intent-awareness; 
+    <span style="display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:#41A0FF; margin-right:0.1em;"></span><strong>
+    Large Language Models for Urban Science</strong>, aiming to build self-evolving agents for urban scientific discovery, planning, and causal reasoning; 
+    <span style="display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:#E91E63; margin-right:0.1em;"></span><strong>
+    Multimodal Transportation Systems</strong>, using multi-source data fusion to understand and optimize mobility systems; and 
+    <span style="display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:#4CAF50; margin-right:0.1em;"></span><strong>
+    Spatiotemporal Data Modeling</strong>, developing models for forecasting, control, and behavior inference across space and time.
   <p>
-    I've just completed my summer research internship at <a href="https://www.mit.edu/" target="_blank">MIT</a>, working with <a href="https://zhuangdingyi.github.io/" target="_blank">Dingyi Zhuang</a> under the supervision of <a href="https://dusp.mit.edu/people/jinhua-zhao" target="_blank">Jinhua Zhao</a>, <a href="https://dcp.ufl.edu/urp/people_wang_s/" target="_blank">Shenhao Wang</a>, and <a href="https://coe.northeastern.edu/people/koutsopoulos-haris/" target="_blank">Haris N. Koutsopoulos</a>.  
-    Prior to that, I worked with <a href="https://dajiangsuo.github.io/" target="_blank">Dajiang Suo</a> as a part-time research assistant at <a href="https://www.asu.edu/" target="_blank">ASU</a>.  
-  <p>
-    <i class="fa-solid fa-rectangle-ad" style="color: #d60000;"></i> <span style="color: #d60000;">I am looking for collaborators and interns</span> interested in AI/ML, MLLMs, and their applications in urban computing and intelligent transportation systems, with the goal of conducting impactful research and publishing in top AI conferences and leading urban and transportation journals.
-    If you are interested in collaborating, please feel free to reach out via email or WeChat. Before contacting me, kindly review 
-    <a href="#" data-toggle="modal" data-target="#modal-info">this</a>.
+    <i class="fa-solid fa-rectangle-ad" style="color: #d60000;"></i> <span style="color: #d60000;">I am looking for collaborators and interns</span> with the goal of conducting impactful research and publishing in top AI conferences and leading urban and transportation journals.
+    If you are interested in collaborating or sharing thoughts, please feel free to reach out via <a href="mailto:yihong.tang@mail.mcgill.ca">Email</a> or <a class="pr-3 no-break" data-toggle="modal" data-target="#modal-wechat">WeChat</a>
   </p>
 
-portrait_url: /assets/images/photos/tyh.jpg
-portrait_caption: >-
-  Taken at the HKU High Table Dinner
+# Before contacting me, kindly review <a href="#" data-toggle="modal" data-target="#modal-info">this</a>.
+portrait_url: /assets/images/photos/tyh_new.jpg
+# portrait_caption: >-
+#   Taken at the HKU High Table Dinner
 
 
 # <a href="" target="_blank"></a>
@@ -100,6 +105,23 @@ awards:
   date: Jan., 2024
 - name: National Science Foundation Award, CIKM 2022
   date: Oct., 2022
+
+academic_services:
+  journal_referees:
+    - Applied Intelligence
+    - Artificial Intelligence for Transportation
+    - IEEE Transaction on Intelligent Transportation Systems
+    - IEEE Open Journal of Intelligent Transportation Systems
+    - The Journal of Supercomputing
+  conference_referees:
+    - ICLR 2025
+    - AAAI 2025
+    - ISTDM 2025
+    - ITSC 2025
+    - NeurIPS 2025
+    - EMNLP 2025
+  mentor:
+    - <a href="https://mobility.mit.edu/openings/" target="_blank">MIT-UF-NU 2025 Joint Summer Research Camp</a>
 
 # short_bio_text_justify: false
 # short_bio: >-

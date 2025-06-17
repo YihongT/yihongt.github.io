@@ -17,4 +17,10 @@ links:
   Paper: https://ieeexplore.ieee.org/abstract/document/9945664
   Arxiv: https://arxiv.org/pdf/2203.03965
   Code: https://github.com/MingxiLii/LocaleGN
+
+topics:
+  # - DS
+  # - LLM4US
+  - trs
+  - st
 ---

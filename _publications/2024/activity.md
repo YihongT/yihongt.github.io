@@ -1,7 +1,7 @@
 ---
 title:          "Activity-aware human mobility prediction with hierarchical graph attention recurrent network"
 date:           2024-12-15 00:01:00 +0800
-selected:       true
+selected:       false
 pub:            "IEEE Transactions on Intelligent Transportation Systems"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
@@ -16,4 +16,10 @@ authors:
 links:
   Paper: https://arxiv.org/pdf/2210.07765
   Code: https://github.com/YihongT/HGARN
+
+topics:
+  - DS
+  # - LLM4US
+  - trs
+  - st
 ---
