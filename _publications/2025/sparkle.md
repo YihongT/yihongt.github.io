@@ -6,6 +6,7 @@ pub:            "IJCAI MKLM"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
+pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Best Paper Award</span>'
 pub_date:       "2025"
 
 cover:          /assets/images/covers/sparkle_cover.png
@@ -22,6 +23,7 @@ authors:
   - Jinhua Zhao
 links:
   Paper: https://arxiv.org/pdf/2410.16162?
+  Best Paper Award: https://yihongt.github.io/assets/awards/mklm2025.png
 
 topics:
   # - DS
