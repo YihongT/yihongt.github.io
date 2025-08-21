@@ -2,7 +2,7 @@
 title:          "Sparkle: Mastering Basic Spatial Capabilities in Vision Language Models Elicits Generalization to Composite Spatial Reasoning"
 date:           2025-06-13 00:01:00 +0800
 selected:       true
-pub:            "IJCAI MKLM"
+pub:            "Findings of Empirical Methods in Natural Language Processing (EMNLP) 2025 & IJCAI MKLM"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
