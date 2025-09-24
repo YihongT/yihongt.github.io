@@ -23,6 +23,7 @@ authors:
   - Jinhua Zhao
 links:
   Paper: https://arxiv.org/pdf/2410.16162?
+  Code: https://github.com/YihongT/Sparkle
   Best Paper Award: https://yihongt.github.io/assets/awards/mklm2025.png
 
 topics:

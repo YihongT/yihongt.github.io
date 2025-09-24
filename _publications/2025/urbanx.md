@@ -19,6 +19,7 @@ authors:
   - Lijun Sun#
 links:
   Paper: https://arxiv.org/pdf/2506.02242
+  Code: https://github.com/YihongT/UrbanX
 
 topics:
   # - DS
