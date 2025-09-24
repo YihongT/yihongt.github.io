@@ -19,6 +19,7 @@ authors:
   - Zhanliang Ma
 links:
   Paper: https://arxiv.org/pdf/2310.03617
+  Code: https://github.com/YihongT/RouteKG
 
 topics:
   - DS
