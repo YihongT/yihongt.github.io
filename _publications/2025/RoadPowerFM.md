@@ -1,6 +1,6 @@
 ---
 title:          "RoadPowerFM: Graphormer-JEPA based Foundation Model for Road-Power Coupling Network"
-date:           2025-6-11 00:01:00 +0800
+date:           2025-06-11 00:01:00 +0800
 selected:       true
 pub:            "IEEE Transactions on Smart Grid"
 # pub_pre:        "Submitted to "
