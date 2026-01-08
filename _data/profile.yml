@@ -4,7 +4,8 @@ navbar_name: "Homepage"
 
 positions:
 - logo: /assets/images/badges/mcgill-logo.png  # Logo is optional
-  name: Ph.D. Student &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;INTJ
+  # name: Ph.D. Student &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;INTJ
+  name: Ph.D. Student
 # - name: INTJ
 
 
