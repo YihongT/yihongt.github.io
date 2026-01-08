@@ -38,4 +38,31 @@ $(function () {
     $(".lazy").on("load", function () {
         $grid.masonry('layout');
     });
+
+    var themeToggle = document.getElementById('theme-toggle');
+    var themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+
+        if (themeToggle) {
+            var nextLabel = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+            themeToggle.setAttribute('aria-label', nextLabel);
+            themeToggle.setAttribute('title', nextLabel);
+        }
+
+        if (themeIcon) {
+            themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+            var currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+
+        applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+    }
 })

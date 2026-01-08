@@ -31,15 +31,17 @@ short_bio: >-
     I have also held research positions at institutions including <a href="http://polyu-mobility-ai-lab.com/" target="_blank">Mobility AI Lab</a> at The Hong Kong Polytechnic University (<a href="https://www.polyu.edu.hk/" target="_blank">HK PolyU</a>), <a href="https://mobility.mit.edu/" target="_blank">JTL Transit Lab</a> at Massachusetts Institute of Technology (<a href="https://www.mit.edu/" target="_blank">MIT</a>), and <a href="https://dajiangsuo.github.io/" target="_blank">Suo Lab</a> at Arizona State University (<a href="https://www.asu.edu/" target="_blank">ASU</a>).
   <p>
     My research focuses on innovating data-driven, statistical, and AI methods to develop more connected, autonomous, intelligent, and human-centered urban and transportation systems, and to uncover the social dynamics they embody. 
-    My primary research interests span four interrelated areas: 
+    My research interests span five interrelated areas: 
     <span style="display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:#ffb05b; margin-right:0.1em;"></span><strong>
-    Human-centered Modeling and Synthesis</strong>, focusing on population and mobility data with equity, privacy, and intent-awareness; 
+    Human-centered Modeling and Synthesis</strong>, focusing on population and mobility data with equity and privacy; 
     <span style="display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:#41A0FF; margin-right:0.1em;"></span><strong>
     Large Language Models for Urban Science</strong>, aiming to build self-evolving agents for urban scientific discovery, planning, and causal reasoning; 
     <span style="display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:#E91E63; margin-right:0.1em;"></span><strong>
     Multimodal Transportation Systems</strong>, using multi-source data fusion to understand and optimize mobility systems; and 
     <span style="display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:#4CAF50; margin-right:0.1em;"></span><strong>
-    Spatiotemporal Data Modeling</strong>, developing models for forecasting, control, and behavior inference across space and time.
+    Spatiotemporal Data Modeling</strong>, developing models for forecasting and behavior inference across space and time; and
+    <span style="display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:#4C6FFF; margin-right:0.1em;"></span><strong>
+    Autonomous Driving</strong>, advancing controllability and reliability for human-centered AD.
   <p>
     <i class="fa-solid fa-rectangle-ad" style="color: #d60000;"></i> <span style="color: #d60000;">I am looking for collaborators and interns</span> with the goal of conducting impactful research and publishing in top AI conferences and leading urban and transportation journals.
     If you are interested in collaborating or sharing thoughts, please feel free to reach out via <a href="mailto:yihong.tang@mail.mcgill.ca">Email</a> or <a class="pr-3 no-break" data-toggle="modal" data-target="#modal-wechat">WeChat</a>
@@ -71,15 +73,25 @@ education:
 
 
 experience:
+- name: ServiceNow AI Research
+  logo: /assets/images/badges/snow.png
+  position: Visiting Researcher
+  date: Jan. 2026 - Present
+
+- name: Autorité régionale de transport métropolitain
+  logo: /assets/images/badges/artm.png
+  position: Research Intern
+  date: Aug. 2025 - Dec. 2025
+
 - name: Massachusetts Institute of Technology
   logo: /assets/images/badges/MIT_Social_circle.png
   position: Summer Research Intern
   date: Apr. 2024 - Oct. 2024
 
-- name: Arizona State University
-  logo: /assets/images/badges/asu.png
-  position: Research Assistant
-  date: Jul. 2024 - Sep. 2024
+# - name: Arizona State University
+#   logo: /assets/images/badges/asu.png
+#   position: Research Assistant
+#   date: Jul. 2024 - Sep. 2024
 
 - name: TuTu. AI, Startup
   logo: /assets/images/badges/tutu.png
@@ -100,16 +112,22 @@ experience:
 
 # <strong></strong>
 awards:
+# - name: McGill Engineering International Tuition Award <a href="https://www.mcgill.ca/engineering/students/graduate-students/funding/doctoral-funding" target="_blank">(MEITA)</a>
+#   date: Jan. 2025
 - name: <a href="https://yihongt.github.io/assets/awards/mklm2025.png" target="_blank">Best Paper Award</a>, 1st Workshop on Multimodal Knowledge and Language Modeling (IJCAI MKLM 2025)
   date: Aug., 2025
 - name: <a href="https://yihongt.github.io/assets/awards/urbcomp2024.jpg" target="_blank">Best Paper Award</a>, 13th International Workshop on Urban Computing
   date: Aug., 2024
 - name: Best Zero to One Award, Alibaba Create@AI Entrepreneur Hackathon Final
   date: Jan., 2024
+# - name: <a href="https://gradsch.hku.hk/prospective_students/fees_scholarships_and_financial_support/postgraduate_scholarships" target="_blank">HKU Postgraduate Scholarships</a>
+#   date: Sept., 2022
 - name: National Science Foundation Award, CIKM 2022
   date: Oct., 2022
 
 academic_services:
+  projects:
+    - <a href="https://nserc-crsng.canada.ca/en/funding-decisions/result/2519" target="_blank">MobAgent</a> - Large Language Model Agent for Mobility Reasoning and Synthesis (NSERC, $300,000)
   journal_referees:
     - IEEE Transactions on Multimedia
     - IEEE Transactions on Intelligent Transportation Systems
@@ -128,8 +146,10 @@ academic_services:
     - COLM 2025
     - TRB Annual Meeting 2026
     - ICLR 2026
-  mentor:
+  mentored:
     - <a href="https://mobility.mit.edu/openings/" target="_blank">MIT-UF-NEU 2025 Joint Summer Research Camp</a>
+    - <strong>Graduate Students:</strong> <a href="https://scholar.google.com/citations?user=zD7XUF8AAAAJ&hl=en" target="_blank">Zeyuan Niu</a> (SJTU, 2026) -> Ph.D., HKU; <a href="https://www.linkedin.com/in/yanling-sang-106275362/" target="_blank">Yanling Sang</a> (UCLA, 2025) -> Ph.D., Johns Hopkins University (JHU)
+    - <strong>Undergraduate Students:</strong> <a href="https://www.linkedin.com/in/qianjun-charlie-huang-739352299/?originalSubdomain=ca" target="_blank">Qianjun Huang</a> (Undergraduate, University of Toronto); Chenshuo Li (Undergraduate, Sichuan University) 
 
 # short_bio_text_justify: false
 # short_bio: >-

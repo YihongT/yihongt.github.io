@@ -9,5 +9,8 @@ trs:
   label: "Multimodal Transportation"
   color: "#E91E63"
 st:
-  label: "Spatio-temporal Modeling"
+  label: "Spatio Temporal"
   color: "#4CAF50"
+AD:
+  label: "Autonomous Driving"
+  color: "#4C6FFF"

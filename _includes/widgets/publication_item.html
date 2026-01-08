@@ -35,17 +35,8 @@
       <div class="mb-2">
         {% for topic in item.topics %}
           {% assign meta = site.data.topics[topic] %}
-          <span
-            class="badge badge-light border mr-1 d-inline-flex align-items-center"
-            style="background: #fff;"
-          >
-            <span style="
-              display: inline-block;
-              width: .5em; height: .5em;
-              border-radius: 50%;
-              background: {{ meta.color }};
-              margin-right: .25em;
-            "></span>
+          <span class="badge badge-light border mr-1 d-inline-flex align-items-center topic-badge">
+            <span class="topic-dot" style="background: {{ meta.color }};"></span>
             {{ meta.label }}
           </span>
         {% endfor %}
@@ -108,14 +99,8 @@
     <div class="mb-2">
       {% for topic in item.topics %}
         {% assign meta = site.data.topics[topic] %}
-        <span class="badge badge-light border mr-1 d-inline-flex align-items-center" style="background:#fff;">
-          <span style="
-            display:inline-block;
-            width:.5em; height:.5em;
-            border-radius:50%;
-            background: {{ meta.color }};
-            margin-right:.25em;
-          "></span>
+        <span class="badge badge-light border mr-1 d-inline-flex align-items-center topic-badge">
+          <span class="topic-dot" style="background: {{ meta.color }};"></span>
           {{ meta.label }}
         </span>
       {% endfor %}

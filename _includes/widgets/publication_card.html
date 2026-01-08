@@ -9,52 +9,48 @@
     #pub-filters {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.75rem;
       padding: 1rem;
       margin-bottom: 1rem;
-      white-space: nowrap;
     }
     #pub-filters li { list-style: none; }
-    #pub-filters li:first-child {
-      flex: 0 0 auto;
-      margin-right: 1rem;
-    }
-    #pub-filters li:not(:first-child) {
-      flex: 1;
-      margin-right: 1rem;
-    }
-    #pub-filters li:last-child { margin-right: 0; }
+    #pub-filters li { flex: 0 0 auto; }
 
     /* 去掉边框，改用阴影 */
     #pub-filters .filter {
-      display: block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
       text-align: center;
-      padding: 0.5rem 0.75rem;
-      border: none;
-      border-radius: .25rem;
-      background-color: #fff;
-      box-shadow: 0 .125rem .25rem rgba(0,0,0,0.075);
+      padding: 0.35rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background-color: transparent;
       text-decoration: none;
       color: inherit;
-      transition: all .2s;
+      font-size: 0.92rem;
+      transition: color .2s, transform .2s;
     }
     #pub-filters .filter:hover {
-      box-shadow: 0 .25rem .5rem rgba(0,0,0,0.1);
       color: #007bff;
+      transform: translateY(-1px);
     }
     #pub-filters .filter.active {
-      box-shadow: 0 .5rem 1rem rgba(0,0,0,0.15);
-      background-color: #007bff;
-      color: #fff;
-      font-weight: bold;
+      color: #007bff;
+      font-weight: 700;
+      border-color: #007bff;
+      background-color: rgba(0, 123, 255, 0.1);
     }
 
     #pub-filters .filter-badge {
       display: inline-block;
-      width: .5em;
-      height: .5em;
+      width: .55em;
+      height: .55em;
       border-radius: 50%;
-      margin-right: .5em;
       vertical-align: middle;
+      box-shadow: 0 0 0 2px rgba(0,0,0,0.15);
     }
 
     @media (max-width: 576px) {
@@ -105,7 +101,7 @@
   
   <!-- 3. Publications 列表（hide_bottom_border 已加） -->
   {% for item in publications limit:include.limit %}
-    {% include widgets/publication_item.html item=item hide_bottom_border=true %}
+    {% include widgets/publication_item.html item=item %}
   {% endfor %}
 
   <!-- 底部链接 -->
