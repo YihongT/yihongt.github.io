@@ -112,7 +112,7 @@
       {{ item.pub_pre }}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}
     </p>
     <p class="mb-1 small text-muted">{{ item.abstract }}</p>
-    <p class="small lh-125 text-muted mb-0">
+    <p class="small lh-125 text-muted mb-0 abstract-links">
       {% for link in item.links %}
         {% assign url = link[1].url or link[1] %}
         <a target="_blank" href="{{ url }}">[{{ link[0] }}]</a>

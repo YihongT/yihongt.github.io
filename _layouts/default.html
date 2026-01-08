@@ -11,8 +11,10 @@
     <script>
         (function() {
             var storedTheme = localStorage.getItem('theme');
-            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            var theme = storedTheme || (prefersDark ? 'dark' : 'light');
+            var now = new Date();
+            var hour = now.getHours();
+            var isDaytime = hour >= 8 && hour < 20;
+            var theme = storedTheme || (isDaytime ? 'light' : 'dark');
             document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>

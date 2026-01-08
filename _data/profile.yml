@@ -63,11 +63,11 @@ education:
   position: Ph.D. in Transportation Engineering
   date: Jan. 2025 - present
 - name: The University of Hong Kong #Massachusetts Institute of Technology
-  logo: /assets/images/badges/hku_removebg.png
+  logo: /assets/images/badges/hku_logo.png
   position: M.Phil. in Urban Analytics and Smart Cities
   date: Sep. 2022 - Jul. 2024
 - name: Beijing University of Posts and Telecommunications
-  logo: /assets/images/badges/bupt_removebg.png
+  logo: /assets/images/badges/bupt_new.png
   position: B.Eng. in Computer Science and Technology
   date: Sep. 2018 - Jul. 2022
 
@@ -127,7 +127,7 @@ awards:
 
 academic_services:
   projects:
-    - <a href="https://nserc-crsng.canada.ca/en/funding-decisions/result/2519" target="_blank">MobAgent</a> - Large Language Model Agent for Mobility Reasoning and Synthesis (NSERC, $300,000)
+    - <a href="https://nserc-crsng.canada.ca/en/funding-decisions/result/2519" target="_blank">MobAgent</a> - Large Language Model Agent for Mobility Reasoning and Synthesis (NSERC, CA$300,000)
   journal_referees:
     - IEEE Transactions on Multimedia
     - IEEE Transactions on Intelligent Transportation Systems
