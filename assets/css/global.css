@@ -236,6 +236,12 @@ a:hover {
     line-height: 1.2;
 }
 
+.navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    line-height: 1.2;
+    font-size: 1rem;
+}
+
 .navbar-brand .theme-toggle-btn {
     font-size: 1rem;
     font-weight: 400;
@@ -247,6 +253,11 @@ a:hover {
 
 @media (max-width: 576px) {
     .navbar-brand .theme-toggle-btn {
+        padding: 0.2rem 0.45rem;
+        line-height: 1;
+    }
+
+    .navbar-toggler {
         padding: 0.2rem 0.45rem;
         line-height: 1;
     }
