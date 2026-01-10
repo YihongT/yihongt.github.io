@@ -238,10 +238,18 @@ a:hover {
 
 .navbar-brand .theme-toggle-btn {
     font-size: 1rem;
+    font-weight: 400;
 }
 
 .theme-toggle-btn:hover {
     background-color: rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 576px) {
+    .navbar-brand .theme-toggle-btn {
+        padding: 0.2rem 0.45rem;
+        line-height: 1;
+    }
 }
 
 html[data-theme="dark"] .theme-toggle-btn:hover {
