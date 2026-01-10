@@ -86,13 +86,13 @@ experience:
 
 - name: Massachusetts Institute of Technology
   logo: /assets/images/badges/MIT_Social_circle.png
-  position: Summer Research Intern
+  position: Summer Research Intern, <a href="https://mobility.mit.edu/" target="_blank">JTL Transit Lab</a>
   date: Apr. 2024 - Oct. 2024
 
-# - name: Arizona State University
-#   logo: /assets/images/badges/asu.png
-#   position: Research Assistant
-#   date: Jul. 2024 - Sep. 2024
+- name: Arizona State University
+  logo: /assets/images/badges/asu.png
+  position: Research Assistant, <a href="https://dajiangsuo.github.io/" target="_blank">Suo Lab</a>
+  date: Jul. 2024 - Sep. 2024
 
 - name: TuTu. AI, Startup
   logo: /assets/images/badges/tutu.png
@@ -101,28 +101,29 @@ experience:
 
 - name: The Hong Kong Polytechnic University
   logo: /assets/images/badges/hkpolyu.png
-  position: Research Assistant
+  position: Research Assistant,  <a href="http://polyu-mobility-ai-lab.com/" target="_blank">Mobility AI Lab</a>
   date: Apr. 2021 - Aug. 2022
 
 - name: Xiaomi Corporation
   logo: /assets/images/badges/xiaomi_logo.png
-  position: Recommendation Algorithm Intern
+  position: Recommendation Algorithm Intern, Xiaomi Music
   date: Jul. 2020 - Sept. 2020
-
 
 
 # <strong></strong>
 awards:
-# - name: McGill Engineering International Tuition Award <a href="https://www.mcgill.ca/engineering/students/graduate-students/funding/doctoral-funding" target="_blank">(MEITA)</a>
-#   date: Jan. 2025
+- name: <a href="https://www.cirrelt.ca/cirrelt/images/file/2026/2025-2026-recipiendaires.pdf" target="_blank">CIRRELT Doctoral Scholarships of Excellence (Early stages)</a>
+  date: Jan. 2026
+- name: McGill Engineering International Tuition Award <a href="https://www.mcgill.ca/engineering/students/graduate-students/funding/doctoral-funding" target="_blank">(MEITA)</a>
+  date: Jan. 2025 - Jul., 2028
 - name: <a href="https://yihongt.github.io/assets/awards/mklm2025.png" target="_blank">Best Paper Award</a>, 1st Workshop on Multimodal Knowledge and Language Modeling (IJCAI MKLM 2025)
   date: Aug., 2025
 - name: <a href="https://yihongt.github.io/assets/awards/urbcomp2024.jpg" target="_blank">Best Paper Award</a>, 13th International Workshop on Urban Computing
   date: Aug., 2024
-- name: Best Zero to One Award, Alibaba Create@AI Entrepreneur Hackathon Final
+- name: <a href="https://www.cirrelt.ca/cirrelt/images/file/2025/2025-26_bourses_francais.pdf" target="_blank">Best Zero to One Award</a>, Alibaba Create@AI Entrepreneur Hackathon Final
   date: Jan., 2024
-# - name: <a href="https://gradsch.hku.hk/prospective_students/fees_scholarships_and_financial_support/postgraduate_scholarships" target="_blank">HKU Postgraduate Scholarships</a>
-#   date: Sept., 2022
+- name: <a href="https://gradsch.hku.hk/prospective_students/fees_scholarships_and_financial_support/postgraduate_scholarships" target="_blank">HKU Postgraduate Scholarships</a>
+  date: Sept., 2022 - Jul., 2024
 - name: National Science Foundation Award, CIKM 2022
   date: Oct., 2022
 

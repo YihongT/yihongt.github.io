@@ -51,10 +51,23 @@
       <p class="mt-0 mb-0 small text-muted">{{ item.abstract }}</p>
       <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
         {% for link in item.links %}
+          {% assign label = link[0] %}
+          {% case label %}
+            {% when "Paper" %}{% assign icon = "fas fa-file-pdf" %}
+            {% when "Code" %}{% assign icon = "fas fa-code" %}
+            {% when "Project" %}{% assign icon = "fas fa-link" %}
+            {% when "Video" %}{% assign icon = "fas fa-video" %}
+            {% when "Slides" %}{% assign icon = "fas fa-file-powerpoint" %}
+            {% when "Poster" %}{% assign icon = "fas fa-image" %}
+            {% when "Dataset" %}{% assign icon = "fas fa-database" %}
+            {% when "Website" %}{% assign icon = "fas fa-globe" %}
+            {% when "Best Paper Award" %}{% assign icon = "fas fa-trophy" %}
+            {% else %}{% assign icon = "fas fa-link" %}
+          {% endcase %}
           {% if link[1].url %}
-            <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>
+            <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[<i class="{{ icon }}"></i> {{ label }}]</a>
           {% else %}
-            <a target="_blank" href="{{ link[1] }}">[{{ link[0] }}]</a>
+            <a target="_blank" href="{{ link[1] }}">[<i class="{{ icon }}"></i> {{ label }}]</a>
           {% endif %}
         {% endfor %}
       </p>
@@ -114,8 +127,20 @@
     <p class="mb-1 small text-muted">{{ item.abstract }}</p>
     <p class="small lh-125 text-muted mb-0 abstract-links">
       {% for link in item.links %}
+        {% assign label = link[0] %}
+        {% case label %}
+          {% when "Paper" %}{% assign icon = "fas fa-file-pdf" %}
+          {% when "Code" %}{% assign icon = "fas fa-code" %}
+          {% when "Project" %}{% assign icon = "fas fa-link" %}
+          {% when "Video" %}{% assign icon = "fas fa-video" %}
+          {% when "Slides" %}{% assign icon = "fas fa-file-powerpoint" %}
+          {% when "Poster" %}{% assign icon = "fas fa-image" %}
+          {% when "Dataset" %}{% assign icon = "fas fa-database" %}
+          {% when "Website" %}{% assign icon = "fas fa-globe" %}
+          {% else %}{% assign icon = "fas fa-link" %}
+        {% endcase %}
         {% assign url = link[1].url or link[1] %}
-        <a target="_blank" href="{{ url }}">[{{ link[0] }}]</a>
+        <a target="_blank" href="{{ url }}">[<i class="{{ icon }}"></i> {{ label }}]</a>
       {% endfor %}
     </p>
   </div>
