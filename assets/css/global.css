@@ -122,6 +122,14 @@ html[data-theme="dark"] .border-gray {
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
 }
 
+/* Add breathing room for inline dots in bio text. */
+.text-profile-bio .topic-dot {
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    margin-top: 0.05em;
+    margin-bottom: 0.05em;
+}
+
 html[data-theme="dark"] .topic-badge {
     background-color: rgba(255, 255, 255, 0.06) !important;
     border-color: rgba(255, 255, 255, 0.12) !important;

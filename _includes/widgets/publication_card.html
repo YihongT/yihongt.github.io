@@ -1,6 +1,6 @@
 {% assign publications = include.publications %}
 
-<div class="my-3 p-0 bg-white shadow-sm rounded-sm">
+<div class="my-3 p-0 bg-white shadow-sm rounded-sm" {% if include.anchor_id %}id="{{ include.anchor_id }}"{% endif %}>
 
   <!-- 全局隐藏类 & Filter 样式 -->
   <style>
@@ -117,7 +117,16 @@
 document.addEventListener("DOMContentLoaded", function(){
   const filters = document.querySelectorAll("#pub-filters .filter");
   const items   = document.querySelectorAll(".publication-item");
+  const topicLinks = document.querySelectorAll(".topic-filter-link[data-topic]");
+  const pubAnchor = document.getElementById("selected-publications");
 //   console.log("找到", items.length, "个条目");
+
+  const applyFilter = (key) => {
+    const target = document.querySelector(`#pub-filters .filter[data-filter='${key}']`);
+    if (target) {
+      target.click();
+    }
+  };
 
   filters.forEach(btn => {
     btn.addEventListener("click", function(e) {
@@ -145,6 +154,21 @@ document.addEventListener("DOMContentLoaded", function(){
           item.classList.add("hidden-by-filter");
         }
       });
+    });
+  });
+
+  topicLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
+      const key = this.dataset.topic;
+      if (!key) {
+        return;
+      }
+      if (pubAnchor) {
+        e.preventDefault();
+        pubAnchor.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.pushState(null, "", "#selected-publications");
+      }
+      applyFilter(key);
     });
   });
 

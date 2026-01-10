@@ -33,15 +33,15 @@ short_bio: >-
   <p>
     My research focuses on innovating data-driven, statistical, and AI methods to develop more connected, autonomous, intelligent, and human-centered urban and transportation systems, and to uncover the social dynamics they embody. 
     My research interests span five interrelated areas: 
-    <span style="display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:#ffb05b; margin-right:0.1em;"></span><strong>
+    <a class="topic-filter-link" data-topic="DS" href="#selected-publications" title="Filter selected publications: Human-centered Modeling"><span class="topic-dot" style="background: #ffb05b;"></span></a><strong>
     Human-centered Modeling and Synthesis</strong>, focusing on population and mobility data with equity and privacy; 
-    <span style="display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:#41A0FF; margin-right:0.1em;"></span><strong>
+    <a class="topic-filter-link" data-topic="LLM4US" href="#selected-publications" title="Filter selected publications: LLM for Urban Science"><span class="topic-dot" style="background: #41A0FF;"></span></a><strong>
     Large Language Models for Urban Science</strong>, aiming to build self-evolving agents for urban scientific discovery, planning, and causal reasoning; 
-    <span style="display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:#E91E63; margin-right:0.1em;"></span><strong>
+    <a class="topic-filter-link" data-topic="trs" href="#selected-publications" title="Filter selected publications: Multimodal Transportation"><span class="topic-dot" style="background: #E91E63;"></span></a><strong>
     Multimodal Transportation Systems</strong>, using multi-source data fusion to understand and optimize mobility systems; and 
-    <span style="display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:#4CAF50; margin-right:0.1em;"></span><strong>
+    <a class="topic-filter-link" data-topic="st" href="#selected-publications" title="Filter selected publications: Spatial-Temporal"><span class="topic-dot" style="background: #4CAF50;"></span></a><strong>
     Spatiotemporal Data Modeling</strong>, developing models for forecasting and behavior inference across space and time; and
-    <span style="display:inline-block; width:0.5em; height:0.5em; border-radius:50%; background:#4C6FFF; margin-right:0.1em;"></span><strong>
+    <a class="topic-filter-link" data-topic="AD" href="#selected-publications" title="Filter selected publications: Autonomous Driving"><span class="topic-dot" style="background: #4C6FFF;"></span></a><strong>
     Autonomous Driving</strong>, advancing controllability and reliability for human-centered AD.
   <p>
     <i class="fa-solid fa-rectangle-ad" style="color: #d60000;"></i> <span style="color: #d60000;">I am looking for collaborators and interns</span> with the goal of conducting impactful research and publishing in top AI conferences and leading urban and transportation journals.
