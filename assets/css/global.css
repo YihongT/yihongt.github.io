@@ -124,7 +124,7 @@ html[data-theme="dark"] .border-gray {
 
 /* Add breathing room for inline dots in bio text. */
 .text-profile-bio .topic-dot {
-    margin-left: 0.3em;
+    margin-left: 0.4em;
     margin-right: 0.3em;
     margin-top: 0.05em;
     margin-bottom: 0.05em;
