@@ -236,6 +236,10 @@ a:hover {
     line-height: 1.2;
 }
 
+.navbar-brand .theme-toggle-btn {
+    font-size: 1rem;
+}
+
 .theme-toggle-btn:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
