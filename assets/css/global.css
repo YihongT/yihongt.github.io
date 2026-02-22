@@ -190,7 +190,7 @@ body::before {
         repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.028) 0, rgba(0, 0, 0, 0.028) 1px, transparent 1px, transparent 7px);
     opacity: 0.24;
     pointer-events: none;
-    z-index: 0;
+    z-index: -1;
 }
 
 body::after {
@@ -241,14 +241,13 @@ html[data-theme="dark"] body::after {
     inset: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: -2;
     pointer-events: none;
 }
 
 .container,
 footer {
     position: relative;
-    z-index: 1;
 }
 
 .navbar {
@@ -334,6 +333,62 @@ h1, h2, h3, h4, h5, h6,
 .navbar-light .navbar-toggler {
     color: var(--navbar-text);
     border-color: var(--border);
+}
+
+.qr-modal .modal-content {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow:
+        0 24px 50px -36px var(--shadow-strong),
+        0 0 0 1px rgba(var(--accent-rgb), 0.16);
+    background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.78));
+}
+
+.qr-modal .modal-body {
+    padding: 0;
+    background:
+        radial-gradient(240px circle at 18% 18%, rgba(var(--link-rgb), 0.12), transparent 60%),
+        radial-gradient(200px circle at 84% 8%, rgba(var(--accent-rgb), 0.12), transparent 55%);
+}
+
+.qr-modal img {
+    display: block;
+    width: 100%;
+    border-radius: 16px;
+}
+
+.qr-modal .modal-footer {
+    border-top: 1px solid rgba(var(--accent-rgb), 0.18);
+    padding: 0.6rem 0.9rem 0.9rem;
+    background: transparent;
+}
+
+.qr-modal .btn-primary {
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: 1px solid rgba(var(--link-rgb), 0.4);
+    background: linear-gradient(120deg, rgba(var(--link-rgb), 0.18), rgba(var(--accent-rgb), 0.18));
+    color: var(--text);
+}
+
+.qr-modal .btn-primary:hover {
+    border-color: rgba(var(--link-rgb), 0.65);
+    background: linear-gradient(120deg, rgba(var(--link-rgb), 0.3), rgba(var(--accent-rgb), 0.25));
+}
+
+html[data-theme="dark"] .qr-modal .modal-content {
+    background:
+        linear-gradient(160deg, rgba(18, 27, 38, 0.96), rgba(18, 27, 38, 0.78));
+    box-shadow:
+        0 26px 52px -38px var(--shadow-strong),
+        0 0 0 1px rgba(var(--accent-rgb), 0.25);
+}
+
+html[data-theme="dark"] .qr-modal .modal-footer {
+    border-top-color: rgba(var(--accent-rgb), 0.28);
 }
 
 .navbar-brand {

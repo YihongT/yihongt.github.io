@@ -19,6 +19,8 @@ wechat_qrcode: /assets/images/etc/tyh_wechat.jpg
 wechat_prompt: >-
   Please let me know your <strong>name</strong>, <strong>affiliation</strong> (current or previous), and your <strong>reason</strong> for adding me on WeChat. Thanks!
 linkedin: yihong-tang-6981331b2
+rednote: https://www.xiaohongshu.com/user/profile/5f4f25a4000000000100aeed
+rednote_qr: /assets/images/etc/rednote_qr.jpg
 # orcid: 0000-0002-3684-3072
 # zhihu: tang-yi-hong-27
 # flickr: 196532734@N06
@@ -59,7 +61,7 @@ short_bio: >-
     and my B.Eng. in Computer Science from 
     <a href="https://ois.bupt.edu.cn/About_Us.htm" target="_blank">BUPT</a>.  
   <p>
-    I study multimodal AI agents and generative models, and their applications in computer, social, and urban sciences. My research has appeared in top AI venues such as ICLR, CVPR, EMNLP, CIKM, and ISMIR.
+    I study multimodal AI agents and generative models, and their applications in computer, social, and urban sciences. My research has appeared in top AI venues, please check out my <a href="#selected-publications">selected publications</a> for details.
   <p>
     <i class="fa-solid fa-rectangle-ad" style="color: #d60000;"></i> <span style="color: #d60000;">I am looking for collaborators and interns</span> with the goal of conducting impactful research and publishing in top venues.
     If you are interested in collaborating or sharing thoughts, please feel free to reach out via <a href="mailto:yihong.tang@mail.mcgill.ca">Email</a> or <a class="pr-3 no-break" data-toggle="modal" data-target="#modal-wechat">WeChat</a>
@@ -106,7 +108,7 @@ education:
 experience:
 - name: ServiceNow AI Research
   logo: /assets/images/badges/snow.png
-  position: Visiting Researcher
+  position: Visiting Researcher, <a href="https://www.servicenow.com/research/" target="_blank">Frontier AI Research</a>
   date: Jan. 2026 - Present
 
 - name: Autorité régionale de transport métropolitain
@@ -181,6 +183,7 @@ academic_services:
     - COLM 2025
     - TRB Annual Meeting 2026
     - ICLR 2026
+    - ITSC 2026
   mentored:
     - <a href="https://mobility.mit.edu/openings/" target="_blank">MIT-UF-NEU 2025 Joint Summer Research Camp</a>
     # - <strong>Graduate Students:</strong> <a href="https://scholar.google.com/citations?user=zD7XUF8AAAAJ&hl=en" target="_blank">Zeyuan Niu</a> (SJTU, 2026) -> Ph.D., HKU; <a href="https://www.linkedin.com/in/yanling-sang-106275362/" target="_blank">Yanling Sang</a> (UCLA, 2025) -> Ph.D., Johns Hopkins University (JHU)

@@ -68,15 +68,15 @@
                         </a>
                         {% endif %}
 
-                        {% if site.data.profile.linkedin %}
-                        <a class="pr-3 no-break" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                        {% endif %}
-
                         {% if site.data.profile.github %}
                         <a class="pr-3 no-break" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
                             <i class="fab fa-github"></i> GitHub
+                        </a>
+                        {% endif %}
+
+                        {% if site.data.profile.linkedin %}
+                        <a class="pr-3 no-break" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}">
+                            <i class="fab fa-linkedin"></i> LinkedIn
                         </a>
                         {% endif %}
 
@@ -89,6 +89,16 @@
                         {% if site.data.profile.wechat_qrcode %}
                         <a class="pr-3 no-break" data-toggle="modal" data-target="#modal-wechat">
                             <i class="fab fa-weixin"></i> WeChat
+                        </a>
+                        {% endif %}
+
+                        {% if site.data.profile.rednote_qr %}
+                        <a class="pr-3 no-break" data-toggle="modal" data-target="#modal-rednote">
+                            <i class="fa-solid fa-book-bookmark"></i> Rednote
+                        </a>
+                        {% elsif site.data.profile.rednote %}
+                        <a class="pr-3 no-break" target="_blank" href="{{ site.data.profile.rednote }}">
+                            <i class="fa-solid fa-book-bookmark"></i> Rednote
                         </a>
                         {% endif %}
 
@@ -117,7 +127,7 @@
 </div>
 
 {% if site.data.profile.wechat_qrcode %}
-<div class="modal fade" id="modal-wechat" tabindex="-1" aria-hidden="true">
+<div class="modal fade qr-modal" id="modal-wechat" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-body p-0">
@@ -128,6 +138,21 @@
                 {{ site.data.profile.wechat_prompt }}
             </div>
             {% endif %}
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if site.data.profile.rednote_qr %}
+<div class="modal fade qr-modal" id="modal-rednote" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <img src="{{ site.data.profile.rednote_qr | relative_url }}" class="img-fluid" alt="Rednote QR">
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
