@@ -3,7 +3,7 @@ $(function () {
     lazyLoadOptions = {
         scrollDirection: 'vertical',
         effect: 'fadeIn',
-        effectTime: 300,
+        effectTime: 120,
         placeholder: "",
         onError: function(element) {
             console.log('[lazyload] Error loading ' + element.data('src'));
@@ -24,6 +24,46 @@ $(function () {
     $('div.lazy.always-load').Lazy({visibleOnly: false, ...lazyLoadOptions});
 
     $('[data-toggle="tooltip"]').tooltip()
+
+    // Fallback modal controls for QR popups in case Bootstrap dismiss hooks
+    // are interrupted by custom styles or runtime conflicts.
+    function cleanupModalArtifacts() {
+        $('body').removeClass('modal-open').css('padding-right', '');
+        $('.modal-backdrop').remove();
+    }
+
+    function bindQrModalFallback(modalSelector) {
+        var $modal = $(modalSelector);
+        if (!$modal.length) return;
+
+        $modal.on('hidden.bs.modal', function () {
+            cleanupModalArtifacts();
+        });
+
+        $modal.on('click', '[data-dismiss="modal"], [data-bs-dismiss="modal"]', function (e) {
+            e.preventDefault();
+            $modal.modal('hide');
+            // Let Bootstrap animate first, then clean up any stale backdrop.
+            setTimeout(cleanupModalArtifacts, 250);
+        });
+
+        $modal.on('click', function (e) {
+            if (e.target === this) {
+                $modal.modal('hide');
+            }
+        });
+    }
+
+    bindQrModalFallback('#modal-wechat');
+    bindQrModalFallback('#modal-rednote');
+
+    // Bootstrap modals should live under <body> to avoid stacking-context issues.
+    $('#modal-wechat, #modal-rednote, #modal-info').each(function () {
+        var $modal = $(this);
+        if ($modal.length && !$modal.parent().is('body')) {
+            $modal.appendTo('body');
+        }
+    });
 
     var $grid = $('.grid').masonry({
         "percentPosition": true,

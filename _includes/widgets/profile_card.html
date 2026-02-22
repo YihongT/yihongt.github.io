@@ -87,13 +87,13 @@
                         {% endif %}
 
                         {% if site.data.profile.wechat_qrcode %}
-                        <a class="pr-3 no-break" data-toggle="modal" data-target="#modal-wechat">
+                        <a class="pr-3 no-break" href="#" data-toggle="modal" data-target="#modal-wechat" onclick="event.preventDefault(); event.stopPropagation(); $('#modal-wechat').modal('show');">
                             <i class="fab fa-weixin"></i> WeChat
                         </a>
                         {% endif %}
 
                         {% if site.data.profile.rednote_qr %}
-                        <a class="pr-3 no-break" data-toggle="modal" data-target="#modal-rednote">
+                        <a class="pr-3 no-break" href="#" data-toggle="modal" data-target="#modal-rednote" onclick="event.preventDefault(); event.stopPropagation(); $('#modal-rednote').modal('show');">
                             <i class="fa-solid fa-book-bookmark"></i> Rednote
                         </a>
                         {% elsif site.data.profile.rednote %}
@@ -127,9 +127,14 @@
 </div>
 
 {% if site.data.profile.wechat_qrcode %}
-<div class="modal fade qr-modal" id="modal-wechat" tabindex="-1" aria-hidden="true">
+<div class="modal fade qr-modal" id="modal-wechat" tabindex="-1" aria-hidden="true" data-backdrop="true" data-keyboard="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
+            <div class="d-flex justify-content-end pr-2 pt-2">
+                <button type="button" class="close" aria-label="Close" data-dismiss="modal" onclick="event.preventDefault(); event.stopPropagation(); $('#modal-wechat').modal('hide');">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
             <div class="modal-body p-0">
                 <img src="{{ site.data.profile.wechat_qrcode | relative_url }}" class="img-fluid">
             </div>
@@ -139,7 +144,7 @@
             </div>
             {% endif %}
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="event.preventDefault(); event.stopPropagation(); $('#modal-wechat').modal('hide');">Close</button>
             </div>
         </div>
     </div>
@@ -147,14 +152,19 @@
 {% endif %}
 
 {% if site.data.profile.rednote_qr %}
-<div class="modal fade qr-modal" id="modal-rednote" tabindex="-1" aria-hidden="true">
+<div class="modal fade qr-modal" id="modal-rednote" tabindex="-1" aria-hidden="true" data-backdrop="true" data-keyboard="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
+            <div class="d-flex justify-content-end pr-2 pt-2">
+                <button type="button" class="close" aria-label="Close" data-dismiss="modal" onclick="event.preventDefault(); event.stopPropagation(); $('#modal-rednote').modal('hide');">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
             <div class="modal-body p-0">
                 <img src="{{ site.data.profile.rednote_qr | relative_url }}" class="img-fluid" alt="Rednote QR">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="event.preventDefault(); event.stopPropagation(); $('#modal-rednote').modal('hide');">Close</button>
             </div>
         </div>
     </div>

@@ -108,7 +108,7 @@
   
   <!-- 3. Publications 列表（hide_bottom_border 已加） -->
   {% for item in publications limit:include.limit %}
-    {% include widgets/publication_item.html item=item %}
+    {% include widgets/publication_item.html item=item index=forloop.index0 %}
   {% endfor %}
 
   <!-- 底部链接 -->

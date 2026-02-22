@@ -11,13 +11,31 @@
     <!-- ① 这里把 col-md-3 改为自定义 30% 宽度 -->
     <div class="mb-md-0 p-md-3" style="flex: 0 0 30%; max-width: 30%;">
       {%- if item.cover -%}
+      {% assign eager_cover = false %}
+      {% if include.index and include.index < 3 %}
+        {% assign eager_cover = true %}
+      {% endif %}
+      {% if eager_cover %}
+      <img
+        src="{{ item.cover | relative_url }}"
+        alt="{{ item.title }}"
+        class="rounded-sm shadow publication-cover"
+        style="width: 100%; height: auto;"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
+      {% else %}
       <img
         data-src="{{ item.cover | relative_url }}"
         alt="{{ item.title }}"
         class="lazy rounded-sm shadow publication-cover"
         style="width: 100%; height: auto;"
         src="{{ '/assets/images/empty_300x200.png' | relative_url }}"
+        loading="lazy"
+        decoding="async"
       >
+      {% endif %}
       {%- else -%}
       <svg
         class="bubble-visual-hash lazy w-100 rounded-sm"

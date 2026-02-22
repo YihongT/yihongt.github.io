@@ -30,7 +30,7 @@ short_bio_text_justify: false
 show_publication_tags: false
 ambient_bg:
   enabled: true
-  density: 300
+  density: 140
   glow_strength_light: 0.15
   glow_strength_dark: 0.15
   glow_radius_scale: 0.4
