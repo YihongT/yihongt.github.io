@@ -1,12 +1,12 @@
 ---
 title:          "Think Before You Drive: World Model-Inspired Multimodal Grounding"
-date:           2025-12-03 00:01:00 +0800
+date:           2026-02-21 01:00:00 +0800
 selected:       false
-# pub:            "IEEE Transactions on Smart Grid"
+pub:            "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"
 # pub_pre:        "Submitted to Nature Human Behaviour"
-pub_post:       'Under review.'
+# pub_post:       'Under review.'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
-pub_date:       "2025"
+pub_date:       "2026"
 
 cover:          /assets/images/covers/worlddrive_cover.png
 authors:

@@ -31,8 +31,9 @@
     <div class="p-3 pl-md-0" style="flex: 1;">
       <h5 class="mt-0 mb-1 font-weight-normal">{{ item.title }}</h5>
       
-      {% if item.topics %}
-      <div class="mb-2">
+      {% assign show_pub_tags = site.data.profile.show_publication_tags | default: true %}
+      {% if item.topics and show_pub_tags != false and show_pub_tags != 'false' %}
+      <div class="mb-2 pub-topics">
         {% for topic in item.topics %}
           {% assign meta = site.data.topics[topic] %}
           <span class="badge badge-light border mr-1 d-inline-flex align-items-center topic-badge">
@@ -108,8 +109,9 @@
   <div class="px-3 pb-3 bg-white">
     <h5 class="mt-0 mb-2 font-weight-normal">{{ item.title }}</h5>
     
-    {% if item.topics %}
-    <div class="mb-2">
+    {% assign show_pub_tags = site.data.profile.show_publication_tags | default: true %}
+    {% if item.topics and show_pub_tags != false and show_pub_tags != 'false' %}
+    <div class="mb-2 pub-topics">
       {% for topic in item.topics %}
         {% assign meta = site.data.topics[topic] %}
         <span class="badge badge-light border mr-1 d-inline-flex align-items-center topic-badge">

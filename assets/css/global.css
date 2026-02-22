@@ -1,28 +1,30 @@
 @charset "utf-8";
 :root {
-    --bg: #f8f9fa;
-    --text: #212529;
+    --bg: #f5f6f8;
+    --text: #1f2933;
     --card-bg: #ffffff;
-    --border: #dee2e6;
-    --link: #007bff;
-    --link-hover: #0056b3;
-    --navbar-bg: #f8f9fa;
-    --navbar-text: #212529;
-    --muted: #6c757d;
-    --shadow: rgba(0, 0, 0, 0.08);
+    --border: #e5e7eb;
+    --link: #2563eb;
+    --link-hover: #1d4ed8;
+    --navbar-bg: rgba(245, 246, 248, 0.96);
+    --navbar-text: #1f2933;
+    --muted: #6b7280;
+    --shadow: rgba(15, 23, 42, 0.08);
+    --shadow-strong: rgba(15, 23, 42, 0.16);
 }
 
 html[data-theme="dark"] {
-    --bg: #0f1419;
+    --bg: #0b1117;
     --text: #e5e7eb;
-    --card-bg: #141b22;
-    --border: #2b3641;
+    --card-bg: #111821;
+    --border: #243041;
     --link: #7cc4ff;
-    --link-hover: #9dd5ff;
-    --navbar-bg: #0f1419;
+    --link-hover: #a7d7ff;
+    --navbar-bg: rgba(11, 17, 23, 0.92);
     --navbar-text: #e5e7eb;
     --muted: #9aa4af;
-    --shadow: rgba(0, 0, 0, 0.4);
+    --shadow: rgba(0, 0, 0, 0.5);
+    --shadow-strong: rgba(0, 0, 0, 0.7);
 }
 
 body {
@@ -30,7 +32,75 @@ body {
     font-weight: 400;
     padding-top: 5.0rem;
     background-color: var(--bg);
+    background-image:
+        radial-gradient(circle at 18% 12%, rgba(37, 99, 235, 0.06), transparent 45%),
+        radial-gradient(circle at 80% 10%, rgba(16, 185, 129, 0.04), transparent 40%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-attachment: fixed;
     color: var(--text);
+    line-height: 1.65;
+    letter-spacing: 0.002em;
+}
+
+html,
+body {
+    background-color: var(--bg);
+    overscroll-behavior-y: none;
+    height: 100%;
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: transparent;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#ambient-bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.container,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+.navbar {
+    z-index: 1030;
+}
+
+html[data-theme="dark"] body {
+    background-image:
+        radial-gradient(circle at 16% 12%, rgba(124, 196, 255, 0.08), transparent 50%),
+        radial-gradient(circle at 85% 12%, rgba(52, 211, 153, 0.06), transparent 45%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0));
+}
+
+a {
+    color: var(--link);
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+    text-decoration: none;
+}
+
+.author-link {
+    text-decoration: none;
+}
+
+.author-link:hover {
+    text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -39,17 +109,27 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .text-profile-position {
-    font-weight: 400;
+    font-weight: 500;
+    color: var(--muted);
 }
 
 .text-profile-bio {
-    /* font-family: "Raleway"; */
     font-weight: 400;
+    font-size: 0.98rem;
+}
+
+#section-profile,
+#section-news,
+#section-experience,
+#section-publications,
+#section-stats {
+    margin-bottom: 1.6rem;
 }
 
 .navbar {
-    opacity: 0.95;
+    opacity: 0.98;
     background-color: var(--navbar-bg) !important;
+    backdrop-filter: blur(8px);
 }
 
 .navbar-light .navbar-brand,
@@ -91,7 +171,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .border-gray {
-    border-color: rgba(0, 0, 0, 0.08) !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
 }
 
 html[data-theme="dark"] .border-gray {
@@ -106,11 +186,11 @@ html[data-theme="dark"] .border-gray {
 
 .topic-badge {
     border-radius: 999px;
-    padding: 0.28rem 0.5rem;
+    padding: 0.28rem 0.6rem;
     font-weight: 600;
     letter-spacing: 0.01em;
     box-shadow: inset 0 0 0 0.1px var(--border);
-    background-color: rgba(255, 255, 255, 0.9) !important;
+    background-color: rgba(255, 255, 255, 0.92) !important;
 }
 
 .topic-dot {
@@ -147,6 +227,51 @@ html[data-theme="dark"] .topic-dot {
     background-color: var(--card-bg);
     border-color: var(--border);
     color: var(--text);
+}
+
+.card {
+    border-radius: 18px;
+}
+
+@keyframes soft-rise {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .card,
+    .news-card {
+        animation: soft-rise 0.5s ease both;
+    }
+}
+
+.card h6,
+.news-card h6,
+.section-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.card-body p {
+    margin-bottom: 0.85rem;
+}
+
+
+.rounded-sm {
+    border-radius: 0.65rem !important;
+}
+
+.shadow-sm {
+    box-shadow: 0 10px 30px -20px var(--shadow-strong), 0 .125rem .25rem var(--shadow) !important;
 }
 
 .table {
@@ -215,8 +340,22 @@ html[data-theme="dark"] .publication-item .badge-light {
     color: var(--text) !important;
 }
 
-.shadow-sm {
-    box-shadow: 0 .125rem .25rem var(--shadow) !important;
+.publication-item {
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.publication-item:hover {
+    background-color: rgba(37, 99, 235, 0.03);
+}
+
+body[data-show-publication-tags="false"] .pub-topics,
+body[data-show-publication-tags="0"] .pub-topics,
+body[data-show-publication-tags="off"] .pub-topics {
+    display: none !important;
+}
+
+.pub-topics {
+    display: none !important;
 }
 
 a {
@@ -272,6 +411,7 @@ html[data-theme="dark"] .theme-toggle-btn:hover {
     vertical-align: -10%;
     margin-right: 2px;
     line-break: unset;
+    border-radius: 4px;
 }
 
 .no-break {
@@ -326,4 +466,44 @@ html[data-theme="dark"] .badge-publication {
 
 .experience-card img {
     border-radius: 4px;
+}
+
+.side-nav-left {
+    position: fixed;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 150px;
+}
+
+.side-nav-left .nav-link {
+    color: var(--muted);
+    padding: 0.45rem 0.65rem;
+    margin-bottom: 0.35rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background: transparent;
+    transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.side-nav-left .nav-link:hover {
+    color: var(--link);
+    background: rgba(37, 99, 235, 0.06);
+}
+
+.side-nav-left .nav-link.active {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    background: #fff;
+    border-radius: 10px;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+html[data-theme="dark"] .side-nav-left .nav-link.active {
+    color: #111827;
+}
+
+.pub-year-anchor {
+    scroll-margin-top: 90px;
 }

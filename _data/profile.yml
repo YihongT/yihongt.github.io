@@ -4,10 +4,10 @@ navbar_name: "Homepage"
 
 positions:
 - logo: /assets/images/badges/mcgill-logo.png  # Logo is optional
-  # name: Ph.D. Student &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;INTJ
-  name: Ph.D. Student
-# - name: INTJ
-
+  name: Ph.D. Candidate
+- logo: /assets/images/badges/snow.png  # Logo is optional
+  name: Visiting Researcher, Frontier AI Research
+- name: 🍁 Montreal ☃️
 
 email: "yihong.tang@mail.mcgill.ca"
 # cv_link: link-to-your-cv-file
@@ -23,37 +23,67 @@ linkedin: yihong-tang-6981331b2
 # zhihu: tang-yi-hong-27
 # flickr: 196532734@N06
 
-
+# I have also held research positions at institutions including <a href="http://polyu-mobility-ai-lab.com/" target="_blank">Mobility AI Lab</a> at The Hong Kong Polytechnic University (<a href="https://www.polyu.edu.hk/" target="_blank">HK PolyU</a>), <a href="https://mobility.mit.edu/" target="_blank">JTL Transit Lab</a> at Massachusetts Institute of Technology (<a href="https://www.mit.edu/" target="_blank">MIT</a>), and <a href="https://dajiangsuo.github.io/" target="_blank">Suo Lab</a> at Arizona State University (<a href="https://www.asu.edu/" target="_blank">ASU</a>).
 short_bio_text_justify: false
+show_publication_tags: false
+ambient_bg:
+  enabled: true
+  density: 300
+  glow_strength_light: 0.08
+  glow_strength_dark: 0.12
+  line_distance: 50
+  line_alpha_light: 0.1
+  line_alpha_dark: 0.15
+  particle_speed: 0.12
+  particle_speed_jitter: 0.3
+  particle_drift: 0.18
+  particle_alpha_base: 0.99
+  particle_alpha_boost: 0.8
+  particle_repulse_radius: 140
+  particle_repulse_strength: 0.6
+  scroll_drift_x: 0.015
+  scroll_drift_y: 0.04
+  wobble: 6
 short_bio: >-
+  <p>    
+    Hi 👋, I'm Yihong, a Ph.D. candidate at 
+    <a href="https://www.mcgill.ca/" target="_blank">McGill University</a>, 
+    advised by Prof. 
+    <a href="https://lijunsun.github.io/" target="_blank">Lijun Sun</a>, 
+    and a Visiting Researcher at 
+    <a href="https://www.servicenow.com/research/" target="_blank">ServiceNow AI Research</a>, 
+    where I work with 
+    <a href="https://vzantedeschi.com/" target="_blank">Valentina Zantedeschi</a>.
+    Prior to McGill, I received my M.Phil. in Urban Computing from 
+    <a href="https://www.hku.hk/" target="_blank">The University of Hong Kong</a> 
+    and my B.Eng. in Computer Science from 
+    <a href="https://ois.bupt.edu.cn/About_Us.htm" target="_blank">BUPT</a>.  
   <p>
-    I'm a doctoral student at <a href="https://www.mcgill.ca/" target="_blank">McGill University</a>, supervised by Prof. <a href="https://lijunsun.github.io/" target="_blank">Lijun Sun</a>. 
-    Before joining McGill, I obtained my M.Phil. in Urban Analytics and Smart Cities from <a href="https://www.hku.hk/" target="_blank">The University of Hong Kong</a> and my B.Eng. in Computer Science and Technology from <a href="https://ois.bupt.edu.cn/About_Us.htm" target="_blank">BUPT</a>. 
-    I have also held research positions at institutions including <a href="http://polyu-mobility-ai-lab.com/" target="_blank">Mobility AI Lab</a> at The Hong Kong Polytechnic University (<a href="https://www.polyu.edu.hk/" target="_blank">HK PolyU</a>), <a href="https://mobility.mit.edu/" target="_blank">JTL Transit Lab</a> at Massachusetts Institute of Technology (<a href="https://www.mit.edu/" target="_blank">MIT</a>), and <a href="https://dajiangsuo.github.io/" target="_blank">Suo Lab</a> at Arizona State University (<a href="https://www.asu.edu/" target="_blank">ASU</a>).
+    I study multimodal AI agents and generative models, and their applications in computer, social, and urban sciences. My first-author work has appeared in top AI venues like ICLR, CVPR, EMNLP, CIKM, and ISMIR.    
   <p>
-    My research focuses on innovating data-driven, statistical, and AI methods to develop more connected, autonomous, intelligent, and human-centered urban and transportation systems, and to uncover the social dynamics they embody. 
-    My research interests span five interrelated areas: 
-    <a class="topic-filter-link" data-topic="DS" href="#selected-publications" title="Filter selected publications: Human-centered Modeling"><span class="topic-dot" style="background: #ffb05b;"></span></a><strong>
-    Human-centered Modeling and Synthesis</strong>, focusing on population and mobility data with equity and privacy; 
-    <a class="topic-filter-link" data-topic="LLM4US" href="#selected-publications" title="Filter selected publications: LLM for Urban Science"><span class="topic-dot" style="background: #41A0FF;"></span></a><strong>
-    Large Language Models for Urban Science</strong>, aiming to build self-evolving agents for urban scientific discovery, planning, and causal reasoning; 
-    <a class="topic-filter-link" data-topic="trs" href="#selected-publications" title="Filter selected publications: Multimodal Transportation"><span class="topic-dot" style="background: #E91E63;"></span></a><strong>
-    Multimodal Transportation Systems</strong>, using multi-source data fusion to understand and optimize mobility systems; and 
-    <a class="topic-filter-link" data-topic="st" href="#selected-publications" title="Filter selected publications: Spatial-Temporal"><span class="topic-dot" style="background: #4CAF50;"></span></a><strong>
-    Spatiotemporal Data Modeling</strong>, developing models for forecasting and behavior inference across space and time; and
-    <a class="topic-filter-link" data-topic="AD" href="#selected-publications" title="Filter selected publications: Autonomous Driving"><span class="topic-dot" style="background: #4C6FFF;"></span></a><strong>
-    Autonomous Driving</strong>, advancing controllability and reliability for human-centered AD.
-  <p>
-    <i class="fa-solid fa-rectangle-ad" style="color: #d60000;"></i> <span style="color: #d60000;">I am looking for collaborators and interns</span> with the goal of conducting impactful research and publishing in top AI conferences and leading urban and transportation journals.
+    <i class="fa-solid fa-rectangle-ad" style="color: #d60000;"></i> <span style="color: #d60000;">I am looking for collaborators and interns</span> with the goal of conducting impactful research and publishing in top venues.
     If you are interested in collaborating or sharing thoughts, please feel free to reach out via <a href="mailto:yihong.tang@mail.mcgill.ca">Email</a> or <a class="pr-3 no-break" data-toggle="modal" data-target="#modal-wechat">WeChat</a>
   </p>
 
 # Before contacting me, kindly review <a href="#" data-toggle="modal" data-target="#modal-info">this</a>.
 portrait_url: /assets/images/photos/tyh_new.jpg
+portrait_height: 240px
 # portrait_caption: >-
 #   Taken at the HKU High Table Dinner
 
 
+    # My research focuses on innovating data-driven, statistical, and AI methods to develop more connected, autonomous, intelligent, and human-centered urban and transportation systems, and to uncover the social dynamics they embody. 
+    # My research interests span five interrelated areas: 
+    # <a class="topic-filter-link" data-topic="DS" href="#selected-publications" title="Filter selected publications: Human-centered Modeling"><span class="topic-dot" style="background: #ffb05b;"></span></a><strong>
+    # Human-centered Modeling and Synthesis</strong>, focusing on population and mobility data with equity and privacy; 
+    # <a class="topic-filter-link" data-topic="LLM4US" href="#selected-publications" title="Filter selected publications: LLM for Urban Science"><span class="topic-dot" style="background: #41A0FF;"></span></a><strong>
+    # Large Language Models for Urban Science</strong>, aiming to build self-evolving agents for urban scientific discovery, planning, and causal reasoning; 
+    # <a class="topic-filter-link" data-topic="trs" href="#selected-publications" title="Filter selected publications: Multimodal Transportation"><span class="topic-dot" style="background: #E91E63;"></span></a><strong>
+    # Multimodal Transportation Systems</strong>, using multi-source data fusion to understand and optimize mobility systems; and 
+    # <a class="topic-filter-link" data-topic="st" href="#selected-publications" title="Filter selected publications: Spatial-Temporal"><span class="topic-dot" style="background: #4CAF50;"></span></a><strong>
+    # Spatiotemporal Data Modeling</strong>, developing models for forecasting and behavior inference across space and time; and
+    # <a class="topic-filter-link" data-topic="AD" href="#selected-publications" title="Filter selected publications: Autonomous Driving"><span class="topic-dot" style="background: #4C6FFF;"></span></a><strong>
+    # Autonomous Driving</strong>, advancing controllability and reliability for human-centered AD.
 
 # <a href="" target="_blank"></a>
 
@@ -61,11 +91,11 @@ portrait_url: /assets/images/photos/tyh_new.jpg
 education:
 - name: McGill University
   logo: /assets/images/badges/mcgill-logo.png
-  position: Ph.D. in Transportation Engineering
+  position: Ph.D. in Geneartive AI for Mobility & Autonomous Driving
   date: Jan. 2025 - present
 - name: The University of Hong Kong #Massachusetts Institute of Technology
   logo: /assets/images/badges/hku_logo.png
-  position: M.Phil. in Urban Analytics and Smart Cities
+  position: M.Phil. in Urban Computing
   date: Sep. 2022 - Jul. 2024
 - name: Beijing University of Posts and Telecommunications
   logo: /assets/images/badges/bupt_new.png
@@ -131,6 +161,9 @@ academic_services:
   projects:
     - <a href="https://nserc-crsng.canada.ca/en/funding-decisions/result/2519" target="_blank">MobAgent</a> - Large Language Model Agent for Mobility Reasoning and Synthesis (NSERC, CA$300,000)
   journal_referees:
+    - Humanities and Social Sciences Communications
+    - Transportation Research Part C
+    - Scientific Reports
     - IEEE Transactions on Multimedia
     - IEEE Transactions on Intelligent Transportation Systems
     - IEEE Open Journal of Intelligent Transportation Systems
@@ -150,8 +183,8 @@ academic_services:
     - ICLR 2026
   mentored:
     - <a href="https://mobility.mit.edu/openings/" target="_blank">MIT-UF-NEU 2025 Joint Summer Research Camp</a>
-    - <strong>Graduate Students:</strong> <a href="https://scholar.google.com/citations?user=zD7XUF8AAAAJ&hl=en" target="_blank">Zeyuan Niu</a> (SJTU, 2026) -> Ph.D., HKU; <a href="https://www.linkedin.com/in/yanling-sang-106275362/" target="_blank">Yanling Sang</a> (UCLA, 2025) -> Ph.D., Johns Hopkins University (JHU)
-    - <strong>Undergraduate Students:</strong> <a href="https://www.linkedin.com/in/qianjun-charlie-huang-739352299/?originalSubdomain=ca" target="_blank">Qianjun Huang</a> (Undergraduate, University of Toronto); Chenshuo Li (Undergraduate, Sichuan University) 
+    # - <strong>Graduate Students:</strong> <a href="https://scholar.google.com/citations?user=zD7XUF8AAAAJ&hl=en" target="_blank">Zeyuan Niu</a> (SJTU, 2026) -> Ph.D., HKU; <a href="https://www.linkedin.com/in/yanling-sang-106275362/" target="_blank">Yanling Sang</a> (UCLA, 2025) -> Ph.D., Johns Hopkins University (JHU)
+    # - <strong>Undergraduate Students:</strong> <a href="https://www.linkedin.com/in/qianjun-charlie-huang-739352299/?originalSubdomain=ca" target="_blank">Qianjun Huang</a> (Undergraduate, University of Toronto); Chenshuo Li (Undergraduate, Sichuan University) 
 
 # short_bio_text_justify: false
 # short_bio: >-

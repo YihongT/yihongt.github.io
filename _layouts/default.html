@@ -30,8 +30,30 @@
     <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}">
     <link rel="icon" href="assets/images/badges/intj.png" />
 </head>
-<body class="bg-light" {{ page.body_attr }}>
+<body
+    class="bg-light"
+    data-show-publication-tags="{{ site.data.profile.show_publication_tags | default: true }}"
+    data-ambient-bg="{{ site.data.profile.ambient_bg.enabled | default: true }}"
+    data-ambient-bg-density="{{ site.data.profile.ambient_bg.density | default: 110 }}"
+    data-ambient-bg-glow-light="{{ site.data.profile.ambient_bg.glow_strength_light | default: 0.08 }}"
+    data-ambient-bg-glow-dark="{{ site.data.profile.ambient_bg.glow_strength_dark | default: 0.12 }}"
+    data-ambient-bg-line-distance="{{ site.data.profile.ambient_bg.line_distance | default: 110 }}"
+    data-ambient-bg-line-alpha-light="{{ site.data.profile.ambient_bg.line_alpha_light | default: 0.12 }}"
+    data-ambient-bg-line-alpha-dark="{{ site.data.profile.ambient_bg.line_alpha_dark | default: 0.15 }}"
+    data-ambient-bg-particle-speed="{{ site.data.profile.ambient_bg.particle_speed | default: 0.12 }}"
+    data-ambient-bg-particle-speed-jitter="{{ site.data.profile.ambient_bg.particle_speed_jitter | default: 0.3 }}"
+    data-ambient-bg-particle-drift="{{ site.data.profile.ambient_bg.particle_drift | default: 0.18 }}"
+    data-ambient-bg-particle-alpha-base="{{ site.data.profile.ambient_bg.particle_alpha_base | default: 0.85 }}"
+    data-ambient-bg-particle-alpha-boost="{{ site.data.profile.ambient_bg.particle_alpha_boost | default: 0.4 }}"
+    data-ambient-bg-particle-repulse-radius="{{ site.data.profile.ambient_bg.particle_repulse_radius | default: 140 }}"
+    data-ambient-bg-particle-repulse-strength="{{ site.data.profile.ambient_bg.particle_repulse_strength | default: 0.6 }}"
+    data-ambient-bg-scroll-drift-x="{{ site.data.profile.ambient_bg.scroll_drift_x | default: 0.015 }}"
+    data-ambient-bg-scroll-drift-y="{{ site.data.profile.ambient_bg.scroll_drift_y | default: 0.04 }}"
+    data-ambient-bg-wobble="{{ site.data.profile.ambient_bg.wobble | default: 6 }}"
+    {{ page.body_attr }}
+>
     {% include navbar.html %}
+    <canvas id="ambient-bg" aria-hidden="true"></canvas>
     <div class="container">
         {{content}}
     </div>
@@ -58,6 +80,7 @@
             });
         });
     </script>
+    <script src="{{ '/assets/js/ambient_bg.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/common.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/bubble_visual_hash.js' | relative_url }}"></script>
 </body>

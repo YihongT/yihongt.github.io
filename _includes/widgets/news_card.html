@@ -5,31 +5,65 @@
   | group_by_exp: "item", "item.date | date: '%Y'"
 -%}
 
-<div class="my-3 bg-white shadow-sm rounded-sm">
-<h6 class="p-3 mb-0 border-bottom border-gray">
-  <i class="fas fa-rss"></i> News
-</h6>
-<!-- 给这里加上 text-profile-bio -->
-<div class="px-3 pb-1 text-profile-bio">
-  <!-- scroll 容器，只影响新闻列表本身 -->
-  <div style="max-height: 200px; overflow-y: auto;">
-    {% assign not_first = false %}
-    {% for year in news_by_year %}
-      <div class="media py-1 {% if not_first %}border-top border-gray{% endif %}">
-        {% assign not_first = true %}
-        <div class="mr-3 text-muted my-1">{{ year.name }}</div>
-        <div class="media-body">
+<div class="my-3 bg-white shadow-sm rounded-sm news-card">
+  <style>
+    .news-card .news-body {
+      padding: 0 1rem 1rem 1rem;
+    }
+    .news-card .news-wrap {
+      max-height: 280px;
+      overflow-y: auto;
+      padding: 0.75rem 0.25rem 0.5rem 0.25rem;
+    }
+    .news-card .news-section {
+      padding: 0.35rem 0.25rem 0.5rem 0.25rem;
+    }
+    .news-card .news-year {
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+    .news-card .news-item {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.5rem 0.25rem 0.6rem 0.25rem;
+      background: transparent;
+      border-radius: 0;
+    }
+    .news-card .news-date {
+      white-space: nowrap;
+      color: #6c757d;
+      font-weight: 600;
+    }
+    .news-card .news-title {
+      color: inherit;
+    }
+    .news-card .news-divider {
+      border-top: 1px solid var(--border);
+      margin: 0.4rem 0 0.6rem 0;
+    }
+    @media (max-width: 767.98px) {
+      .news-card .news-item {
+        padding: 0.5rem 0.5rem 0.6rem 0.6rem;
+      }
+    }
+  </style>
+  <h6 class="p-3 mb-0 border-bottom border-gray">
+    <i class="fas fa-rss"></i> News
+  </h6>
+  <div class="news-body text-profile-bio">
+    <div class="news-wrap">
+      {% for year in news_by_year %}
+        <div class="news-section" id="news-year-{{ year.name }}">
+          <div class="news-year">{{ year.name }}</div>
+          <div class="news-divider"></div>
           {% for item in year.items %}
-            <div class="my-1 d-flex">
-              <div>{{ item.title }}</div>
-              <div class="ml-auto mt-auto text-muted no-break">
-                <i>{{ item.date | date: "%b %d" }}</i>
-              </div>
+            <div class="news-item">
+              <div class="news-date">{{ item.date | date: "%Y-%m-%d" }}</div>
+              <div class="news-title">{{ item.title }}</div>
             </div>
           {% endfor %}
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
-</div>
 </div>

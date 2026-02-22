@@ -3,35 +3,142 @@ layout: default
 title: Yihong Tang
 navbar_title: Home
 ---
-{% include widgets/profile_card.html %}
-
-{% include widgets/debug_repo_name.html %}
-
-{% include widgets/debug_url.html %}
-
-{% if site.data.display.homepage.show_news %}
-    {% assign count_news = site.news | size %}
-    {% if count_news > 0 %}
-        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
+<div class="side-nav-left d-none d-lg-block">
+  <div class="nav nav-pills flex-column text-center" id="side-nav">
+    <a class="nav-link d-block" href="#section-profile">Profile</a>
+    {% if site.data.display.homepage.show_news %}
+      <a class="nav-link d-block" href="#section-news">News</a>
     {% endif %}
-{% endif %}
+    {% if site.data.display.homepage.show_experience %}
+      <a class="nav-link d-block" href="#section-experience">Experience</a>
+    {% endif %}
+    {% if site.data.display.homepage.show_selected_publications %}
+      <a class="nav-link d-block" href="#section-publications">Publications</a>
+    {% endif %}
+    {% if site.data.display.homepage.show_visitor_statistics %}
+      <!-- Stats entry removed from side nav -->
+    {% endif %}
+  </div>
+</div>
 
-{% if site.data.display.homepage.show_experience %}
-    {% include widgets/experience_card.html %}
-{% endif %}
+<div class="row">
+  <div class="col-12">
+    <div id="section-profile">
+      {% include widgets/profile_card.html %}
+    </div>
 
-{% if site.data.display.homepage.show_selected_publications %}
-    <!-- {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %} -->
-    {% assign pubs = site.publications | sort: "date" | reverse %}
-    {% 
-        include widgets/publication_card.html 
-        publications=pubs
-        title='<i class="fas fa-star"></i> Selected Publications'
-        anchor_id="selected-publications"
-    %}
-{% endif %}
+    {% include widgets/debug_repo_name.html %}
+
+    {% include widgets/debug_url.html %}
+
+    {% if site.data.display.homepage.show_news %}
+        {% assign count_news = site.news | size %}
+        {% if count_news > 0 %}
+            <div id="section-news">
+              {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
+            </div>
+        {% endif %}
+    {% endif %}
+
+    {% if site.data.display.homepage.show_experience %}
+        <div id="section-experience">
+          {% include widgets/experience_card.html %}
+        </div>
+    {% endif %}
+
+    {% if site.data.display.homepage.show_selected_publications %}
+        {% assign show_pub_tags = site.data.profile.show_publication_tags | default: true %}
+        {% if show_pub_tags == false or show_pub_tags == 'false' %}
+            {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
+        {% else %}
+            {% assign pubs = site.publications | sort: "date" | reverse %}
+        {% endif %}
+        <div id="section-publications">
+          {% 
+              include widgets/publication_card.html 
+              publications=pubs
+              title='<i class="fas fa-star"></i> Selected Publications'
+              anchor_id="selected-publications"
+          %}
+        </div>
+    {% endif %}
 
 
-{% if site.data.display.homepage.show_visitor_statistics %}
-    {% include widgets/visitor_stats.html %}
-{% endif %}
+    {% if site.data.display.homepage.show_visitor_statistics %}
+        <div id="section-stats">
+          {% include widgets/visitor_stats.html %}
+        </div>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (location.hash === "#section-profile") {
+    history.replaceState(null, "", location.pathname + location.search);
+  }
+  const nav = document.getElementById("side-nav");
+  if (!nav) {
+    return;
+  }
+  const links = Array.from(nav.querySelectorAll("a[href^='#section-']"));
+  const targets = links
+    .map(link => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+
+  const setActive = (id) => {
+    links.forEach(link => {
+      const isActive = link.getAttribute("href") === `#${id}`;
+      link.classList.toggle("active", isActive);
+    });
+  };
+
+  let scrollTicking = false;
+  const updateActiveFromScroll = () => {
+    const scrollTop = window.scrollY || 0;
+    const anchorOffset = 140;
+    let activeId = targets[0] ? targets[0].id : "";
+    targets.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top + scrollTop;
+      if (scrollTop + anchorOffset >= sectionTop) {
+        activeId = section.id;
+      }
+    });
+    if (activeId) {
+      setActive(activeId);
+    }
+  };
+
+  const activateLastIfBottom = () => {
+    const totalHeight = document.body.offsetHeight;
+    const statsSection = document.getElementById("section-stats");
+    if (!statsSection) {
+      return;
+    }
+    const statsTop = statsSection.getBoundingClientRect().top + window.scrollY;
+    if (totalHeight <= window.innerHeight + 200 || statsTop <= window.innerHeight * 0.4) {
+      return;
+    }
+    const scrolledToBottom = window.innerHeight + window.scrollY >= totalHeight - 2;
+    if (scrolledToBottom) {
+      setActive(statsSection.id);
+    }
+  };
+
+  window.addEventListener("scroll", () => {
+    if (!scrollTicking) {
+      scrollTicking = true;
+      requestAnimationFrame(() => {
+        updateActiveFromScroll();
+        activateLastIfBottom();
+        scrollTicking = false;
+      });
+    }
+  }, { passive: true });
+  window.addEventListener("resize", () => {
+    updateActiveFromScroll();
+    activateLastIfBottom();
+  });
+  updateActiveFromScroll();
+});
+</script>

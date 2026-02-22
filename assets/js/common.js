@@ -65,4 +65,34 @@ $(function () {
 
         applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
     }
+
+    function preventOverscroll(e) {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+        var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        if ((scrollTop <= 0 && e.deltaY < 0) || (scrollTop >= maxScroll && e.deltaY > 0)) {
+            e.preventDefault();
+        }
+    }
+
+    var touchStartY = 0;
+    function onTouchStart(e) {
+        if (e.touches && e.touches.length) {
+            touchStartY = e.touches[0].clientY;
+        }
+    }
+
+    function onTouchMove(e) {
+        if (!e.touches || !e.touches.length) return;
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+        var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        var currentY = e.touches[0].clientY;
+        var deltaY = currentY - touchStartY;
+        if ((scrollTop <= 0 && deltaY > 0) || (scrollTop >= maxScroll && deltaY < 0)) {
+            e.preventDefault();
+        }
+    }
+
+    document.addEventListener('wheel', preventOverscroll, { passive: false });
+    document.addEventListener('touchstart', onTouchStart, { passive: true });
+    document.addEventListener('touchmove', onTouchMove, { passive: false });
 })

@@ -1,4 +1,9 @@
 {% assign publications = include.publications %}
+{% assign show_pub_tags = site.data.profile.show_publication_tags | default: true %}
+{% assign hide_pub_tags = show_pub_tags == false or show_pub_tags == 'false' %}
+{% if hide_pub_tags %}
+  {% assign publications = publications | where: "selected", true %}
+{% endif %}
 
 <div class="my-3 p-0 bg-white shadow-sm rounded-sm" {% if include.anchor_id %}id="{{ include.anchor_id }}"{% endif %}>
 
@@ -66,7 +71,7 @@
   </style>
 
   <!-- 标题 -->
-  <h6 class="border-bottom border-gray p-3 mb-0">
+  <h6 class="section-title border-bottom border-gray p-3 mb-0">
     {% if include.title %}
       {{ include.title }}
     {% else %}
@@ -79,6 +84,7 @@
 
   
   
+  {% unless hide_pub_tags %}
   <ul id="pub-filters">
     <li>
       <a href="#" class="filter active" data-filter="all">
@@ -97,6 +103,7 @@
       </li>
     {% endfor %}
   </ul>
+  {% endunless %}
 
   
   <!-- 3. Publications 列表（hide_bottom_border 已加） -->
@@ -113,6 +120,7 @@
 </div>
 
 <!-- 4. 筛选脚本：All 用 selected，其他用 topics，切换 hidden-by-filter -->
+{% unless hide_pub_tags %}
 <script>
 document.addEventListener("DOMContentLoaded", function(){
   const filters = document.querySelectorAll("#pub-filters .filter");
@@ -176,3 +184,4 @@ document.addEventListener("DOMContentLoaded", function(){
   document.querySelector("#pub-filters .filter[data-filter='all']").click();
 });
 </script>
+{% endunless %}

@@ -2,17 +2,64 @@
 layout: default
 title : Publications
 navbar_title: Publications
-body_attr: >-
-  data-spy="scroll" data-target="#navbar-year" data-offset="100"
+body_attr: ""
 ---
 
 {% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
+<div class="side-nav-left d-none d-lg-block">
+    <div class="nav nav-pills flex-column text-center" id="side-nav">
+        {% for year in pubs_by_year %}
+        <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const nav = document.getElementById("side-nav");
+  if (!nav) {
+    return;
+  }
+  const links = Array.from(nav.querySelectorAll("a[href^='#year-']"));
+  const targets = links
+    .map(link => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+
+  const setActive = (id) => {
+    links.forEach(link => {
+      const isActive = link.getAttribute("href") === `#${id}`;
+      link.classList.toggle("active", isActive);
+    });
+  };
+
+  const updateActiveFromScroll = () => {
+    const scrollTop = window.scrollY || 0;
+    const anchorOffset = 140;
+    let activeId = targets[0] ? targets[0].id : "";
+    targets.forEach(section => {
+      if (scrollTop + anchorOffset >= section.offsetTop) {
+        activeId = section.id;
+      }
+    });
+    if (activeId) {
+      setActive(activeId);
+    }
+  };
+
+  window.addEventListener("scroll", () => {
+    requestAnimationFrame(updateActiveFromScroll);
+  }, { passive: true });
+  window.addEventListener("resize", updateActiveFromScroll);
+  updateActiveFromScroll();
+});
+</script>
+
 <div class="row">
-    <div class="col-12 col-lg-10">
+    <div class="col-12">
         {% for year in pubs_by_year %}
         {% assign num_papers = year.items | size %}
-        <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
+        <h2 class="pt-4 pub-year-anchor" id="year-{{ year.name }}">{{ year.name }}</h2>
         <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
             {% for item in year.items %}
                 {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
@@ -20,13 +67,4 @@ body_attr: >-
         </div>
         {% endfor %}
     </div>
-
-    <div class="col-2 d-none d-lg-block">
-        <div id="navbar-year" class="nav nav-pills flex-column sticky-top" style="top: 80px">
-            {% for year in pubs_by_year %}
-            <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
-            {% endfor %}
-        </div>
-    </div>
-
 </div>

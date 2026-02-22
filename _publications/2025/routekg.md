@@ -1,7 +1,7 @@
 ---
 title:          "RouteKG: A knowledge graph-based framework for route prediction on road networks"
 date:           2025-09-23 00:01:00 +0800
-selected:       true
+selected:       false
 # pub:            "ACM Transactions on Intelligent Systems and Technology"
 pub:            "IEEE Transactions on Intelligent Transportation Systems"
 # pub_pre:        "Submitted to "
