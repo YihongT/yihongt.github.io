@@ -1,12 +1,12 @@
 ---
 title:          "LLMSynthor: Macro-Aligned Micro-Records Synthesis with Large Language Models"
-date:           2025-09-10 00:01:00 +0800
+date:           2026-02-01 00:00:01 +0800
 selected:       true
 # pub:            "IJCAI MKLM"
 # pub_pre:        "Submitted to "
 pub_post:       'Under review.'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
-pub_date:       "2025"
+pub_date:       "2026"
 
 cover:          /assets/images/covers/llmsynthor_cover.png
 authors:
@@ -14,6 +14,7 @@ authors:
   - Menglin Kong
   - Junlin He
   - Tong Nie
+  - Wei Ma
   - Lijun Sun#
 links:
   Paper: https://arxiv.org/pdf/2505.14752?
