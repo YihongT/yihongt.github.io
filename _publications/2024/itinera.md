@@ -5,7 +5,7 @@ selected:       true
 pub:            "Empirical Methods in Natural Language Processing (EMNLP) 2024 Industry Track & KDD UrbComp"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
-pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Best Paper Award</span>'
+pub_last:       ' <span class="badge badge-pill badge-publication award-badge">Best Paper Award</span>'
 pub_date:       "2024"
 
 cover:          /assets/images/covers/itinera_cover.png

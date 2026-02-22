@@ -41,29 +41,58 @@ $(function () {
 
     var themeToggle = document.getElementById('theme-toggle');
     var themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
+    var themeLabel = themeToggle ? themeToggle.querySelector('.theme-toggle-label') : null;
+    var themes = [
+        { id: 'light', label: 'Linen', icon: 'fas fa-sun' },
+        { id: 'dark', label: 'Midnight', icon: 'fas fa-moon' },
+        { id: 'atelier', label: 'Atelier', icon: 'fas fa-palette' },
+        { id: 'sage', label: 'Sage', icon: 'fas fa-leaf' },
+        { id: 'harbor', label: 'Harbor', icon: 'fas fa-compass' }
+    ];
+
+    function getThemeConfig(theme) {
+        for (var i = 0; i < themes.length; i += 1) {
+            if (themes[i].id === theme) {
+                return themes[i];
+            }
+        }
+        return themes[0];
+    }
 
     function applyTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+        var themeConfig = getThemeConfig(theme);
+        document.documentElement.setAttribute('data-theme', themeConfig.id);
+        localStorage.setItem('theme', themeConfig.id);
 
         if (themeToggle) {
-            var nextLabel = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
-            themeToggle.setAttribute('aria-label', nextLabel);
-            themeToggle.setAttribute('title', nextLabel);
+            themeToggle.setAttribute('aria-label', 'Switch theme');
+            themeToggle.setAttribute('title', 'Switch theme');
+        }
+
+        if (themeLabel) {
+            themeLabel.textContent = 'Theme: ' + themeConfig.label;
         }
 
         if (themeIcon) {
-            themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            themeIcon.className = themeConfig.icon;
         }
     }
 
     if (themeToggle) {
         themeToggle.addEventListener('click', function () {
-            var currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-            applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            var currentTheme = document.documentElement.getAttribute('data-theme') || themes[0].id;
+            var currentIndex = 0;
+            for (var i = 0; i < themes.length; i += 1) {
+                if (themes[i].id === currentTheme) {
+                    currentIndex = i;
+                    break;
+                }
+            }
+            var nextTheme = themes[(currentIndex + 1) % themes.length].id;
+            applyTheme(nextTheme);
         });
 
-        applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+        applyTheme(document.documentElement.getAttribute('data-theme') || themes[0].id);
     }
 
     function preventOverscroll(e) {

@@ -21,21 +21,29 @@
     .news-card .news-year {
       font-weight: 600;
       margin-bottom: 0.35rem;
+      font-family: var(--font-serif);
+      letter-spacing: 0.02em;
+      color: var(--text);
     }
     .news-card .news-item {
       display: flex;
       gap: 0.75rem;
       padding: 0.5rem 0.25rem 0.6rem 0.25rem;
       background: transparent;
-      border-radius: 0;
+      border-radius: var(--radius-md);
+      transition: background-color 0.2s ease;
     }
     .news-card .news-date {
       white-space: nowrap;
-      color: #6c757d;
+      color: var(--muted);
       font-weight: 600;
+      letter-spacing: 0.01em;
     }
     .news-card .news-title {
       color: inherit;
+    }
+    .news-card .news-item:hover {
+      background-color: rgba(29, 79, 117, 0.08);
     }
     .news-card .news-divider {
       border-top: 1px solid var(--border);

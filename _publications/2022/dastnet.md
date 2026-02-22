@@ -5,7 +5,7 @@ selected:       true
 pub:            "Proceedings of the 31st ACM International Conference on Information & Knowledge Management (CIKM)"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
-pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Oral Presentation</span> <span class="badge badge-pill badge-publication badge-success" style="background-color: #ffb05b; color: white;">NSF Award</span>' 
+pub_last:       ' <span class="badge badge-pill badge-publication">Oral Presentation</span> <span class="badge badge-pill badge-publication award-badge">NSF Award</span>' 
 pub_date:       "2022"
 
 cover:          /assets/images/covers/dastnet_cover.png

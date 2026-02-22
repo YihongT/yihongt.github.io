@@ -5,7 +5,7 @@
   {% assign publications = publications | where: "selected", true %}
 {% endif %}
 
-<div class="my-3 p-0 bg-white shadow-sm rounded-sm" {% if include.anchor_id %}id="{{ include.anchor_id }}"{% endif %}>
+<div class="my-3 p-0 bg-white shadow-sm rounded-sm publication-panel" {% if include.anchor_id %}id="{{ include.anchor_id }}"{% endif %}>
 
   <!-- 全局隐藏类 & Filter 样式 -->
   <style>
@@ -36,17 +36,17 @@
       text-decoration: none;
       color: inherit;
       font-size: 0.92rem;
-      transition: color .2s, transform .2s;
+      transition: color .2s, transform .2s, background-color .2s, border-color .2s;
     }
     #pub-filters .filter:hover {
-      color: #007bff;
+      color: var(--link);
       transform: translateY(-1px);
     }
     #pub-filters .filter.active {
-      color: #007bff;
+      color: var(--link);
       font-weight: 700;
-      border-color: #007bff;
-      background-color: rgba(0, 123, 255, 0.1);
+      border-color: var(--link);
+      background-color: rgba(29, 79, 117, 0.12);
     }
 
     #pub-filters .filter-badge {

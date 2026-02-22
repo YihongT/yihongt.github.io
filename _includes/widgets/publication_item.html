@@ -14,7 +14,7 @@
       <img
         data-src="{{ item.cover | relative_url }}"
         alt="{{ item.title }}"
-        class="lazy rounded-sm shadow"
+        class="lazy rounded-sm shadow publication-cover"
         style="width: 100%; height: auto;"
         src="{{ '/assets/images/empty_300x200.png' | relative_url }}"
       >
@@ -50,7 +50,7 @@
         {{ item.pub_date }} {{ item.pub_last }}
       </p>
       <p class="mt-0 mb-0 small text-muted">{{ item.abstract }}</p>
-      <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
+    <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
         {% for link in item.links %}
           {% assign label = link[0] %}
           {% case label %}
@@ -65,10 +65,14 @@
             {% when "Best Paper Award" %}{% assign icon = "fas fa-trophy" %}
             {% else %}{% assign icon = "fas fa-link" %}
           {% endcase %}
+          {% assign link_class = "pub-link" %}
+          {% if label contains "Award" %}
+            {% assign link_class = "pub-link pub-link-award" %}
+          {% endif %}
           {% if link[1].url %}
-            <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[<i class="{{ icon }}"></i> {{ label }}]</a>
+            <a class="{{ link_class }}" target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}"><i class="{{ icon }}"></i><span>{{ label }}</span></a>
           {% else %}
-            <a target="_blank" href="{{ link[1] }}">[<i class="{{ icon }}"></i> {{ label }}]</a>
+            <a class="{{ link_class }}" target="_blank" href="{{ link[1] }}"><i class="{{ icon }}"></i><span>{{ label }}</span></a>
           {% endif %}
         {% endfor %}
       </p>
@@ -100,7 +104,7 @@
   <img
     src="{{ item.cover | relative_url }}"
     alt="{{ item.title }}"
-    class="rounded-sm shadow mb-2 mx-auto"
+    class="rounded-sm shadow mb-2 mx-auto publication-cover"
     style="width: 90% !important; margin: 0 auto; display: block; height: auto; object-fit: cover;"
   >
   {% endif %}
@@ -142,7 +146,11 @@
           {% else %}{% assign icon = "fas fa-link" %}
         {% endcase %}
         {% assign url = link[1].url or link[1] %}
-        <a target="_blank" href="{{ url }}">[<i class="{{ icon }}"></i> {{ label }}]</a>
+        {% assign link_class = "pub-link" %}
+        {% if label contains "Award" %}
+          {% assign link_class = "pub-link pub-link-award" %}
+        {% endif %}
+        <a class="{{ link_class }}" target="_blank" href="{{ url }}"><i class="{{ icon }}"></i><span>{{ label }}</span></a>
       {% endfor %}
     </p>
   </div>
