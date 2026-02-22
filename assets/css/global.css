@@ -542,7 +542,7 @@ html[data-theme="dark"] .news-card h6 {
     background: linear-gradient(90deg, rgba(var(--link-rgb), 0.16), rgba(var(--accent-rgb), 0.1));
 }
 
-.experience-card h6 {
+.experience-card .card-body h6 {
     background: transparent;
     color: var(--text);
     letter-spacing: 0.08em;
@@ -551,7 +551,7 @@ html[data-theme="dark"] .news-card h6 {
     margin-bottom: 0.6rem;
 }
 
-.experience-card h6::after {
+.experience-card .card-body h6::after {
     content: "";
     position: absolute;
     left: 0;
@@ -564,6 +564,10 @@ html[data-theme="dark"] .news-card h6 {
 
 html[data-theme="dark"] .experience-card h6::after {
     background: linear-gradient(90deg, rgba(var(--link-rgb), 0.6), rgba(var(--accent-rgb), 0.45));
+}
+
+html[data-theme="dark"] .experience-card .card-body h6 {
+    background: transparent;
 }
 
 .section-title a {
