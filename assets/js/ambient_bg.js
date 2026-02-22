@@ -15,6 +15,14 @@
     const number = Number(value);
     return Number.isFinite(number) ? number : fallback;
   };
+  const parseCssRgbVar = (styles, name, fallback) => {
+    const raw = (styles.getPropertyValue(name) || "").trim();
+    if (!raw) return fallback;
+    const parts = raw.split(",").map(v => Number(v.trim()));
+    if (parts.length !== 3 || parts.some(v => !Number.isFinite(v))) return fallback;
+    return parts;
+  };
+  const rgba = (rgb, alpha) => `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${alpha})`;
   const baseDensity = parseNumber(dataset.ambientBgDensity, 110);
   const density = prefersReduced ? Math.max(18, Math.round(baseDensity / 3)) : baseDensity;
   const particles = [];
@@ -26,6 +34,18 @@
   let targetY = 0;
   let scrollY = 0;
   let lastTime = 0;
+  let activeThemeId = "";
+  let glowPalette = {
+    link: [99, 102, 241],
+    accent: [56, 189, 248]
+  };
+  const refreshGlowPalette = () => {
+    const styles = getComputedStyle(document.documentElement);
+    glowPalette = {
+      link: parseCssRgbVar(styles, "--link-rgb", [99, 102, 241]),
+      accent: parseCssRgbVar(styles, "--accent-rgb", [56, 189, 248])
+    };
+  };
 
   const palette = {
     light: [
@@ -43,7 +63,9 @@
   const config = {
     glowLight: parseNumber(dataset.ambientBgGlowLight, 0.08),
     glowDark: parseNumber(dataset.ambientBgGlowDark, 0.12),
+    glowRadiusScale: parseNumber(dataset.ambientBgGlowRadiusScale, 1.05),
     lineDistance: parseNumber(dataset.ambientBgLineDistance, 110),
+    lineDistanceMobile: parseNumber(dataset.ambientBgLineDistanceMobile, 36),
     lineAlphaLight: parseNumber(dataset.ambientBgLineAlphaLight, 0.12),
     lineAlphaDark: parseNumber(dataset.ambientBgLineAlphaDark, 0.15),
     particleSpeed: parseNumber(dataset.ambientBgParticleSpeed, 0.12),
@@ -88,18 +110,40 @@
     }
   };
 
-  const drawGlow = (theme) => {
-    const glowStrength = theme === "dark" ? config.glowDark : config.glowLight;
-    const radius = Math.min(width, height) * 0.4;
-    const gradient = ctx.createRadialGradient(pointerX, pointerY, 0, pointerX, pointerY, radius);
-    gradient.addColorStop(0, `rgba(99, 102, 241, ${glowStrength})`);
-    gradient.addColorStop(1, "rgba(99, 102, 241, 0)");
-    ctx.fillStyle = gradient;
+  const drawGlow = (themeId) => {
+    const isDark = themeId === "dark";
+    const glowStrength = isDark ? config.glowDark : config.glowLight;
+    const maxRadius = Math.hypot(width, height) * config.glowRadiusScale;
+
+    // Keep a subtle, full-screen base so the glow never drops out at any scroll position.
+    ctx.fillStyle = rgba(glowPalette.link, glowStrength * 0.14);
+    ctx.fillRect(0, 0, width, height);
+
+    // Main mouse-follow glow.
+    const follower = ctx.createRadialGradient(pointerX, pointerY, 0, pointerX, pointerY, maxRadius);
+    follower.addColorStop(0, rgba(glowPalette.link, glowStrength * 0.95));
+    follower.addColorStop(0.42, rgba(glowPalette.accent, glowStrength * 0.48));
+    follower.addColorStop(1, rgba(glowPalette.link, 0));
+    ctx.fillStyle = follower;
+    ctx.fillRect(0, 0, width, height);
+
+    // Secondary ambient highlight to avoid a hard single-spot look.
+    const ambient = ctx.createRadialGradient(
+      width * 0.86,
+      height * 0.18,
+      0,
+      width * 0.86,
+      height * 0.18,
+      maxRadius
+    );
+    ambient.addColorStop(0, rgba(glowPalette.accent, glowStrength * 0.2));
+    ambient.addColorStop(1, rgba(glowPalette.accent, 0));
+    ctx.fillStyle = ambient;
     ctx.fillRect(0, 0, width, height);
   };
 
   const drawConnections = (theme, offsetX, offsetY) => {
-    const maxDist = config.lineDistance;
+    const maxDist = (isTouch || width <= 768) ? config.lineDistanceMobile : config.lineDistance;
     ctx.lineWidth = 1;
     for (let i = 0; i < particles.length; i += 1) {
       const p = particles[i];
@@ -143,14 +187,19 @@
 
   const draw = (time) => {
     ctx.clearRect(0, 0, width, height);
-    const theme = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    const themeId = document.documentElement.getAttribute("data-theme") || "light";
+    if (themeId !== activeThemeId) {
+      activeThemeId = themeId;
+      refreshGlowPalette();
+    }
+    const theme = themeId === "dark" ? "dark" : "light";
     const driftX = Math.sin(time * 0.00008) * 10 + scrollY * config.scrollDriftX;
     const driftY = Math.cos(time * 0.00007) * 10 + scrollY * config.scrollDriftY;
     const normX = (pointerX / width - 0.5) * 40;
     const normY = (pointerY / height - 0.5) * 40;
     const offsetX = normX * 0.02 + driftX;
     const offsetY = normY * 0.02 + driftY;
-    drawGlow(theme);
+    drawGlow(themeId);
     drawConnections(theme, offsetX, offsetY);
     drawParticles(theme, offsetX, offsetY);
   };

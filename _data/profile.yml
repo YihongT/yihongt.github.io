@@ -31,11 +31,13 @@ show_publication_tags: false
 ambient_bg:
   enabled: true
   density: 300
-  glow_strength_light: 0.08
-  glow_strength_dark: 0.12
-  line_distance: 50
-  line_alpha_light: 0.1
-  line_alpha_dark: 0.15
+  glow_strength_light: 0.15
+  glow_strength_dark: 0.15
+  glow_radius_scale: 0.4
+  line_distance: 80
+  line_distance_mobile: 24
+  line_alpha_light: 0.12
+  line_alpha_dark: 0.12
   particle_speed: 0.12
   particle_speed_jitter: 0.3
   particle_drift: 0.18
