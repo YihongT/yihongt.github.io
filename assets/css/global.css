@@ -793,6 +793,13 @@ html[data-theme="dark"] .publication-cover {
     .publication-cover {
         max-height: 180px;
     }
+
+    .publication-item.d-md-none .publication-cover {
+        width: 90% !important;
+        height: auto !important;
+        max-height: none;
+        object-fit: contain !important;
+    }
 }
 
 .pub-year-title {
