@@ -1,0 +1,228 @@
+2022-dastnet: |-
+  @inproceedings{tang2022domain,
+    title={Domain adversarial spatial-temporal network: A transferable framework for short-term traffic forecasting across cities},
+    author={Tang, Yihong and Qu, Ao and Chow, Andy HF and Lam, William HK and Wong, Sze Chun and Ma, Wei},
+    booktitle={Proceedings of the 31st ACM international conference on information \& knowledge management},
+    pages={1905--1915},
+    year={2022}
+  }
+
+2022-fewsample: |-
+  @article{li2022few,
+    title={Few-sample traffic prediction with graph networks using locale as relational inductive biases},
+    author={Li, Mingxi and Tang, Yihong and Ma, Wei},
+    journal={IEEE Transactions on Intelligent Transportation Systems},
+    volume={24},
+    number={2},
+    pages={1894--1908},
+    year={2022},
+    publisher={IEEE}
+  }
+
+2022-protein: |-
+  @article{zhang2022protein,
+    title={Protein residue contact prediction based on deep learning and massive statistical features from multi-sequence alignment},
+    author={Zhang, Huiling and Hao, Min and Wu, Hao and Ting, Hing-Fung and Tang, Yihong and Xi, Wenhui and Wei, Yanjie},
+    journal={Tsinghua Science and Technology},
+    volume={27},
+    number={5},
+    pages={843--854},
+    year={2022},
+    publisher={TUP}
+  }
+
+2023-roadsafety: |-
+  @article{qu2023adversarial,
+    title={Adversarial attacks on deep reinforcement learning-based traffic signal control systems with colluding vehicles},
+    author={Qu, Ao and Tang, Yihong and Ma, Wei},
+    journal={ACM Transactions on Intelligent Systems and Technology},
+    volume={14},
+    number={6},
+    pages={1--22},
+    year={2023},
+    publisher={ACM New York, NY}
+  }
+
+2024-activity: |-
+  @article{tang2024activity,
+    title={Activity-aware human mobility prediction with hierarchical graph attention recurrent network},
+    author={Tang, Yihong and He, Junlin and Zhao, Zhan},
+    journal={IEEE Transactions on Intelligent Transportation Systems},
+    volume={26},
+    number={2},
+    pages={1604--1616},
+    year={2024},
+    publisher={IEEE}
+  }
+
+2024-bikeplan: |-
+  @article{liang2024time,
+    title={Time-dependent trip generation for bike sharing planning: A multi-task memory-augmented graph neural network},
+    author={Liang, Yuebing and Zhao, Zhan and Ding, Fangyi and Tang, Yihong and He, Zhengbing},
+    journal={Information Fusion},
+    volume={106},
+    pages={102294},
+    year={2024},
+    publisher={Elsevier}
+  }
+
+2024-hilo: |-
+  @article{ding2024high,
+    title={High and low resolution tradeoffs in roadside multimodal sensing},
+    author={Ding, Shaozu and Tang, Yihong and De Vincenzi, Marco and Suo, Dajiang},
+    journal={arXiv preprint arXiv:2410.01250},
+    year={2024}
+  }
+
+2024-itinera: |-
+  @inproceedings{tang2024itinera,
+    title={Itinera: Integrating spatial optimization with large language models for open-domain urban itinerary planning},
+    author={Tang, Yihong and Wang, Zhaokai and Qu, Ao and Yan, Yihao and Wu, Zhaofeng and Zhuang, Dingyi and Kai, Jushi and Hou, Kebing and Guo, Xiaotong and Zhao, Jinhua and others},
+    booktitle={Proceedings of the 2024 conference on empirical methods in natural language processing: Industry track},
+    pages={1413--1432},
+    year={2024}
+  }
+
+2024-roadsafety: |-
+  @article{yu2024can,
+    title={Can we trust our eyes? Interpreting the misperception of road safety from street view images and deep learning},
+    author={Yu, Xujing and Ma, Jun and Tang, Yihong and Yang, Tianren and Jiang, Feifeng},
+    journal={Accident Analysis \& Prevention},
+    volume={197},
+    pages={107455},
+    year={2024},
+    publisher={Elsevier}
+  }
+
+2025-autourbanci: |-
+  @article{xia2025reimagining,
+    title={Reimagining urban science: Scaling causal inference with large language models},
+    author={Xia, Yutong and Qu, Ao and Zheng, Yunhan and Tang, Yihong and Zhuang, Dingyi and Liang, Yuxuan and Wang, Shenhao and Wu, Cathy and Sun, Lijun and Zimmermann, Roger and others},
+    journal={arXiv preprint arXiv:2504.12345},
+    year={2025}
+  }
+
+2025-e3ad: |-
+  @article{tang2025e3ad,
+    title={E3AD: An emotion-aware vision-language-action model for human-centric end-to-end autonomous driving},
+    author={Tang, Yihong and Liao, Haicheng and Nie, Tong and He, Junlin and Qu, Ao and Chen, Kehua and Ma, Wei and Li, Zhenning and Sun, Lijun and Xu, Chengzhong},
+    journal={arXiv preprint arXiv:2512.04733},
+    year={2025}
+  }
+
+2025-roadpowerfm: |-
+  @article{niu2025roadpowerfm,
+    title={RoadPowerFM: Graphormer-JEPA based foundation model for road-power coupling network},
+    author={Niu, Zeyuan and Tang, Yihong and Li, Jiamei and Ai, Qian and He, Xing},
+    journal={IEEE Transactions on Smart Grid},
+    year={2025},
+    publisher={IEEE}
+  }
+
+2025-routekg: |-
+  @article{tang2025routekg,
+    title={Routekg: A knowledge graph-based framework for route prediction on road networks},
+    author={Tang, Yihong and Zhao, Zhan and Deng, Weipeng and Lei, Shuyu and Liang, Yuebing and Ma, Zhenliang},
+    journal={IEEE Transactions on Intelligent Transportation Systems},
+    year={2025},
+    publisher={IEEE}
+  }
+
+2025-sage: |-
+  @article{nie2025steerable,
+    title={Steerable adversarial scenario generation through test-time preference alignment},
+    author={Nie, Tong and Mei, Yuewen and Tang, Yihong and He, Junlin and Sun, Jie and Shi, Haotian and Ma, Wei and Sun, Jian},
+    journal={arXiv preprint arXiv:2509.20102},
+    year={2025}
+  }
+
+2025-sparkle: |-
+  @article{tang2025sparkle,
+    title={Sparkle: Mastering basic spatial capabilities in vision language models elicits generalization to spatial reasoning},
+    author={Tang, Yihong and Qu, Ao and Wang, Zhaokai and Zhuang, Dingyi and Wu, Zhaofeng and Ma, Wei and Wang, Shenhao and Zheng, Yunhan and Zhao, Zhan and Zhao, Jinhua},
+    journal={Findings of the Association for Computational Linguistics: EMNLP},
+    volume={2025},
+    pages={4083--4103},
+    year={2025}
+  }
+
+2025-urbanx: |-
+  @article{tang2025street,
+    title={From street views to urban science: Discovering road safety factors with multimodal large language models},
+    author={Tang, Yihong and Qu, Ao and Yu, Xujing and Deng, Weipeng and Ma, Jun and Zhao, Jinhua and Sun, Lijun},
+    journal={arXiv preprint arXiv:2506.02242},
+    year={2025}
+  }
+
+2025-v2m: |-
+  @inproceedings{wang2025survey,
+    title={A Survey on Vision-to-Music Generation: Methods, Datasets, Evaluation, and Challenges},
+    author={Wang, Zhaokai and Bao, Chenxi and Zhuo, Le and Han, Jingrui and Yue, Yang and Tang, Yihong and Huang, Victor Shea-Jay and Liao, Yue},
+    booktitle={Ismir 2025 Hybrid Conference},
+    year={2025}
+  }
+
+2025-vlaad: |-
+  @inproceedings{jiang2025survey,
+    title={A survey on vision-language-action models for autonomous driving},
+    author={Jiang, Sicong and Huang, Zilin and Qian, Kangan and Luo, Ziang and Zhu, Tianze and Zhong, Yang and Tang, Yihong and Kong, Menglin and Wang, Yunlong and Jiao, Siwen and others},
+    booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+    pages={4524--4536},
+    year={2025}
+  }
+
+2025-worlddrive: |-
+  @article{liao2025think,
+    title={Think Before You Drive: World Model-Inspired Multimodal Grounding for Autonomous Vehicles},
+    author={Liao, Haicheng and Shen, Huanming and Wang, Bonan and Li, Yongkang and Tang, Yihong and Wang, Chengyue and Zhuang, Dingyi and Chen, Kehua and Yang, Hai and Xu, Chengzhong and others},
+    journal={arXiv preprint arXiv:2512.03454},
+    year={2025}
+  }
+
+2026-digital_visibility: |-
+  @article{deng2026digital,
+    title={Digital visibility, physical obscurity: Uncovering the location strategies of ghost kitchens in platform urbanism},
+    author={Deng, Weipeng and Tang, Yihong and Liu, Yaxin and Yang, Tianren},
+    journal={Journal of Retailing and Consumer Services},
+    volume={91},
+    pages={104766},
+    year={2026},
+    publisher={Elsevier}
+  }
+
+2026-intent: |-
+  @article{tang2026intent,
+    title={INTENT: Trajectory prediction framework with intention-guided contrastive clustering},
+    author={Tang, Yihong and Ma, Wei},
+    journal={IEEE Open Journal of Intelligent Transportation Systems},
+    year={2026},
+    publisher={IEEE}
+  }
+
+2026-llm4ds: |-
+  @article{tang2025llmsynthor,
+    title={LLMSynthor: Macro-Aligned Micro-Records Synthesis with Large Language Models},
+    author={Tang, Yihong and Kong, Menglin and He, Junlin and Nie, Tong and Sun, Lijun},
+    journal={arXiv preprint arXiv:2505.14752},
+    year={2025}
+  }
+
+2026-llm4gkid: |-
+  @article{deng2026llm4gkid,
+    title={LLM4GKID: A multimodal large language model-driven framework for ghost kitchen identification},
+    author={Deng, Weipeng and Tang, Yihong and Wang, Chaofan and Yang, Tianren},
+    journal={IEEE Transactions on Computational Social Systems},
+    year={2026},
+    publisher={IEEE}
+  }
+
+2026-tra: |-
+  @article{lei2026evaluating,
+    title={Evaluating age-friendly public transportation: a novel smart card data approach analyzing travel time differences between older and younger travelers after controlling for confounding effects},
+    author={Lei, Shuyu and Zhou, Mingzhi and Deng, Weipeng and Tang, Yihong and Zhou, Jiangping},
+    journal={Transportation Research Part A: Policy and Practice},
+    volume={204},
+    pages={104842},
+    year={2026},
+    publisher={Elsevier}
+  }
