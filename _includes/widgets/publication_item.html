@@ -1,5 +1,26 @@
 {% assign topics   = item.topics | join: " " %}
 {% assign selected = item.selected | default: false %}
+{% assign item_slug = item.path | split: "/" | last | split: "." | first %}
+{% assign clean_first_author = item.authors[0] | remove: "*" | remove: "#" %}
+{% assign bibtex_key = clean_first_author | split: " " | last | downcase | append: item.pub_date | append: item_slug %}
+{% assign pub_name_lower = item.pub | downcase %}
+{% assign bibtex_type = "inproceedings" %}
+{% if pub_name_lower contains "journal" or pub_name_lower contains "transactions" or pub_name_lower contains "research part" or pub_name_lower contains "science and technology" %}
+  {% assign bibtex_type = "article" %}
+{% endif %}
+{% assign paper_link = item.links.Paper.url | default: item.links.Paper %}
+{% capture bibtex_authors %}
+{% for author in item.authors %}{% assign clean_author = author | remove: "*" | remove: "#" %}{{ clean_author }}{% unless forloop.last %} and {% endunless %}{% endfor %}
+{% endcapture %}
+{% capture bibtex_entry %}
+@{{ bibtex_type }}{ {{ bibtex_key }},
+  title={ {{ item.title }} },
+  author={ {{ bibtex_authors | strip }} },
+  {% if bibtex_type == "article" %}journal{% else %}booktitle{% endif %}={ {{ item.pub | strip_html }} },
+  year={ {{ item.pub_date }} }{% if paper_link %},
+  url={ {{ paper_link }} }{% endif %}
+}
+{% endcapture %}
 
 <!-- 桌面端条目 -->
 <div
@@ -68,6 +89,7 @@
         {{ item.pub_date }} {{ item.pub_last }}
       </p>
       <p class="mt-0 mb-0 small text-muted">{{ item.abstract }}</p>
+      <script type="application/x-bibtex" id="bibtex-{{ item_slug }}-desktop">{{ bibtex_entry | strip }}</script>
     <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
         {% for link in item.links %}
           {% assign label = link[0] %}
@@ -93,6 +115,12 @@
             <a class="{{ link_class }}" target="_blank" href="{{ link[1] }}"><i class="{{ icon }}"></i><span>{{ label }}</span></a>
           {% endif %}
         {% endfor %}
+        <button
+          class="pub-link bibtex-copy-btn"
+          type="button"
+          data-bibtex-target="bibtex-{{ item_slug }}-desktop"
+          aria-label="Copy BibTeX for {{ item.title }}"
+        ><i class="fas fa-copy"></i><span>BibTeX</span></button>
       </p>
     </div>
   </div>
@@ -149,6 +177,7 @@
       {{ item.pub_pre }}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}
     </p>
     <p class="mb-1 small text-muted">{{ item.abstract }}</p>
+    <script type="application/x-bibtex" id="bibtex-{{ item_slug }}-mobile">{{ bibtex_entry | strip }}</script>
     <p class="small lh-125 text-muted mb-0 abstract-links">
       {% for link in item.links %}
         {% assign label = link[0] %}
@@ -170,6 +199,12 @@
         {% endif %}
         <a class="{{ link_class }}" target="_blank" href="{{ url }}"><i class="{{ icon }}"></i><span>{{ label }}</span></a>
       {% endfor %}
+      <button
+        class="pub-link bibtex-copy-btn"
+        type="button"
+        data-bibtex-target="bibtex-{{ item_slug }}-mobile"
+        aria-label="Copy BibTeX for {{ item.title }}"
+      ><i class="fas fa-copy"></i><span>BibTeX</span></button>
     </p>
   </div>
 </div>

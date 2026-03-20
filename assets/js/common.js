@@ -87,7 +87,8 @@ $(function () {
         { id: 'dark', label: 'Midnight', icon: 'fas fa-moon' },
         { id: 'atelier', label: 'Atelier', icon: 'fas fa-palette' },
         { id: 'sage', label: 'Sage', icon: 'fas fa-leaf' },
-        { id: 'harbor', label: 'Harbor', icon: 'fas fa-compass' }
+        { id: 'harbor', label: 'Harbor', icon: 'fas fa-compass' },
+        { id: 'newyorker', label: 'New Yorker', icon: 'fas fa-newspaper' }
     ];
 
     function getThemeConfig(theme) {
@@ -134,6 +135,61 @@ $(function () {
 
         applyTheme(document.documentElement.getAttribute('data-theme') || themes[0].id);
     }
+
+    function fallbackCopyText(text) {
+        var textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+    }
+
+    function setBibtexButtonLabel(button, label) {
+        var labelNode = button.querySelector('span');
+        if (labelNode) {
+            labelNode.textContent = label;
+        }
+    }
+
+    function resetBibtexButton(button) {
+        window.setTimeout(function () {
+            setBibtexButtonLabel(button, 'BibTeX');
+            button.classList.remove('is-copied');
+        }, 1600);
+    }
+
+    document.addEventListener('click', function (event) {
+        var button = event.target.closest('.bibtex-copy-btn');
+        if (!button) return;
+
+        var targetId = button.getAttribute('data-bibtex-target');
+        var source = targetId ? document.getElementById(targetId) : null;
+        if (!source) return;
+
+        var bibtex = (source.textContent || '').trim();
+        if (!bibtex) return;
+
+        function onSuccess() {
+            setBibtexButtonLabel(button, 'Copied');
+            button.classList.add('is-copied');
+            resetBibtexButton(button);
+        }
+
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(bibtex).then(onSuccess).catch(function () {
+                fallbackCopyText(bibtex);
+                onSuccess();
+            });
+            return;
+        }
+
+        fallbackCopyText(bibtex);
+        onSuccess();
+    });
 
     function getScrollableParent(node) {
         var current = node;
