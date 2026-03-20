@@ -135,7 +135,38 @@ $(function () {
         applyTheme(document.documentElement.getAttribute('data-theme') || themes[0].id);
     }
 
+    function getScrollableParent(node) {
+        var current = node;
+        while (current && current !== document.body && current !== document.documentElement) {
+            if (current instanceof Element) {
+                var style = window.getComputedStyle(current);
+                var overflowY = style.overflowY;
+                var canScroll = (overflowY === 'auto' || overflowY === 'scroll' || overflowY === 'overlay')
+                    && current.scrollHeight > current.clientHeight;
+                if (canScroll) {
+                    return current;
+                }
+            }
+            current = current.parentNode;
+        }
+        return null;
+    }
+
+    function canScrollWithin(element, deltaY) {
+        if (!element || !deltaY) return false;
+        var top = element.scrollTop;
+        var maxTop = element.scrollHeight - element.clientHeight;
+        if (deltaY > 0) {
+            return top < maxTop;
+        }
+        return top > 0;
+    }
+
     function preventOverscroll(e) {
+        var scrollableParent = getScrollableParent(e.target);
+        if (canScrollWithin(scrollableParent, e.deltaY)) {
+            return;
+        }
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
         var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         if ((scrollTop <= 0 && e.deltaY < 0) || (scrollTop >= maxScroll && e.deltaY > 0)) {
@@ -152,10 +183,14 @@ $(function () {
 
     function onTouchMove(e) {
         if (!e.touches || !e.touches.length) return;
+        var scrollableParent = getScrollableParent(e.target);
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
         var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
         var currentY = e.touches[0].clientY;
         var deltaY = currentY - touchStartY;
+        if (canScrollWithin(scrollableParent, -deltaY)) {
+            return;
+        }
         if ((scrollTop <= 0 && deltaY > 0) || (scrollTop >= maxScroll && deltaY < 0)) {
             e.preventDefault();
         }
