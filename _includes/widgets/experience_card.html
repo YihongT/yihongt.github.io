@@ -2,7 +2,7 @@
     <div class="col">
         <div class="card border-0 shadow-sm bg-white experience-card">
             <div class="card-body p-4">
-                <div class="row" data-masonry='{"percentPosition": true }'>
+                <div class="row experience-sections" data-masonry='{"percentPosition": true }'>
                     {% if site.data.profile.education %}
                     <div class="col-md-6">
                         <div class="mx-2 my-1">
@@ -14,9 +14,9 @@
                                     <div class="media-body">
                                         <div>{{ item.name }}</div>
                                         <div class="small">{{ item.dept }}</div>
-                                        <div class="small d-flex">
+                                        <div class="small d-flex experience-meta">
                                             <div>{{ item.position }}</div>
-                                            <div class="mt-auto ml-auto no-break"><em>{{ item.date }}</em></div>
+                                            <div class="mt-auto ml-auto no-break experience-date"><em>{{ item.date }}</em></div>
                                         </div>
                                     </div>
                                 </li>
@@ -37,9 +37,9 @@
                                     <div class="media-body">
                                         <div>{{ item.name }}</div>
                                         <div class="small">{{ item.dept }}</div>
-                                        <div class="small d-flex">
+                                        <div class="small d-flex experience-meta">
                                             <div>{{ item.position }}</div>
-                                            <div class="mt-auto ml-auto no-break"><em>{{ item.date }}</em></div>
+                                            <div class="mt-auto ml-auto no-break experience-date"><em>{{ item.date }}</em></div>
                                         </div>
                                     </div>
                                 </li>
@@ -56,9 +56,9 @@
                             <ul class="list small pl-3 mb-1">
                                 {% for item in site.data.profile.awards %}
                                 <li>
-                                    <div class="d-flex">
+                                    <div class="d-flex experience-meta">
                                         <div>{{ item.name }}</div>
-                                        <div class="ml-auto mt-auto no-break"><em>{{ item.date }}</em></div>
+                                        <div class="ml-auto mt-auto no-break experience-date"><em>{{ item.date }}</em></div>
                                     </div>
                                 </li>
                                 {% endfor %}
@@ -74,14 +74,14 @@
 
                         
 
-                      <div class="small d-flex flex-column flex-md-row">
+                      <div class="small d-flex flex-column flex-md-row academic-service-row">
                         <span style="min-width: 160px;"><strong>Journal Referees:</strong></span>
                         <div style="flex: 1;">
                           {{ site.data.profile.academic_services.journal_referees | join: ", " }}
                         </div>
                       </div>
 
-                      <div class="small d-flex flex-column flex-md-row">
+                      <div class="small d-flex flex-column flex-md-row academic-service-row">
                         <span style="min-width: 160px;"><strong>Conference Referees:</strong></span>
                         <div style="flex: 1;">
                           {{ site.data.profile.academic_services.conference_referees | join: ", " }}
@@ -89,7 +89,7 @@
                       </div>
 
                       {% if site.data.profile.academic_services.projects %}
-                      <div class="small d-flex flex-column flex-md-row">
+                      <div class="small d-flex flex-column flex-md-row academic-service-row">
                         <span style="min-width: 160px;"><strong>Projects:</strong></span>
                         <div style="flex: 1;">
                           {{ site.data.profile.academic_services.projects | join: "; " }}
@@ -98,7 +98,7 @@
                       {% endif %}
 
                       {% if site.data.profile.academic_services.mentored %}
-                      <div class="small d-flex flex-column flex-md-row">
+                      <div class="small d-flex flex-column flex-md-row academic-service-row">
                         <span style="min-width: 160px;"><strong>Mentored:</strong></span>
                         <div style="flex: 1;">
                           {% for item in site.data.profile.academic_services.mentored %}

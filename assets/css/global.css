@@ -1451,6 +1451,22 @@ html[data-theme="dark"] .badge-publication.award-badge {
     border-radius: 4px;
 }
 
+.experience-card .experience-meta {
+    gap: 0.35rem 0.75rem;
+}
+
+.experience-card .experience-meta > :first-child {
+    min-width: 0;
+}
+
+.experience-card .experience-date {
+    flex-shrink: 0;
+}
+
+.experience-card .academic-service-row + .academic-service-row {
+    margin-top: 0.4rem;
+}
+
 .side-nav-left {
     position: fixed;
     left: 16px;
@@ -1491,6 +1507,27 @@ html[data-theme="dark"] .side-nav-left .nav-link.active {
 @media (max-width: 1300px), (pointer: coarse) {
     .side-nav-left {
         display: none !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .experience-card .experience-sections {
+        height: auto !important;
+    }
+
+    .experience-card .experience-sections > [class*="col-"] {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+    }
+
+    .experience-card .experience-meta {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .experience-card .experience-date {
+        margin-left: 0 !important;
     }
 }
 

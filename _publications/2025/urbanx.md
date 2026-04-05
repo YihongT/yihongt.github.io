@@ -1,12 +1,12 @@
 ---
 title:          "From Street Views to Urban Science: Discovering Road Safety Factors with Multimodal Large Language Models"
-date:           2025-6-2 00:01:00 +0800
+date:           2026-04-05 00:01:00 +0800
 selected:       true
-# pub:            "IJCAI MKLM"
+pub:            "Transportation Research Part C: Emerging Technologies"
 # pub_pre:        "Submitted to "
-pub_post:       'Under review.'
+pub_post:       '.'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
-pub_date:       "2025"
+pub_date:       "2026"
 
 cover:          /assets/images/covers/urbanx_cover.png
 authors:
