@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="title" content="From Street Views to Urban Science">
+  <meta name="description" content="UrbanX discovers interpretable road-safety factors from street-view imagery using multimodal large language models.">
+  <meta name="keywords" content="urban science, street-view imagery, road safety, multimodal language models, visual question answering">
+  <meta name="author" content="Yihong Tang, Ao Qu, Xujing Yu, Weipeng Deng, Jun Ma, Jinhua Zhao, Lijun Sun">
+  <meta name="citation_title" content="From Street Views to Urban Science: Discovering Road Safety Factors with Multimodal Large Language Models">
+  <meta name="citation_author" content="Tang, Yihong">
+  <meta name="citation_author" content="Qu, Ao">
+  <meta name="citation_author" content="Yu, Xujing">
+  <meta name="citation_author" content="Deng, Weipeng">
+  <meta name="citation_author" content="Ma, Jun">
+  <meta name="citation_author" content="Zhao, Jinhua">
+  <meta name="citation_author" content="Sun, Lijun">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_journal_title" content="Transportation Research Part C: Emerging Technologies">
+  <meta name="citation_volume" content="188">
+  <meta name="citation_firstpage" content="105692">
+  <meta name="citation_doi" content="10.1016/j.trc.2026.105692">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="From Street Views to Urban Science">
+  <meta property="og:description" content="Discovering Road Safety Factors with Multimodal Large Language Models.">
+  <meta property="og:image" content="static/images/overview_teaser.png">
+  <title>UrbanX | From Street Views to Urban Science</title>
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+  <main id="main-content">
+    <section class="hero publication-header">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">From Street Views to Urban Science: Discovering Road Safety Factors with Multimodal Large Language Models</h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Yihong Tang,</span>
+                <span class="author-block">Ao Qu,</span>
+                <span class="author-block">Xujing Yu,</span>
+                <span class="author-block">Weipeng Deng,</span>
+                <span class="author-block">Jun Ma,</span>
+                <span class="author-block">Jinhua Zhao,</span>
+                <span class="author-block">Lijun Sun</span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Transportation Research Part C: Emerging Technologies, 188, 105692</span>
+              </div>
+              <div class="publication-links">
+                <span class="link-block"><a href="https://doi.org/10.1016/j.trc.2026.105692" class="external-link button is-normal is-rounded is-dark">Paper</a></span>
+                <span class="link-block"><a href="https://github.com/YihongT/UrbanX" class="external-link button is-normal is-rounded is-dark">Code</a></span>
+                <span class="link-block"><a href="#BibTeX" class="external-link button is-normal is-rounded is-dark">BibTeX</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img class="paper-figure" src="static/images/overview_teaser.png" alt="UrbanX overview figure from the paper">
+          <h2 class="subtitle has-text-centered">UrbanX is an interpretable, MLLM-powered framework for hypothesis-driven urban scientific discovery.</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="abstract">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>Urban and transportation research has long sought to uncover statistically meaningful relationships between key variables and societal outcomes such as road safety, aiming to generate actionable insights that guide the planning, development, and renewal of urban mobility systems. However, traditional workflows face several key challenges: (1) reliance on human experts to propose hypotheses, which can be time-consuming and prone to confirmation bias; (2) limited interpretability, particularly in deep learning approaches; and (3) underutilization of unstructured data that encodes critical urban context. To address these limitations, we propose a Multimodal Large Language Model (MLLM)-based approach for interpretable hypothesis inference, enabling the automated generation, assessment, and refinement of hypotheses concerning urban form and transportation safety. Specifically, we leverage MLLMs to generate road safety-relevant questions and automatically answer them based on street view images (SVIs) through visual question answering (VQA). These responses are used to construct interpretable embeddings for each SVI, which are then incorporated into linear statistical models for transparent and explainable regression analysis. UrbanX supports iterative hypothesis testing and refinement guided by statistical evidence, such as coefficient significance, thereby enabling rigorous, transparent scientific discovery of previously overlooked correlations between urban design and transportation risk. We evaluate our framework on Manhattan street segments and demonstrate that it outperforms pretrained deep learning baselines while offering full interpretability. We demonstrate that UrbanX matches or exceeds the explanatory power of existing expert-curated built environment variables, validating its potential to replace labor-intensive feature engineering with automated, scalable discovery of potential safety-related factors. Beyond road safety, UrbanX can serve as a general-purpose foundation for hypothesis-driven urban mobility analysis, extracting structured insights from unstructured data across diverse socioeconomic and environmental outcomes. This approach establishes a scalable and trustworthy pathway for interpretable, data-driven scientific discovery in urban and transportation systems using foundation models such as MLLMs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Method</h2>
+        <figure class="publication-figure">
+          <img class="paper-figure" src="static/images/method.png" alt="UrbanX framework figure from the paper">
+          <figcaption>The framework iterates through hypothesis generation, MLLM-based VQA embedding construction, and interpretable regression assessment.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="results">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Results</h2>
+        <div class="figure-grid">
+          <figure class="publication-figure">
+            <img src="static/images/performance_comparison.png" alt="Model performance comparison from the UrbanX paper">
+            <figcaption>UrbanX improves road-safety prediction while preserving human-readable features.</figcaption>
+          </figure>
+          <figure class="publication-figure">
+            <img src="static/images/ablation_spearman.png" alt="Spearman correlation ablation result from the UrbanX paper">
+            <figcaption>Rank-correlation comparison against direct VLM prediction and latent visual embeddings.</figcaption>
+          </figure>
+          <figure class="publication-figure">
+            <img src="static/images/hypo_importance.png" alt="Hypothesis importance SHAP summary from the UrbanX paper">
+            <figcaption>Top discovered hypotheses remain interpretable and map back to natural-language questions.</figcaption>
+          </figure>
+          <figure class="publication-figure">
+            <img src="static/images/sig_indp.png" alt="Hypothesis significance and independence figure from the UrbanX paper">
+            <figcaption>Discovered factors are predictive, statistically significant, and weakly correlated.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vqa">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">VQA Case Study</h2>
+        <figure class="publication-figure">
+          <img class="paper-figure" src="static/images/case_study_img.jpg" alt="Panoramic street-view image used for VQA analysis in the paper">
+          <figcaption>Panoramic SVI used for VQA analysis in the paper. The open-source repo does not redistribute the full private image collection.</figcaption>
+        </figure>
+        <figure class="publication-figure">
+          <img class="paper-figure narrow" src="static/images/cost_accuracy_tradeoff.png" alt="Cost accuracy tradeoff for VQA in UrbanX">
+          <figcaption>Cost-accuracy trade-off for VQA across model scales.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" data-copy-target="bibtex-code">Copy</button>
+        </div>
+        <pre id="bibtex-code"><code>@article{tang2026street,
+  title={From street views to urban science: Discovering road safety factors with multimodal large language models},
+  author={Tang, Yihong and Qu, Ao and Yu, Xujing and Deng, Weipeng and Ma, Jun and Zhao, Jinhua and Sun, Lijun},
+  journal={Transportation Research Part C: Emerging Technologies},
+  volume={188},
+  pages={105692},
+  year={2026},
+  publisher={Elsevier}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container is-max-desktop">
+      <div class="content">
+        <p>This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>, adopted from the Nerfies project page. The template is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="static/js/site.js"></script>
+</body>
+</html>

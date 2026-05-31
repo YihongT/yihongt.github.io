@@ -194,7 +194,7 @@
           {% when "Website" %}{% assign icon = "fas fa-globe" %}
           {% else %}{% assign icon = "fas fa-link" %}
         {% endcase %}
-        {% assign url = link[1].url or link[1] %}
+        {% assign url = link[1].url | default: link[1] %}
         {% assign link_class = "pub-link" %}
         {% if label contains "Award" %}
           {% assign link_class = "pub-link pub-link-award" %}
