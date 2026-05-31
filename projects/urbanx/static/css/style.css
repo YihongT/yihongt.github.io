@@ -93,12 +93,18 @@ a { color: var(--primary-color); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.45rem;
   min-height: 2.5rem;
   padding: 0.55rem 1rem;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 700;
   border: 1px solid transparent;
+}
+
+.button .icon {
+  display: inline-flex;
+  align-items: center;
 }
 
 .button.is-dark {
@@ -187,6 +193,9 @@ code {
 }
 
 .copy-bibtex-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   background: var(--primary-color);
   color: #fff;
   border: 0;
