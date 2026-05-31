@@ -64,9 +64,6 @@ short_bio: >-
     <a href="https://ois.bupt.edu.cn/About_Us.htm" target="_blank">BUPT</a>.  
   <p>
     I study multimodal AI agents and generative models, and their applications in computer, social, and urban sciences. My research has appeared in top AI venues, please check out my <a href="#selected-publications">selected publications</a> for details.
-
-  <p>
-    <i class="fa-solid fa-rectangle-ad" style="color: #d60000;"></i> <span style="color: #d60000;">I am co-organizing the MIT-UF-NEU 2026 Joint Summer Research Camp.</span> See the <a href="https://drive.google.com/file/d/1f2SLK8p5u-X3dlxLXQnHVzODO0DK_y2X/view" target="_blank">detailed announcement</a>. If you would like to collaborate with me, submit the <a href="https://forms.gle/QY1fG3eRoc27R5r17" target="_blank">application form</a>, list my name under "interested mentors," and apply by April 17, 2026 (AOE).
   </p>
 
 # <p>
@@ -151,7 +148,7 @@ experience:
 
 # <strong></strong>
 awards:
-- name: <strong>FRQNT Doctoral Research Scholarship</strong> (Nature et technologies), Fonds de recherche du Québec
+- name: FRQNT Doctoral Research Scholarship (Nature et technologies), Fonds de recherche du Québec
   date: Apr. 2026
 - name: <a href="https://www.cirrelt.ca/cirrelt/images/file/2026/2025-2026-recipiendaires.pdf" target="_blank">CIRRELT Doctoral Scholarships of Excellence (Early stages)</a>
   date: Jan. 2026
@@ -193,6 +190,7 @@ academic_services:
     - TRB Annual Meeting 2026
     - ICLR 2026
     - ITSC 2026
+    - NeurIPS 2026
   mentored:
     - <a href="https://mobility.mit.edu/openings/" target="_blank">MIT-UF-NEU 2025 Joint Summer Research Camp</a>
     # - <strong>Graduate Students:</strong> <a href="https://scholar.google.com/citations?user=zD7XUF8AAAAJ&hl=en" target="_blank">Zeyuan Niu</a> (SJTU, 2026) -> Ph.D., HKU; <a href="https://www.linkedin.com/in/yanling-sang-106275362/" target="_blank">Yanling Sang</a> (UCLA, 2025) -> Ph.D., Johns Hopkins University (JHU)
