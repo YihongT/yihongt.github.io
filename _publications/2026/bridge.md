@@ -8,6 +8,7 @@ pub:            "IEEE International Conference on Intelligent Transportation Sys
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
 pub_date:       "2026"
 
+cover:          /assets/images/covers/bridge_cover.png
 authors:
   - Yihong Tang
   - Tong Nie

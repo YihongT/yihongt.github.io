@@ -8,6 +8,7 @@ pub:            "International Conference on Machine Learning (ICML)"
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
 pub_date:       "2026"
 
+cover:          /assets/images/covers/distill_cover.png
 authors:
   - Junlin He*
   - Yihong Tang*
@@ -17,6 +18,8 @@ authors:
   - Jinxiao Du
   - Lijun Sun
   - Wei Ma#
+links:
+  Paper: https://arxiv.org/pdf/2605.29327
 
 topics:
   # - DS

@@ -8,6 +8,7 @@ pub_post:       'Under review.'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
 pub_date:       "2026"
 
+cover:          /assets/images/covers/drcik_cover.png
 authors:
   - Yihong Tang
   - Andrew Robert Williams
@@ -18,6 +19,8 @@ authors:
   - Issam H. Laradji
   - Étienne Marcotte
   - Valentina Zantedeschi
+links:
+  Paper: https://arxiv.org/pdf/2605.27904
 
 topics:
   # - DS
