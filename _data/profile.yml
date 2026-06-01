@@ -55,7 +55,8 @@ short_bio: >-
     advised by Prof.
     <a href="https://lijunsun.github.io/" target="_blank">Lijun Sun</a>
     and Prof.
-    <a href="https://mila.quebec/en/directory/bang-liu" target="_blank">Bang Liu</a>,
+    <a href="https://mila.quebec/en/directory/bang-liu" target="_blank">Bang Liu</a>
+    (Mila & Université de Montréal),
     and a Visiting Researcher at
     <a href="https://www.servicenow.com/research/" target="_blank">ServiceNow AI Research</a>, 
     where I work with 
@@ -97,9 +98,13 @@ portrait_height: 240px
 
 
 education:
-- name: McGill University & Mila
+- name: McGill University
   logo: /assets/images/badges/mcgill-logo.png
   position: Ph.D. in Geneartive AI for Mobility & Autonomous Driving
+  date: Jan. 2025 - present
+- name: Mila – Quebec AI Institute
+  logo: /assets/images/badges/mila.svg
+  position: Ph.D. Research in Self-Evolving Agents & Post-Training
   date: Jan. 2025 - present
 - name: The University of Hong Kong #Massachusetts Institute of Technology
   logo: /assets/images/badges/hku_logo.png
