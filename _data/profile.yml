@@ -52,9 +52,11 @@ short_bio: >-
   <p>    
     Hi 👋, I'm Yihong, a Ph.D. candidate at 
     <a href="https://www.mcgill.ca/" target="_blank">McGill University</a>, 
-    advised by Prof. 
-    <a href="https://lijunsun.github.io/" target="_blank">Lijun Sun</a>, 
-    and a Visiting Researcher at 
+    advised by Prof.
+    <a href="https://lijunsun.github.io/" target="_blank">Lijun Sun</a>
+    and Prof.
+    <a href="https://mila.quebec/en/directory/bang-liu" target="_blank">Bang Liu</a>,
+    and a Visiting Researcher at
     <a href="https://www.servicenow.com/research/" target="_blank">ServiceNow AI Research</a>, 
     where I work with 
     <a href="https://vzantedeschi.com/" target="_blank">Valentina Zantedeschi</a>.
@@ -95,7 +97,7 @@ portrait_height: 240px
 
 
 education:
-- name: McGill University
+- name: McGill University & Mila
   logo: /assets/images/badges/mcgill-logo.png
   position: Ph.D. in Geneartive AI for Mobility & Autonomous Driving
   date: Jan. 2025 - present
