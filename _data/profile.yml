@@ -187,6 +187,8 @@ academic_services:
   projects:
     - <a href="https://nserc-crsng.canada.ca/en/funding-decisions/result/2519" target="_blank">MobAgent</a> - Large Language Model Agent for Mobility Reasoning and Synthesis (NSERC, CA$300,000)
   journal_referees:
+    - IEEE Transactions on Services Computing
+    - ACM Transactions on Knowledge Discovery from Data
     - Humanities and Social Sciences Communications
     - Transportation Research Part C
     - Scientific Reports
