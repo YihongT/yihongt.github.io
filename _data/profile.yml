@@ -60,7 +60,11 @@ short_bio: >-
     and a Visiting Researcher at
     <a href="https://www.servicenow.com/research/" target="_blank">ServiceNow AI Research</a>, 
     where I work with 
-    <a href="https://vzantedeschi.com/" target="_blank">Valentina Zantedeschi</a>.
+    <a href="https://vzantedeschi.com/" target="_blank">Valentina Zantedeschi</a>,
+    <a href="https://scholar.google.com/citations?user=NwSnV9UAAAAJ&hl=fr" target="_blank">Étienne Marcotte</a>,
+    <a href="https://issamlaradji.com/" target="_blank">Issam H. Laradji</a>,
+    and
+    <a href="https://www.alexdrouin.com/" target="_blank">Alexandre Drouin</a>.
     Prior to McGill, I received my M.Phil. in Urban Computing from 
     <a href="https://www.hku.hk/" target="_blank">The University of Hong Kong</a> 
     and my B.Eng. in Computer Science from 
@@ -98,14 +102,14 @@ portrait_height: 240px
 
 
 education:
-- name: McGill University
-  logo: /assets/images/badges/mcgill-logo.png
-  position: Ph.D. in Geneartive AI for Mobility & Autonomous Driving
-  date: Jan. 2025 - present
 - name: Mila – Quebec AI Institute
   logo: /assets/images/badges/mila.png
   position: Ph.D. in Self-Evolving Agents & Post-Training
   date: May 2026 - present
+- name: McGill University
+  logo: /assets/images/badges/mcgill-logo.png
+  position: Ph.D. in Geneartive AI for Mobility & Autonomous Driving
+  date: Jan. 2025 - present
 - name: The University of Hong Kong #Massachusetts Institute of Technology
   logo: /assets/images/badges/hku_logo.png
   position: M.Phil. in Urban Computing
@@ -121,6 +125,11 @@ experience:
   logo: /assets/images/badges/snow.png
   position: Visiting Researcher, <a href="https://www.servicenow.com/research/" target="_blank">Frontier AI Research</a>
   date: Jan. 2026 - Present
+
+- name: <a href="https://drive.google.com/file/d/1f2SLK8p5u-X3dlxLXQnHVzODO0DK_y2X/view" target="_blank">MIT-UF-NEU Joint Summer Research Camp</a>
+  logo: /assets/images/badges/MIT_Social_circle.png
+  position: Co-organizer & Mentor
+  date: 2025 - 2026
 
 - name: Autorité régionale de transport métropolitain
   logo: /assets/images/badges/artm.png
