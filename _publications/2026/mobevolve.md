@@ -1,7 +1,7 @@
 ---
 title:          "MobEvolve: An Agentic Self-Evolving Heuristic System for Interpretable Human Mobility Generation"
 date:           2026-06-02 00:01:00 +0800
-selected:       false
+selected:       true
 # pub:            ""
 # pub_pre:        "Submitted to "
 pub_post:       'Under review.'
