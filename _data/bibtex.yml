@@ -225,6 +225,14 @@
     year={2026}
   }
 
+2026-mobevolve: |-
+  @article{he2026mobevolve,
+    title={MobEvolve: An Agentic Self-Evolving Heuristic System for Interpretable Human Mobility Generation},
+    author={He, Junlin and Tang, Yihong and Nie, Tong and Qu, Ao and Liang, Yuebing and Alizadeh, Hamzeh and Liu, Bang and Ma, Wei and Sun, Lijun},
+    journal={arXiv preprint arXiv:2606.01640},
+    year={2026}
+  }
+
 2026-intent: |-
   @article{tang2026intent,
     title={INTENT: Trajectory prediction framework with intention-guided contrastive clustering},
