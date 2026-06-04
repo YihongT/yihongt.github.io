@@ -233,6 +233,14 @@
     year={2026}
   }
 
+2026-evodrive: |-
+  @article{nie2026evodrive,
+    title={EvoDrive: Pareto Evolution for Safety-Critical Autonomous Driving via Self-Improving LLM Agents},
+    author={Nie, Tong and Mei, Yuewen and Tang, Yihong and He, Junlin and Deng, Jie and Sun, Jian and Ma, Wei},
+    journal={arXiv preprint arXiv:2606.03678},
+    year={2026}
+  }
+
 2026-intent: |-
   @article{tang2026intent,
     title={INTENT: Trajectory prediction framework with intention-guided contrastive clustering},
