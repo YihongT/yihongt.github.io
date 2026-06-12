@@ -142,7 +142,7 @@
       <thead><tr><th>Security property</th><th>The question it asks</th><th>Representative paper</th><th>Example in that paper</th><th>Paper's contribution</th></tr></thead>
       <tbody>
         <tr><td class="prop">Integrity · poisoning</td><td>Authentic, or <b>forged &amp; injected</b>?</td><td><b>PoisonedRAG</b></td><td>Inject 5 optimized docs → LLM outputs the attacker's chosen answer (~90%).</td><td>First RAG knowledge-corruption attack; retrieval+generation conditions; defenses insufficient.</td></tr>
-        <tr><td class="prop">Integrity · indirect injection</td><td>Is there a <b>hidden instruction</b> in the data?</td><td><b>AgentDojo</b></td><td>An email body says "transfer $10k to IBAN X"; the agent executes it mid-task.</td><td>Dynamic benchmark for prompt-injection attacks &amp; defenses on tool-using agents.</td></tr>
+        <tr><td class="prop">Integrity · indirect injection</td><td>Is there a <b>hidden instruction</b> in the data?</td><td><b>AgentDojo</b></td><td>An email body says "transfer \$10k to IBAN X"; the agent executes it mid-task.</td><td>Dynamic benchmark for prompt-injection attacks &amp; defenses on tool-using agents.</td></tr>
         <tr><td class="prop">Integrity · supply-chain backdoor</td><td>Was the agent itself <b>backdoored upstream</b> (data / model / training env)?</td><td><b>Malice in Agentland</b></td><td>Poison ~2% of training traces → a trigger makes the agent leak confidential info (&gt;80%); guardrails fail.</td><td>Formalizes 3 AI-supply-chain threat models incl. novel <em>environment poisoning</em>.</td></tr>
         <tr><td class="prop">Integrity · defense by design</td><td>Can untrusted data <b>drive control flow</b>?</td><td><b>CaMeL</b></td><td>Untrusted data gets capabilities; it cannot trigger an unauthorized tool call even if it contains an order.</td><td>Defeats prompt injection <em>by design</em> via control/data-flow separation.</td></tr>
         <tr><td class="prop">Confidentiality · info-flow</td><td>Should this datum <b>flow to that recipient</b>?</td><td><b>MAGPIE / CI</b></td><td>A sub-agent leaks the user's SSN/salary to an agent that shouldn't see it (35–51%).</td><td>Contextual-Integrity lens + impossibility; CI-grounded multi-agent leakage benchmark.</td></tr>
@@ -245,7 +245,7 @@
     <div class="traces">
       <div class="trace t">
         <p class="trace-h"><span class="tnum">a</span><span class="tprop">Over-confidence</span> — <span class="ttask">Deep-Research market-size for a board deck</span></p>
-        <div class="trow"><span class="tl agent">Agent does</span><p>From <b>one shaky source</b>, outputs "TAM = $42B by 2027, high confidence" with citations.</p></div>
+        <div class="trow"><span class="tl agent">Agent does</span><p>From <b>one shaky source</b>, outputs "TAM = \$42B by 2027, high confidence" with citations.</p></div>
         <div class="trow"><span class="tl cost">Human then</span><p>Drops the number straight into the board deck and commits budget.</p></div>
         <div class="trow"><span class="tl fix">Correct</span><p>Return a range + "single low-trust source — low confidence," or abstain.</p></div>
       </div>
@@ -297,7 +297,7 @@
         <summary><span class="badge">T1 · trust</span><span class="ititle">Provenance-conditioned calibration &amp; abstention (security → trust bridge)</span><span class="chev">▸</span></summary>
         <div class="ibody">
           <div class="facet"><span class="flabel">Motivation</span><p>A number isn't decision-usable; humans over-rely on fluent/overconfident forecasts. Uncertainty should reflect <b>evidence trustworthiness</b> — poisoned/unauthorized/stale context ⇒ less confidence or abstain; confidence must be faithful.</p></div>
-          <div class="facet"><span class="flabel">Real-world</span><p>A Deep-Research "TAM = $42B by 2027" from one shaky source goes into a board deck; a CRM copilot's confident quarterly forecast on 2-week-stale pipeline gets committed to the board.</p></div>
+          <div class="facet"><span class="flabel">Real-world</span><p>A Deep-Research "TAM = \$42B by 2027" from one shaky source goes into a board deck; a CRM copilot's confident quarterly forecast on 2-week-stale pipeline gets committed to the board.</p></div>
           <div class="facet diff"><span class="flabel">Differs</span><p>Conformal/UQ work (Conformal-TS, DiscoUQ) derives intervals from model/data uncertainty but <b>not</b> from evidence provenance/trust; calibration work ignores that the context may be poisoned.</p></div>
           <div class="facet con"><span class="flabel">Contribution</span><p>Provenance/trust-conditioned conformal prediction + abstention policy; an <b>appropriate-reliance</b> metric (does confidence track evidence trust <em>and</em> accuracy?).</p></div>
           <div class="facet val"><span class="flabel">Value</span><p>Turns input-security into output-trust: the forecast gets <b>less</b> confident exactly when its evidence is compromised, so humans don't over-commit on poisoned/stale numbers.</p></div>
