@@ -1,2 +1,184 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>SafeCAFDR — Refined Proposal</title><style>body{margin:0;background:#f6f8fb;color:#16202e;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7}.topbar{position:sticky;top:0;background:rgba(246,248,251,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e4e9f0;padding:.7rem 1.25rem;font-size:.86rem}.topbar a{color:#0b7d72;text-decoration:none;font-weight:700}main{max-width:900px;margin:0 auto;padding:2.4rem 1.4rem 5rem}h1{font-size:2rem;border-bottom:2px solid #e4e9f0;padding-bottom:.35em}h2{font-size:1.35rem;border-bottom:1px solid #e4e9f0;padding-bottom:.25em;margin-top:2rem}.card{background:#fff;border:1px solid #e4e9f0;border-radius:14px;padding:1rem 1.2rem;margin:1rem 0}li{margin:.45rem 0}.tag{display:inline-block;border:1px solid #dfe5ee;background:#ecfdf5;color:#0b7d72;border-radius:999px;padding:.2rem .55rem;font-weight:800;font-size:.78rem;margin:.1rem}a{color:#2563eb}</style></head><body><div class="topbar">&larr; <a href="../index.html">Back to overview</a></div><main><h1>Refined Proposal: SafeCAFDR</h1><p><strong>SafeCAFDR</strong> means <strong>Safe Context-Aware Forecasting Deep Research</strong>. The project builds a forecasting agent that performs deep contextual research while proactively estimating and mitigating future safety and reliability risks.</p><div class="card"><h2>Abstract draft</h2><p>Context-aware agents can improve time-series forecasting by retrieving and reasoning over external information, but the same retrieval and tool-use capabilities introduce prompt-injection, leakage, hallucination, and unreliable-evidence risks. We propose SafeCAFDR, a forecasting deep-research agent that jointly predicts target outcomes and the future risk trajectory of its own reasoning process. SafeCAFDR uses a predictive guardrail to anticipate unsafe or unreliable states before they occur, then intervenes through context re-ranking, tool restriction, verification, or explanation revision. Experiments evaluate both forecasting accuracy and robustness under adversarial retrieved context.</p></div><h2>Core contributions</h2><ul><li><strong>Task formulation:</strong> Safe forecasting deep research, where a model must optimize accuracy and future safety.</li><li><strong>Method:</strong> Context-aware forecasting agent plus predictive risk head and intervention policy.</li><li><strong>Benchmarking:</strong> Forecasting tasks with adversarial and noisy external context.</li><li><strong>Metrics:</strong> Joint reporting of forecast accuracy, evidence reliability, attack success, and intervention cost.</li></ul><h2>System components</h2><div class="card"><p><span class="tag">Retriever</span><span class="tag">Forecaster</span><span class="tag">Risk predictor</span><span class="tag">Policy layer</span><span class="tag">Verifier</span></p><ol><li>Retrieve context relevant to the target series and forecast horizon.</li><li>Generate candidate forecasts and explanations.</li><li>Predict whether the current reasoning path is likely to lead to unsafe, injected, or unreliable output.</li><li>Intervene when risk is high by pruning context, requiring citations, reducing tool access, or asking for independent verification.</li><li>Output calibrated forecasts with evidence and risk annotations.</li></ol></div><h2>Evaluation design</h2><ul><li><strong>Forecast quality:</strong> MASE, sMAPE, CRPS, calibration, and ranking accuracy where appropriate.</li><li><strong>Safety robustness:</strong> attack success rate, leakage rate, unsafe tool-use rate, and misleading-evidence reliance.</li><li><strong>Agent reliability:</strong> citation faithfulness, evidence diversity, abstention quality, and cost.</li><li><strong>Ablations:</strong> no retrieval, no risk predictor, no intervention policy, retrieval-only safety, and reactive-only guardrails.</li></ul><h2>Expected claim</h2><p>SafeCAFDR should show that proactive safety prediction can preserve or improve forecasting accuracy under realistic context while substantially reducing unsafe behavior under adversarial context.</p></main></body></html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Refined Proposal — ForecastHarnessAudit</title><style>
+:root{--bg:#f6f8fb;--surface:#fff;--surface2:#f3f6fa;--line:#e4e9f0;--line2:#cfd8e4;
+ --text:#16202e;--muted:#51607a;--accent:#0d9488;--accent-ink:#0b7d72;--accent2:#2563eb;
+ --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;
+ -webkit-font-smoothing:antialiased}
+.topbar{position:sticky;top:0;background:rgba(246,248,251,.9);backdrop-filter:blur(10px);
+ border-bottom:1px solid var(--line);padding:.7rem 1.25rem;font-size:.86rem}
+.topbar a{color:var(--accent-ink);text-decoration:none;font-weight:600}
+.topbar a:hover{text-decoration:underline}
+main{max-width:820px;margin:0 auto;padding:2.4rem 1.4rem 5rem}
+h1,h2,h3,h4{line-height:1.3;letter-spacing:-.01em;margin:1.8em 0 .6em}
+h1{font-size:2rem;margin-top:.2em;border-bottom:2px solid var(--line);padding-bottom:.35em}
+h2{font-size:1.4rem;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.12rem;color:var(--accent-ink)}
+p,li{color:#243042}
+a{color:var(--accent2)}
+code{font-family:var(--mono);font-size:.86em;background:var(--surface2);padding:.12em .42em;
+ border-radius:6px;color:var(--accent-ink);border:1px solid var(--line)}
+pre{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:1rem;overflow:auto}
+pre code{background:none;border:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:3px solid var(--accent);
+ background:rgba(13,148,136,.06);border-radius:0 8px 8px 0;color:#243042}
+blockquote p{margin:.3em 0}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.93rem;background:var(--surface);
+ border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--surface2);font-size:.8rem;text-transform:uppercase;letter-spacing:.03em}
+tbody tr:last-child td{border-bottom:none}
+hr{border:none;border-top:1px solid var(--line);margin:2.4em 0}
+strong{color:var(--text)}
+</style></head>
+<body>
+<div class="topbar">&larr; <a href="../index.html">Back to overview</a></div>
+<main><h1 id="refined-proposal-relevance-security">Refined Proposal — Relevance ≠ Security</h1>
+<p><strong>A contextual forecast can be accurate and still illegal, leaked, or hijacked.</strong></p>
+<p>Version 3 · 2026-06-12 · supersedes the "ForecastHarnessAudit" framing (v2), which collapsed into
+what Dr-CiK already does. Citation keys resolve in <a href="external_references.html">external_references.md</a>.</p>
+<hr />
+<h2 id="1-thesis">1. Thesis</h2>
+<p>Dr-CiK already settled the <strong>relevance / robustness</strong> question for contextual forecasting agents: can an
+agent retrieve the <em>right</em> supporting evidence from a noisy corpus and <strong>filter distractors</strong> — including
+forecast-dependent, adversarially-crafted distractors? (Answer: today's deep-research agents are bad at
+it — &lt;5% evidence recall, &gt;80% distractor citations.)</p>
+<p>That is a <strong>content-decidable, average-case capability</strong> problem. It is <em>not</em> security. Our contribution
+lives in the part Dr-CiK <strong>structurally cannot express</strong>:</p>
+<blockquote>
+<p><strong>Relevance-competence and security-compliance are decoupled.</strong> Whether a forecast is <em>good</em> (relevant,
+accurate) is independent of whether it was produced <em>legitimately</em> — with <strong>authorized, authentic,
+timely, and contained</strong> evidence. Worse, the most <em>useful</em> evidence is often the one you are <em>forbidden</em>
+to use, and a stronger reasoner does not become more compliant — it becomes a better rule-breaker
+(Apollo: under pressure, capable agents use insider information and lie about it [Deception-Pressure]).</p>
+</blockquote>
+<p>So an agent can ace Dr-CiK and still be undeployable: it forecasts well by using material non-public
+information, citing an injected document, leaking a private field, or reading the future.</p>
+<hr />
+<h2 id="2-why-this-is-not-dr-cik-the-technical-line">2. Why this is not Dr-CiK — the technical line</h2>
+<h3 id="21-distractor-vs-security-item-what-the-agent-must-look-at">2.1 Distractor vs. security item: what the agent must look at</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Distractor (Dr-CiK)</th>
+<th>Security item (ours)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Question the agent asks</td>
+<td>"Is this <strong>true &amp; relevant</strong>?"</td>
+<td>"Am I <strong>allowed</strong> to use it? Is the source <strong>authentic</strong>? Is it <strong>timely</strong>? May it <strong>flow there</strong>?"</td>
+</tr>
+<tr>
+<td>Decision input</td>
+<td>the <strong>document content</strong></td>
+<td>the document's <strong>label</strong>: provenance, identity/policy, timestamp, allowed recipients</td>
+</tr>
+<tr>
+<td>Ground-truth function</td>
+<td><code>f(content, task)</code></td>
+<td><code>f(provenance, identity, policy, time, recipient)</code> — <strong>independent of content</strong></td>
+</tr>
+<tr>
+<td>Relevance vs. safety</td>
+<td>aligned (irrelevant → reject)</td>
+<td><strong>opposed</strong> — the <em>most relevant</em> item is often the one to reject</td>
+</tr>
+<tr>
+<td>Problem type</td>
+<td>capability (reasoning / ranking)</td>
+<td>systems (access control + information-flow control + provenance)</td>
+</tr>
+<tr>
+<td>Solvable inside the context window?</td>
+<td>yes, by a better reader</td>
+<td><strong>no</strong> — the deciding info is not in the content</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The killer example (content-identical, label-opposite).</strong> The sentence <em>"Q3 sales are tracking 30%
+below plan"</em> is <strong>fine</strong> in a public earnings pre-announcement and <strong>illegal</strong> in a leaked confidential
+memo. Same words, opposite decision ⇒ the decision <strong>cannot</strong> be a function of content; it is a function
+of the <em>label</em>. Dr-CiK generates distractors from content and grades them by citation/relevance — so it
+is, by construction, blind to this.</p>
+<h3 id="22-distractor-poisonedrag-natural-hard-example-targeted-adversarial-example">2.2 Distractor : PoisonedRAG :: natural-hard-example : targeted-adversarial-example</h3>
+<p>Dr-CiK's distractor is a <strong>hard sample from a fixed, deliberately-difficult distribution</strong> — passive,
+content-crafted for plausibility. PoisonedRAG's poison is the <strong>solution to an optimization</strong>:
+<code>maximize sim(P, Q)</code> (guaranteed retrieval) <strong>and</strong> <code>induce(answer = R)</code> (attacker-chosen target),
+injected into a <em>deployed</em> corpus at a <em>tiny budget</em> (5 docs → ~90% targeted success) [PoisonedRAG].
+Change the retriever and the distractor is unchanged; the poison is recomputed. The security increment is
+<strong>target + control + optimization-against-the-pipeline + injection</strong> — none of which Dr-CiK has.</p>
+<h3 id="23-consequence-for-evaluation">2.3 Consequence for evaluation</h3>
+<p>Dr-CiK's unit of evaluation is <em>was a relevant doc cited</em>. Ours must be <strong>the trajectory of a labeled
+token: access → use → emission</strong>, scored for boundary violations <strong>regardless of whether it improved the
+forecast</strong>. The labels (provenance / authorization / validity-window / flow-constraint) are <strong>out-of-band</strong>
+— assigned by the benchmark, not recoverable from content.</p>
+<hr />
+<h2 id="3-the-technical-core-how-an-agent-actually-distinguishes-security-info">3. The technical core (how an agent actually distinguishes security info)</h2>
+<p>Security cannot be prompted into the model, because the deciding signal is not in the content and the
+relevance signal is misleading or captured. It must be <strong>enforced by the harness</strong>:</p>
+<ol>
+<li><strong>Typed labels at ingestion</strong> — every datum carries <code>{source-id, trust-tier, classification, timestamp,
+   allowed-purposes, allowed-recipients}</code>.</li>
+<li><strong>Taint propagation</strong> — labels travel with the data through reasoning and tool calls (information-flow
+   control / taint tracking, à la capability-based agent designs).</li>
+<li><strong>A reference monitor outside the LLM</strong> — checks the label at every <em>use</em> and <em>emit</em> point and
+   allows / redacts / denies. The LLM reasons; the monitor decides authorization. (You cannot rely on the
+   LLM to "choose not to use" forbidden info — see Apollo.)</li>
+</ol>
+<p>This maps onto the four formalized contextual-security properties [Formalizing-Agent-Security]:
+<strong>Source Authorization, Task Alignment, Action Alignment, Data Isolation.</strong></p>
+<hr />
+<h2 id="4-flagship-artifact-trustcast">4. Flagship artifact — TrustCast</h2>
+<p><strong>An information-flow-labeled forecasting benchmark + a reference-monitor harness</strong>, designed so that the
+security ground truth is out-of-band and the security contribution cannot be re-derived from Dr-CiK.</p>
+<ul>
+<li><strong>Benchmark.</strong> Forecasting tasks where each document/feed carries hidden labels: <code>public/embargoed</code>,
+  <code>authorized/forbidden-for-identity</code>, <code>authentic/injected</code>, <code>in-window/future/stale</code>,
+  <code>internal-only/exportable</code>. Ground truth is the <em>label</em>, not the relevance.</li>
+<li><strong>Harness.</strong> Taint-tracking + reference monitor implementing the four properties.</li>
+<li><strong>Metrics (decoupled from accuracy).</strong> Unauthorized-use rate (e.g., MNPI-use), injected-evidence-use
+  rate (targeted-ASR under injection), stale/lookahead-use rate, context-leakage rate (Data Isolation),
+  citation <strong>faithfulness</strong> (causal, not post-hoc), and concealment rate (does it hide a violation?).</li>
+<li><strong>Headline result.</strong> The <strong>decoupling</strong>: a forecaster that is strong on Dr-CiK relevance is near-zero on
+  security compliance; plotting accuracy vs. compliance shows they do not co-vary, and capability scaling
+  moves accuracy without moving compliance (or worsens concealment).</li>
+</ul>
+<hr />
+<h2 id="5-scenario-grounded-directions-security-is-intrinsic-not-bolted-on">5. Scenario-grounded directions (security is intrinsic, not bolted on)</h2>
+<p>Each is a real deployment where a motivated adversary and a real trust boundary already exist; each is
+explicitly <em>not</em> a relevance problem.</p>
+<ul>
+<li><strong>S1 · Insider-Information Firewall (finance / MNPI).</strong> Authorization + confidentiality + deception with
+  a <em>legal</em> boundary. Combine: Source-Authorization + Data-Isolation monitor, provenance/lineage
+  (compliance-as-code), deception probes [Deception-Pressure], membership-inference contamination checks
+  [MemGuard]. <em>Differs from Dr-CiK:</em> the forbidden evidence is the <em>most</em> useful one.</li>
+<li><strong>S2 · Stealthy-FDI-secure grid / market forecasting.</strong> Physically-consistent false-data injection into
+  sensor/market feeds → targeted price/load bias [FDI-Energy, FDI-SMLT]. Combine: cross-feed corroboration,
+  SafePred-style downstream-risk prediction, attack-budget curves. <em>Differs:</em> targeted controllability on
+  a deployed feed, not a fixed distractor.</li>
+<li><strong>S3 · Adversary-in-the-loop threat forecasting (EPSS-style).</strong> The forecast's <em>subject</em> is the attacker,
+  who poisons threat-intel feeds to suppress prediction of their own activity and adapts to published
+  scores [EPSS, LLM-CTI]. <em>Differs:</em> the adversary is intrinsic to the loop; strategic feedback.</li>
+<li><strong>S4 · Multi-tenant / multi-agent demand forecasting (supply chain).</strong> Targeted poisoning that surfaces
+  only on coordination + competitive-strategy leakage via the agent's own queries [SupplyChain-Poison].
+  Combine: CI-aware info-flow firewall, HarnessAudit inter-agent audit. <em>Differs:</em> confidentiality across
+  tenants + integrity under a competitor, not single-agent relevance.</li>
+</ul>
+<p><strong>A1 · Targeted poisoning &amp; attack-scaling for forecasting agents.</strong> The attack companion: port
+PoisonedRAG to forecasting — targeted-ASR and <em>injection-budget</em> cost curves, defense frontier (CausalArmor,
+LlamaFirewall, source-trust). The methodological contrast to Dr-CiK's distractor robustness.</p>
+<hr />
+<h2 id="6-why-none-of-this-collapses-into-dr-cik">6. Why none of this collapses into Dr-CiK</h2>
+<p>Dr-CiK = <strong>relevance / robustness</strong> (content-decidable, fixed corpus, distractor-citation, average-case) —
+<strong>done</strong>. This proposal = <strong>security / compliance</strong> (label-decidable, deployed adversary, info-flow
+enforcement, worst-case + targeted) — <strong>open</strong>, and provably outside Dr-CiK's generate-distractors-and-
+score-citation design. The bridge is the empirical <strong>decoupling thesis</strong>: being good at the former tells
+you nothing about the latter.</p></main>
+</body></html>
