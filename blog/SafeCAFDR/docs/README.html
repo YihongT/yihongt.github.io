@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Paper Library — README</title><style>
+:root{--bg:#f6f8fb;--surface:#fff;--surface2:#f3f6fa;--line:#e4e9f0;--line2:#cfd8e4;
+ --text:#16202e;--muted:#51607a;--accent:#0d9488;--accent-ink:#0b7d72;--accent2:#2563eb;
+ --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;
+ -webkit-font-smoothing:antialiased}
+.topbar{position:sticky;top:0;background:rgba(246,248,251,.9);backdrop-filter:blur(10px);
+ border-bottom:1px solid var(--line);padding:.7rem 1.25rem;font-size:.86rem}
+.topbar a{color:var(--accent-ink);text-decoration:none;font-weight:600}
+.topbar a:hover{text-decoration:underline}
+main{max-width:820px;margin:0 auto;padding:2.4rem 1.4rem 5rem}
+h1,h2,h3,h4{line-height:1.3;letter-spacing:-.01em;margin:1.8em 0 .6em}
+h1{font-size:2rem;margin-top:.2em;border-bottom:2px solid var(--line);padding-bottom:.35em}
+h2{font-size:1.4rem;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.12rem;color:var(--accent-ink)}
+p,li{color:#243042}
+a{color:var(--accent2)}
+code{font-family:var(--mono);font-size:.86em;background:var(--surface2);padding:.12em .42em;
+ border-radius:6px;color:var(--accent-ink);border:1px solid var(--line)}
+pre{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:1rem;overflow:auto}
+pre code{background:none;border:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:3px solid var(--accent);
+ background:rgba(13,148,136,.06);border-radius:0 8px 8px 0;color:#243042}
+blockquote p{margin:.3em 0}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.93rem;background:var(--surface);
+ border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--surface2);font-size:.8rem;text-transform:uppercase;letter-spacing:.03em}
+tbody tr:last-child td{border-bottom:none}
+hr{border:none;border-top:1px solid var(--line);margin:2.4em 0}
+strong{color:var(--text)}
+</style></head>
+<body>
+<div class="topbar">&larr; <a href="../index.html">Back to overview</a></div>
+<main><h1 id="paper-library">Paper Library</h1>
+<p>Created: 2026-06-11</p>
+<p>This folder collects the forecasting and agent trust/security references for the "deep research for forecasting" next-step discussion.</p>
+<h2 id="layout">Layout</h2>
+<ul>
+<li><code>pdfs/</code>: canonical downloaded PDFs.</li>
+<li><code>sources/</code>: saved HTML sources for references that are blogs/project pages rather than papers.</li>
+<li><code>by_theme/</code>: categorized symlinks into <code>pdfs/</code> and <code>sources/</code>.</li>
+<li><code>manifest.json</code>: machine-readable inventory with URLs, local paths, themes, and use cases.</li>
+<li><code>classification.md</code>: human-readable paper classification matrix.</li>
+<li><code>research_opportunity_map.md</code>: first-pass research combinations and demand checks.</li>
+</ul>
+<h2 id="theme-index">Theme Index</h2>
+<ul>
+<li><code>01_forecasting_and_contextual_agents</code>: Dr-CiK, Moirai, GIFT-Eval, Context is Key, MoiraiAgent blog.</li>
+<li><code>02_predictive_guardrails_and_future_risk</code>: SafePred.</li>
+<li><code>03_harness_security_and_audit</code>: SafeHarness, HarnessAudit, HarnessAudit project page.</li>
+<li><code>04_prompt_injection_and_jailbreak_scaling</code>: Contextual-integrity prompt injection and jailbreak scaling.</li>
+<li><code>05_enterprise_zero_trust_and_deployment</code>: Claude Zero Trust for AI Agents blog and ebook.</li>
+<li><code>06_surveys_and_landscape</code>: Agentic AI attack/defense survey.</li>
+</ul>
+<h2 id="scope-notes">Scope Notes</h2>
+<p>The first batch covers the papers in the screenshot, the current Dr-CiK manuscript, and the MoiraiAgent/Zero Trust references. I also added Moirai, GIFT-Eval, and Context is Key because they anchor the forecasting benchmark lineage needed to reason about beating MoiraiAgent.</p></main>
+</body></html>
