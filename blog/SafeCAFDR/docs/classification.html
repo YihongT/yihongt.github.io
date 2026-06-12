@@ -1,2 +1,207 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>SafeCAFDR — Classification</title><style>body{margin:0;background:#f6f8fb;color:#16202e;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7}.topbar{position:sticky;top:0;background:rgba(246,248,251,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e4e9f0;padding:.7rem 1.25rem;font-size:.86rem}.topbar a{color:#0b7d72;text-decoration:none;font-weight:700}main{max-width:1000px;margin:0 auto;padding:2.4rem 1.4rem 5rem}h1{font-size:2rem;border-bottom:2px solid #e4e9f0;padding-bottom:.35em}h2{font-size:1.35rem;border-bottom:1px solid #e4e9f0;padding-bottom:.25em;margin-top:2rem}table{border-collapse:collapse;width:100%;background:#fff;border:1px solid #e4e9f0;border-radius:12px;overflow:hidden}th,td{text-align:left;vertical-align:top;padding:.75rem;border-bottom:1px solid #e4e9f0}th{background:#f3f6fa;color:#526174;text-transform:uppercase;font-size:.75rem;letter-spacing:.05em}.card{background:#fff;border:1px solid #e4e9f0;border-radius:14px;padding:1rem 1.2rem;margin:1rem 0}a{color:#2563eb}</style></head><body><div class="topbar">&larr; <a href="../index.html">Back to overview</a></div><main><h1>Paper Classification Matrix</h1><p>This matrix organizes the references by their role in the SafeCAFDR research direction.</p><table><thead><tr><th>Category</th><th>References</th><th>What they contribute</th><th>Open gap</th></tr></thead><tbody><tr><td>Forecasting foundation models</td><td>Moirai, GIFT-Eval</td><td>Backbone models and evaluation conventions for general time-series forecasting.</td><td>They do not directly address adversarial retrieved context or agent safety.</td></tr><tr><td>Context-aware forecasting</td><td>Dr-CiK, Context is Key, MoiraiAgent</td><td>Motivation for using external context and agentic research to improve forecasts.</td><td>Context quality and safety are not jointly optimized.</td></tr><tr><td>Predictive safety</td><td>SafePred</td><td>Conceptual basis for forecasting future harmful states before they happen.</td><td>Not specialized to forecasting agents or time-series deep research.</td></tr><tr><td>Harness and tool security</td><td>SafeHarness, HarnessAudit</td><td>Threat models and audit methods for agent tool-use environments.</td><td>Typically evaluates present tool misuse, not future reasoning risk.</td></tr><tr><td>Prompt injection and jailbreak robustness</td><td>Contextual-integrity prompt injection, jailbreak scaling</td><td>Adversarial stress tests for long-context and retrieved-document agents.</td><td>Need adaptation to forecasting-specific tasks and metrics.</td></tr><tr><td>Zero-trust deployment</td><td>Claude Zero Trust for AI Agents</td><td>Practical deployment principles: least privilege, isolation, verification.</td><td>Needs algorithmic integration with forecasting-agent decisions.</td></tr><tr><td>Surveys</td><td>Agentic AI attack/defense survey</td><td>Landscape taxonomy and related-work structure.</td><td>Surveys identify risks but do not solve forecasting-specific safety.</td></tr></tbody></table><div class="card"><h2>Positioning statement</h2><p>SafeCAFDR sits at the intersection of contextual forecasting, agentic deep research, and predictive safety. Its novelty comes from making safety itself a forecasting problem inside the forecasting agent.</p></div></main></body></html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Paper Classification</title><style>
+:root{--bg:#f6f8fb;--surface:#fff;--surface2:#f3f6fa;--line:#e4e9f0;--line2:#cfd8e4;
+ --text:#16202e;--muted:#51607a;--accent:#0d9488;--accent-ink:#0b7d72;--accent2:#2563eb;
+ --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;
+ -webkit-font-smoothing:antialiased}
+.topbar{position:sticky;top:0;background:rgba(246,248,251,.9);backdrop-filter:blur(10px);
+ border-bottom:1px solid var(--line);padding:.7rem 1.25rem;font-size:.86rem}
+.topbar a{color:var(--accent-ink);text-decoration:none;font-weight:600}
+.topbar a:hover{text-decoration:underline}
+main{max-width:820px;margin:0 auto;padding:2.4rem 1.4rem 5rem}
+h1,h2,h3,h4{line-height:1.3;letter-spacing:-.01em;margin:1.8em 0 .6em}
+h1{font-size:2rem;margin-top:.2em;border-bottom:2px solid var(--line);padding-bottom:.35em}
+h2{font-size:1.4rem;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.12rem;color:var(--accent-ink)}
+p,li{color:#243042}
+a{color:var(--accent2)}
+code{font-family:var(--mono);font-size:.86em;background:var(--surface2);padding:.12em .42em;
+ border-radius:6px;color:var(--accent-ink);border:1px solid var(--line)}
+pre{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:1rem;overflow:auto}
+pre code{background:none;border:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:3px solid var(--accent);
+ background:rgba(13,148,136,.06);border-radius:0 8px 8px 0;color:#243042}
+blockquote p{margin:.3em 0}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.93rem;background:var(--surface);
+ border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--surface2);font-size:.8rem;text-transform:uppercase;letter-spacing:.03em}
+tbody tr:last-child td{border-bottom:none}
+hr{border:none;border-top:1px solid var(--line);margin:2.4em 0}
+strong{color:var(--text)}
+</style></head>
+<body>
+<div class="topbar">&larr; <a href="../index.html">Back to overview</a></div>
+<main><h1 id="classification">Classification</h1>
+<h2 id="theme-taxonomy">Theme Taxonomy</h2>
+<table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Core question</th>
+<th>Included items</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forecasting and contextual agents</td>
+<td>How do agents retrieve, select, and use context to improve forecasts?</td>
+<td>Dr-CiK, MoiraiAgent, Moirai, GIFT-Eval, Context is Key</td>
+</tr>
+<tr>
+<td>Predictive guardrails and future risk</td>
+<td>Can an agent predict unsafe future states before taking an action?</td>
+<td>SafePred</td>
+</tr>
+<tr>
+<td>Harness security and audit</td>
+<td>Can we evaluate and control tool use, state, permissions, and information flow across a trajectory?</td>
+<td>SafeHarness, HarnessAudit</td>
+</tr>
+<tr>
+<td>Prompt injection and jailbreak scaling</td>
+<td>How do attacks scale with attacker budget, and why do context-sensitive defenses fail?</td>
+<td>AI Agents May Always Fall for Prompt Injections, Jailbreak Scaling</td>
+</tr>
+<tr>
+<td>Enterprise zero trust and deployment</td>
+<td>What must be true before enterprises trust autonomous agents with sensitive systems?</td>
+<td>Zero Trust for AI Agents</td>
+</tr>
+<tr>
+<td>Surveys and landscape</td>
+<td>What attack/defense taxonomy should frame the related work?</td>
+<td>Agentic AI attack/defense survey</td>
+</tr>
+</tbody>
+</table>
+<h2 id="paper-matrix">Paper Matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Primary contribution</th>
+<th>Best use in our next project</th>
+<th>Combination strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dr-CiK</td>
+<td>Benchmark for agents that must retrieve forecast-relevant context from noisy corpora.</td>
+<td>Main forecasting/deep-research testbed.</td>
+<td>Highest: gives the task and failure modes.</td>
+</tr>
+<tr>
+<td>MoiraiAgent</td>
+<td>Agentic contextual time-series forecasting with expert selection and tool orchestration.</td>
+<td>SOTA target and architecture to beat or stress-test.</td>
+<td>Highest: direct competitive baseline.</td>
+</tr>
+<tr>
+<td>Moirai</td>
+<td>Universal time-series forecasting transformer.</td>
+<td>Numerical foundation-model baseline.</td>
+<td>Medium: useful baseline, less aligned with trust/security by itself.</td>
+</tr>
+<tr>
+<td>GIFT-Eval</td>
+<td>General benchmark for zero-shot time-series forecasting.</td>
+<td>External benchmark context for SOTA claims.</td>
+<td>Medium: useful for positioning.</td>
+</tr>
+<tr>
+<td>Context is Key</td>
+<td>Forecasting benchmark where textual context is essential.</td>
+<td>Predecessor to Dr-CiK; useful for ablations and data design.</td>
+<td>High: clean context/forecast interface.</td>
+</tr>
+<tr>
+<td>SafePred</td>
+<td>Predictive guardrail using world-model future-risk prediction.</td>
+<td>Convert "forecasting" from target output into a safety mechanism.</td>
+<td>Highest: natural bridge between forecasting and agent safety.</td>
+</tr>
+<tr>
+<td>SafeHarness</td>
+<td>Lifecycle-integrated defense layers across agent operation.</td>
+<td>Defense architecture for deep-research forecasting agents.</td>
+<td>High: maps well to retrieval, planning, tool use, and state update.</td>
+</tr>
+<tr>
+<td>HarnessAudit</td>
+<td>Trajectory-level harness safety benchmark and audit framework.</td>
+<td>Add safety metrics beyond final forecast accuracy.</td>
+<td>Highest: low-hanging evaluation paper angle.</td>
+</tr>
+<tr>
+<td>Agentic AI Survey</td>
+<td>Systematic attack/defense taxonomy.</td>
+<td>Threat-model and related-work backbone.</td>
+<td>Medium: framing rather than direct method.</td>
+</tr>
+<tr>
+<td>Prompt Injection/CI</td>
+<td>Contextual-integrity argument that data-instruction separation is insufficient.</td>
+<td>Threat model for malicious forecasting context and evidence flow.</td>
+<td>High: directly targets context-heavy forecasting agents.</td>
+</tr>
+<tr>
+<td>Jailbreak Scaling</td>
+<td>FLOPs-budget scaling curves for jailbreak attacks.</td>
+<td>Attack/defense evaluation methodology.</td>
+<td>High: can become "attack budget vs forecast degradation/safety violation."</td>
+</tr>
+<tr>
+<td>Zero Trust for AI Agents</td>
+<td>Enterprise deployment framework and demand signal.</td>
+<td>Product/security motivation: permissions, identity, sandboxing, memory, compliance.</td>
+<td>High: helps prove demand is real.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="classification-by-research-action">Classification By Research Action</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Papers to read first</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Build a publishable benchmark extension</td>
+<td>Dr-CiK, HarnessAudit, Prompt Injection/CI, Jailbreak Scaling</td>
+<td>Add adversarial context, permission boundaries, and trajectory-level safety metrics to contextual forecasting agents.</td>
+</tr>
+<tr>
+<td>Improve the agent/model</td>
+<td>MoiraiAgent, Dr-CiK, SafePred, Context is Key</td>
+<td>Train or adapt expert selection/retrieval using future-risk and evidence-quality signals.</td>
+</tr>
+<tr>
+<td>Build a defense architecture</td>
+<td>SafeHarness, Zero Trust, SafePred, HarnessAudit</td>
+<td>Define deployable controls around search, tool use, memory, rollback, and privilege.</td>
+</tr>
+<tr>
+<td>Write related work and threat model</td>
+<td>Agentic AI Survey, Zero Trust, Prompt Injection/CI, SafeHarness</td>
+<td>Covers the broader agent security landscape and enterprise needs.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="initial-ranking-for-your-situation">Initial Ranking For Your Situation</h2>
+<ol>
+<li>Best team-aligned low-hanging fruit: "HarnessAudit for forecasting/deep-research agents." It is evaluation-heavy, publishable, and aligned with agent trust/security.</li>
+<li>Best algorithmic bridge: "SafePred-style predictive guardrails for forecast-driven agents." It reframes forecasting as a safety primitive.</li>
+<li>Best SOTA-beating path: "Robust MoiraiAgent-style expert/context selection under untrusted context." It still targets forecasting quality but adds a security dimension.</li>
+<li>Best demand story: "Zero Trust contextual forecasting agents for enterprise decisions." It ties to regulated data, tool permissions, provenance, and operational risk.</li>
+</ol></main>
+</body></html>
