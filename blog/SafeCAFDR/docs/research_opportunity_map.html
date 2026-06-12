@@ -1,2 +1,120 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>SafeCAFDR — Research Opportunity Map</title><style>body{margin:0;background:#f6f8fb;color:#16202e;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7}.topbar{position:sticky;top:0;background:rgba(246,248,251,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e4e9f0;padding:.7rem 1.25rem;font-size:.86rem}.topbar a{color:#0b7d72;text-decoration:none;font-weight:700}main{max-width:980px;margin:0 auto;padding:2.4rem 1.4rem 5rem}h1{font-size:2rem;border-bottom:2px solid #e4e9f0;padding-bottom:.35em}h2{font-size:1.35rem;border-bottom:1px solid #e4e9f0;padding-bottom:.25em;margin-top:2rem}.card{background:#fff;border:1px solid #e4e9f0;border-radius:14px;padding:1rem 1.2rem;margin:1rem 0}.score{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:800;color:#0f766e}table{border-collapse:collapse;width:100%;background:#fff;border:1px solid #e4e9f0;border-radius:12px;overflow:hidden}th,td{text-align:left;vertical-align:top;padding:.75rem;border-bottom:1px solid #e4e9f0}th{background:#f3f6fa;color:#526174;text-transform:uppercase;font-size:.75rem;letter-spacing:.05em}a{color:#2563eb}</style></head><body><div class="topbar">&larr; <a href="../index.html">Back to overview</a></div><main><h1>Research Opportunity Map</h1><p>This map ranks possible paper ideas produced by combining forecasting agents, deep research, and agent safety/security references.</p><div class="card"><h2>#1 — Predictive safety layer for deep forecasting agents</h2><p><span class="score">Best overall opportunity.</span> Build a forecasting deep-research agent that predicts future unsafe or unreliable states in its own reasoning process. The model forecasts both the target time series and the risk trajectory of its context/tool/reasoning path.</p><ul><li><strong>Novelty:</strong> Moves from reactive guardrails to proactive risk forecasting.</li><li><strong>Demand:</strong> Matches current interest in agents, safety, and reliable forecasting.</li><li><strong>Feasibility:</strong> Can be evaluated with existing forecasting benchmarks plus adversarial context perturbations.</li></ul></div><div class="card"><h2>#2 — Safe context selection for forecasting</h2><p>Use safety-aware retrieval and ranking to select evidence that is both predictive and robust. This is cleaner and easier than a full agent, but potentially less ambitious.</p></div><div class="card"><h2>#3 — Forecasting-agent security benchmark</h2><p>Create an adversarial benchmark for long-context forecasting agents. This is useful infrastructure, but it may need a method contribution to reach top-conference strength.</p></div><h2>Comparison table</h2><table><thead><tr><th>Idea</th><th>Novelty</th><th>Feasibility</th><th>Publication angle</th></tr></thead><tbody><tr><td>Predictive safety layer</td><td>High</td><td>Medium</td><td>Strong method paper</td></tr><tr><td>Safe context selection</td><td>Medium-high</td><td>High</td><td>Retrieval / robustness paper</td></tr><tr><td>Security benchmark</td><td>Medium</td><td>High</td><td>Benchmark / evaluation paper</td></tr><tr><td>Zero-trust forecasting deployment</td><td>Medium</td><td>Medium</td><td>Systems / applied security paper</td></tr></tbody></table><div class="card"><h2>Recommended paper shape</h2><p>Lead with SafeCAFDR as a method, include a benchmark slice for adversarial forecasting context, and report both forecasting accuracy and safety robustness. This creates a clearer contribution than a benchmark-only or safety-only paper.</p></div></main></body></html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Research Opportunity Map</title><style>
+:root{--bg:#f6f8fb;--surface:#fff;--surface2:#f3f6fa;--line:#e4e9f0;--line2:#cfd8e4;
+ --text:#16202e;--muted:#51607a;--accent:#0d9488;--accent-ink:#0b7d72;--accent2:#2563eb;
+ --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;
+ -webkit-font-smoothing:antialiased}
+.topbar{position:sticky;top:0;background:rgba(246,248,251,.9);backdrop-filter:blur(10px);
+ border-bottom:1px solid var(--line);padding:.7rem 1.25rem;font-size:.86rem}
+.topbar a{color:var(--accent-ink);text-decoration:none;font-weight:600}
+.topbar a:hover{text-decoration:underline}
+main{max-width:820px;margin:0 auto;padding:2.4rem 1.4rem 5rem}
+h1,h2,h3,h4{line-height:1.3;letter-spacing:-.01em;margin:1.8em 0 .6em}
+h1{font-size:2rem;margin-top:.2em;border-bottom:2px solid var(--line);padding-bottom:.35em}
+h2{font-size:1.4rem;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.12rem;color:var(--accent-ink)}
+p,li{color:#243042}
+a{color:var(--accent2)}
+code{font-family:var(--mono);font-size:.86em;background:var(--surface2);padding:.12em .42em;
+ border-radius:6px;color:var(--accent-ink);border:1px solid var(--line)}
+pre{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:1rem;overflow:auto}
+pre code{background:none;border:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:3px solid var(--accent);
+ background:rgba(13,148,136,.06);border-radius:0 8px 8px 0;color:#243042}
+blockquote p{margin:.3em 0}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.93rem;background:var(--surface);
+ border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--surface2);font-size:.8rem;text-transform:uppercase;letter-spacing:.03em}
+tbody tr:last-child td{border-bottom:none}
+hr{border:none;border-top:1px solid var(--line);margin:2.4em 0}
+strong{color:var(--text)}
+</style></head>
+<body>
+<div class="topbar">&larr; <a href="../index.html">Back to overview</a></div>
+<main><h1 id="research-opportunity-map">Research Opportunity Map</h1>
+<h2 id="1-forecastharnessaudit-safety-evaluation-for-contextual-forecasting-agents">1. ForecastHarnessAudit: Safety Evaluation For Contextual Forecasting Agents</h2>
+<p>Core idea: adapt HarnessAudit to Dr-CiK-style forecasting agents. Score not only forecast error, but also whether the agent respected evidence provenance, data access boundaries, citation integrity, tool permissions, and inter-agent information flow.</p>
+<p>Why it is promising:</p>
+<ul>
+<li>Low implementation barrier: it can start as an evaluation/benchmark extension before requiring heavy model training.</li>
+<li>Strong team fit: trajectory audit, harness safety, and information-flow constraints are central to agent trust/security.</li>
+<li>Clear demand: enterprises care about whether an agent made a forecast by leaking private data, using disallowed tools, or citing poisoned context, not just whether the number was close.</li>
+</ul>
+<p>Possible contribution:</p>
+<ul>
+<li>A benchmark extension over Dr-CiK with safety constraints and adversarial documents.</li>
+<li>A metric suite: forecast accuracy, evidence recall, distractor citation rate, unauthorized access rate, context leakage rate, and safe-completion rate.</li>
+<li>A finding likely to be publishable: better forecast accuracy can trade off against worse information-flow or provenance safety.</li>
+</ul>
+<h2 id="2-attack-scaling-laws-for-forecasting-agents">2. Attack Scaling Laws For Forecasting Agents</h2>
+<p>Core idea: adapt jailbreak scaling methodology to context attacks on forecasting agents. Instead of single-budget ASR, measure how forecast degradation and safety violations scale with attacker compute, number of poisoned documents, prompt rewrites, or retrieval opportunities.</p>
+<p>Why it is promising:</p>
+<ul>
+<li>Existing forecasting benchmarks usually do not model adversary budget.</li>
+<li>Dr-CiK already has distractor/citation failure modes that can become adversarial.</li>
+<li>The scaling-law framing gives a clean evaluation story that is more informative than one attack setting.</li>
+</ul>
+<p>Possible contribution:</p>
+<ul>
+<li>Attack budget curves for contextual forecasting: forecast error, evidence corruption, malicious citation rate, and unsafe tool action rate.</li>
+<li>Comparison of defenses: retrieval filtering, source trust scoring, CI-aware policies, SafeHarness-style tool control.</li>
+</ul>
+<h2 id="3-safepred-for-forecast-driven-agents">3. SafePred For Forecast-Driven Agents</h2>
+<p>Core idea: use world-model/predictive-guardrail ideas to evaluate actions induced by forecasts. The agent should forecast not only the target time series but also the downstream risk of using certain context, tools, or recommendations.</p>
+<p>Why it is promising:</p>
+<ul>
+<li>This is the cleanest conceptual combination of forecasting and safety.</li>
+<li>It moves beyond "make the forecast accurate" to "make decisions safely under forecast uncertainty."</li>
+<li>It could create a new benchmark class: foresight-driven safe agents.</li>
+</ul>
+<p>Possible contribution:</p>
+<ul>
+<li>A risk-to-decision loop for forecasting agents: predict future task utility and future safety risk before using retrieved context or taking tool actions.</li>
+<li>Counterfactual risk ablations: what happens if the agent follows poisoned context, stale context, or unauthorized context?</li>
+</ul>
+<h2 id="4-robust-moiraiagent-style-expert-selection-under-untrusted-context">4. Robust MoiraiAgent-Style Expert Selection Under Untrusted Context</h2>
+<p>Core idea: MoiraiAgent selects forecasting experts and applies contextual pre/post-processing. Train or evaluate an expert selector that is robust to poisoned context, misleading metadata, manipulated cross-validation windows, and adversarial anomaly descriptions.</p>
+<p>Why it is promising:</p>
+<ul>
+<li>Directly targets the SOTA path while giving it a trust/security angle.</li>
+<li>The attack surface is concrete: expert selection, lookback trimming, anomaly removal, and future-effect adjustment.</li>
+<li>It can start with evaluation before training a new model.</li>
+</ul>
+<p>Possible contribution:</p>
+<ul>
+<li>A robust expert-selection benchmark with clean vs adversarial context.</li>
+<li>Defense mechanisms: source-aware context features, confidence calibration, constrained transformations, and audit logs.</li>
+<li>Result target: beat or match MoiraiAgent on clean data while degrading less under adversarial context.</li>
+</ul>
+<h2 id="5-zero-trust-deep-research-forecasting-agents">5. Zero-Trust Deep Research Forecasting Agents</h2>
+<p>Core idea: build a reference architecture for deep-research forecasting agents that treats retrieved context, tools, memory, and generated evidence as untrusted by default.</p>
+<p>Why it is promising:</p>
+<ul>
+<li>It is aligned with Agent Trust and Security.</li>
+<li>It has a real enterprise demand story: forecasting agents may touch sales, finance, security, medical, climate, supply-chain, or incident data.</li>
+<li>It can become a systems/security paper if backed by strong benchmark evidence.</li>
+</ul>
+<p>Possible contribution:</p>
+<ul>
+<li>A zero-trust harness for forecasting agents: scoped identities, per-task permissions, sandboxed tools, provenance checks, memory quarantine, rollback, and audit logs.</li>
+<li>Evaluation on Dr-CiK plus adversarial and permission-constrained variants.</li>
+</ul>
+<h2 id="recommended-first-bet">Recommended First Bet</h2>
+<p>Start with ForecastHarnessAudit. It is the most defensible bridge between your existing Dr-CiK work and the Agent Trust/Security team. It can produce a publishable benchmark/evaluation result quickly, and it creates the substrate for later algorithmic work on SafePred-style defenses or robust MoiraiAgent-style training.</p>
+<p>Concrete first experiment:</p>
+<ol>
+<li>Take a subset of Dr-CiK tasks.</li>
+<li>Add security labels to documents: trusted, untrusted, private, poisoned, stale, and distractor.</li>
+<li>Run a MoiraiAgent-like or deep-research-plus-forecaster pipeline.</li>
+<li>Log full trajectories: queries, retrieved docs, citations, tool calls, transformations, and final forecasts.</li>
+<li>Score both accuracy and safety: forecast error, evidence recall, distractor citation rate, unauthorized evidence use, poisoned evidence use, and unsafe transformation rate.</li>
+</ol>
+<p>Demand check:</p>
+<p>The demand looks real if the benchmark can show that current high-performing forecasting agents improve accuracy by using context but cannot reliably prove that the context was allowed, fresh, non-poisoned, and causally relevant. That failure is exactly what enterprise agent deployments need to solve before they can trust autonomous forecasting workflows.</p></main>
+</body></html>
