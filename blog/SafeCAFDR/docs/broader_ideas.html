@@ -1,2 +1,140 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>SafeCAFDR — Broader Ideas</title><style>body{margin:0;background:#f6f8fb;color:#16202e;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7}.topbar{position:sticky;top:0;background:rgba(246,248,251,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e4e9f0;padding:.7rem 1.25rem;font-size:.86rem}.topbar a{color:#0b7d72;text-decoration:none;font-weight:700}main{max-width:880px;margin:0 auto;padding:2.4rem 1.4rem 5rem}h1{font-size:2rem;border-bottom:2px solid #e4e9f0;padding-bottom:.35em}h2{font-size:1.35rem;border-bottom:1px solid #e4e9f0;padding-bottom:.25em;margin-top:2rem}.card{background:#fff;border:1px solid #e4e9f0;border-radius:14px;padding:1rem 1.2rem;margin:1rem 0}li{margin:.45rem 0}a{color:#2563eb}</style></head><body><div class="topbar">&larr; <a href="../index.html">Back to overview</a></div><main><h1>Broader Ideas</h1><p>These are adjacent research directions around the SafeCAFDR theme. They can become ablations, companion benchmarks, or follow-up papers.</p><div class="card"><h2>1. Safe context selection for forecasting</h2><p>Rank retrieved evidence using both predictive relevance and safety risk. The key question is whether a forecasting agent can reject malicious or misleading context without losing useful signal.</p><ul><li>Inputs: news, reports, domain notes, prior observations.</li><li>Risks: prompt injection, stale evidence, leakage, adversarial framing.</li><li>Outputs: safer evidence sets and calibrated forecast explanations.</li></ul></div><div class="card"><h2>2. Forecasting-agent security benchmark</h2><p>Create adversarial forecasting tasks where injected context tries to change the horizon, tools, data interpretation, or explanation. This is especially useful for evaluating deep-research agents that depend on external documents.</p></div><div class="card"><h2>3. Future-risk-aware tool policy</h2><p>Instead of allowing tools whenever the current step looks safe, predict whether the next few steps will create unsafe states. The policy can then require verification, sandboxing, or reduced privileges.</p></div><div class="card"><h2>4. Explanation reliability for long-horizon forecasts</h2><p>Evaluate whether generated explanations cite reliable evidence and whether the explanation changes under adversarial context. This can connect forecasting accuracy with trustworthiness.</p></div><div class="card"><h2>5. Multi-agent forecasting debate with safety monitors</h2><p>Run multiple forecasting agents with different evidence views and use a safety monitor to detect collusion, overconfidence, or evidence poisoning.</p></div></main></body></html>
+<html lang="en"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Broader Ideas — Agent Trust & Security</title><style>
+:root{--bg:#f6f8fb;--surface:#fff;--surface2:#f3f6fa;--line:#e4e9f0;--line2:#cfd8e4;
+ --text:#16202e;--muted:#51607a;--accent:#0d9488;--accent-ink:#0b7d72;--accent2:#2563eb;
+ --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+ --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;
+ -webkit-font-smoothing:antialiased}
+.topbar{position:sticky;top:0;background:rgba(246,248,251,.9);backdrop-filter:blur(10px);
+ border-bottom:1px solid var(--line);padding:.7rem 1.25rem;font-size:.86rem}
+.topbar a{color:var(--accent-ink);text-decoration:none;font-weight:600}
+.topbar a:hover{text-decoration:underline}
+main{max-width:820px;margin:0 auto;padding:2.4rem 1.4rem 5rem}
+h1,h2,h3,h4{line-height:1.3;letter-spacing:-.01em;margin:1.8em 0 .6em}
+h1{font-size:2rem;margin-top:.2em;border-bottom:2px solid var(--line);padding-bottom:.35em}
+h2{font-size:1.4rem;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.12rem;color:var(--accent-ink)}
+p,li{color:#243042}
+a{color:var(--accent2)}
+code{font-family:var(--mono);font-size:.86em;background:var(--surface2);padding:.12em .42em;
+ border-radius:6px;color:var(--accent-ink);border:1px solid var(--line)}
+pre{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:1rem;overflow:auto}
+pre code{background:none;border:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:3px solid var(--accent);
+ background:rgba(13,148,136,.06);border-radius:0 8px 8px 0;color:#243042}
+blockquote p{margin:.3em 0}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.93rem;background:var(--surface);
+ border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--surface2);font-size:.8rem;text-transform:uppercase;letter-spacing:.03em}
+tbody tr:last-child td{border-bottom:none}
+hr{border:none;border-top:1px solid var(--line);margin:2.4em 0}
+strong{color:var(--text)}
+</style></head>
+<body>
+<div class="topbar">&larr; <a href="../index.html">Back to overview</a></div>
+<main><h1 id="broader-ideas-agent-trust-security-non-forecasting">Broader Ideas — Agent Trust &amp; Security (non-forecasting)</h1>
+<p>For pitching to the group beyond the forecasting thread. Each idea reuses primitives the team already
+cares about — trajectory auditing, information flow, provenance, predictive guardrails, attack-budget
+scaling — on a general agent substrate. Citation keys resolve in
+<a href="external_references.html">external_references.md</a>. Each entry follows the same four-facet structure:
+<strong>Motivation · Expected contribution · Experiment / application · How it differs.</strong></p>
+<p>The forecasting ideas (F1–F5) live in <a href="research_opportunity_map.html">research_opportunity_map.md</a> and
+<a href="refined_proposal.html">refined_proposal.md</a>; the same four-facet structure is mirrored on the website.</p>
+<hr />
+<h2 id="b1-provenance-faithful-agents-certifying-why-an-agent-acted">B1 · Provenance-Faithful Agents — certifying <em>why</em> an agent acted</h2>
+<ul>
+<li><strong>Motivation.</strong> Correctness ≠ faithfulness: up to <strong>57% of RAG citations are post-rationalized</strong>
+  [Cite-Faithfulness] — the model decides first and attaches a plausible source afterward. An agent that
+  "explains" its decision may be confabulating the cause, so trust requires proving the cited evidence
+  actually drove the action.</li>
+<li><strong>Expected contribution.</strong> A counterfactual audit (ablate the cited evidence → does the action
+  change?) that emits a <strong>per-trajectory faithfulness certificate</strong>, plus a benchmark and metric
+  extending HarnessAudit's <em>execution-fidelity</em> axis.</li>
+<li><strong>Experiment / application.</strong> Run on tool-using QA, coding, and research agents; report the
+  faithfulness-vs-correctness gap and certificate accuracy. Deployable as a trust badge / regulatory
+  audit signal for any agent.</li>
+<li><strong>How it differs.</strong> [Cite-Faithfulness] studies QA citations <em>statically</em>; B1 makes it <em>causal and
+  agentic</em> over the trajectory. [CausalArmor] uses causal attribution to <em>defend</em> against injection;
+  B1 repurposes attribution to <em>certify provenance</em>.</li>
+</ul>
+<h2 id="b2-attack-scaling-laws-for-indirect-prompt-injection">B2 · Attack Scaling Laws for Indirect Prompt Injection</h2>
+<ul>
+<li><strong>Motivation.</strong> IPI is evaluated at a single attacker setting [AgentDojo, IPI-Competition]; we lack
+  predictive scaling curves, so defenders cannot compare on a common budget axis.</li>
+<li><strong>Expected contribution.</strong> Attack-success and unsafe-tool-call rate vs <strong>attacker budget</strong> (injected
+  docs, rewrite compute, retrieval ops) across agent frameworks; saturating-curve fits; a defense
+  efficiency frontier (CausalArmor, LlamaFirewall, SecAlign) ranked by compute-to-break.</li>
+<li><strong>Experiment / application.</strong> Sweep injection budget across AgentDojo-style suites; fit curves; report
+  which formal property (per [Formalizing-Agent-Security]) breaks first. Application: red-team budgeting
+  and procurement SLAs.</li>
+<li><strong>How it differs.</strong> Jailbreak-Scaling targets <em>chat</em> refusals on a FLOPs axis; B2 targets <em>agent</em>
+  IPI with tool-call outcomes and property-level breakage.</li>
+</ul>
+<h2 id="b3-temporal-validity-guardrail-agents-that-know-when-context-is-stale">B3 · Temporal-Validity Guardrail — agents that know when context is stale</h2>
+<ul>
+<li><strong>Motivation.</strong> Agents can't reliably tell when memories/evidence are no longer valid [STALE]; stale
+  documents degrade RAG [HoH]; lookahead leakage inflates apparent skill [Lookahead-LLM]; the 2026
+  trustworthy-agent survey flags temporal staleness as a core evaluation pitfall
+  [Trustworthy-Agentic-Survey].</li>
+<li><strong>Expected contribution.</strong> A <strong>validity-window + supersession-detection</strong> mechanism and a benchmark of
+  time-conflicting evidence, scored by <em>stale-use rate</em> and <em>post-hoc leakage rate</em>; an abstain-when-
+  invalid policy.</li>
+<li><strong>Experiment / application.</strong> Inject superseded / future-dated documents; measure stale-use before vs
+  after the guardrail; integrate into memory-using assistants. Application: long-horizon assistants,
+  news/financial agents, anything over evolving knowledge.</li>
+<li><strong>How it differs.</strong> T-GRAG / SmartVector add temporal awareness to <em>retrieval ranking</em>; B3 is a
+  <em>guardrail</em> that detects invalidity and abstains, evaluated as a safety property and paired with
+  predictive (SafePred) framing.</li>
+</ul>
+<h2 id="b4-ci-aware-multi-agent-information-flow-firewall">B4 · CI-Aware Multi-Agent Information-Flow Firewall</h2>
+<ul>
+<li><strong>Motivation.</strong> SOTA multi-agent systems leak <strong>35–51%</strong> of sensitive fields across handoffs
+  [AgentLeak, MAGPIE]; data/instruction separation is provably insufficient [PromptInj-CI]; HarnessAudit
+  finds risk concentrates in inter-agent transfer.</li>
+<li><strong>Expected contribution.</strong> A runtime monitor grounded in <strong>Contextual Integrity</strong> that labels per-field
+  flow norms and blocks/redacts inappropriate inter-agent transfers; a privacy↔utility frontier
+  evaluation; direct realization of the <strong>Data Isolation</strong> property [Formalizing-Agent-Security].</li>
+<li><strong>Experiment / application.</strong> Run on AgentLeak/MAGPIE-style tasks; measure leakage reduction vs utility
+  loss; ablate flow rules. Application: enterprise multi-agent systems handling confidential fields.</li>
+<li><strong>How it differs.</strong> AgentLeak/MAGPIE <em>measure</em> leakage; 1-2-3-Check uses multi-agent <em>reasoning</em> for
+  privacy; B4 is an <em>enforced</em> information-flow firewall (mechanism + property compliance), not just
+  measurement or prompting.</li>
+</ul>
+<h2 id="b5-predictive-guardrails-beyond-cuas">B5 · Predictive Guardrails Beyond CUAs</h2>
+<ul>
+<li><strong>Motivation.</strong> SafePred targets computer-using agents; reactive guardrails miss delayed harm. Many
+  high-impact agents (coding, devops, research) have delayed-consequence failures — e.g., a refactor that
+  silently breaks the audit trail six steps later.</li>
+<li><strong>Expected contribution.</strong> Generalize world-model <strong>future-risk prediction</strong> to general tool/coding
+  agents; a delayed-consequence benchmark; step-level intervention plus task-level re-planning.</li>
+<li><strong>Experiment / application.</strong> Construct tasks where harm emerges N steps later; measure detection /
+  prevention vs a reactive baseline. Application: autonomous coding/devops agents.</li>
+<li><strong>How it differs.</strong> SafePred = CUAs/GUI actions; B5 = general tool/coding agents with code-and-state
+  consequences, complementing LlamaFirewall's <em>reactive</em> CodeShield with <em>predictive</em> foresight.</li>
+</ul>
+<h2 id="b6-zero-trust-agent-harness-conformance-suite">B6 · Zero-Trust Agent Harness + Conformance Suite</h2>
+<ul>
+<li><strong>Motivation.</strong> Zero-Trust-for-AI-Agents [ZeroTrust] is a framework/whitepaper, not a measured system;
+  LlamaFirewall is production but partial; no standard conformance benchmark exists; 2026 MCP
+  tool-poisoning incidents show the need [MCP-Threat-Model].</li>
+<li><strong>Expected contribution.</strong> A <strong>reference harness</strong> (scoped identities, least-privilege tools,
+  sandboxing, memory quarantine, provenance checks, rollback, audit logs) plus a <strong>conformance
+  benchmark</strong> scoring any harness against these controls — unifying SafeHarness and HarnessAudit.</li>
+<li><strong>Experiment / application.</strong> Implement the harness; score it and baselines (LlamaFirewall, vanilla)
+  on the conformance suite under MCP-poisoning + IPI attacks. Application: enterprise procurement /
+  certification of agent platforms.</li>
+<li><strong>How it differs.</strong> SafeHarness proposes lifecycle <em>layers</em>; HarnessAudit <em>audits</em> trajectories; B6 is
+  the deployable zero-trust <em>architecture</em> plus a <em>conformance standard</em> tying them together with
+  identity and least-privilege.</li>
+</ul>
+<hr />
+<h3 id="how-they-relate-to-the-forecasting-bet">How they relate to the forecasting bet</h3>
+<p>ForecastHarnessAudit is the <strong>vertical</strong> (one high-stakes domain, deep). B1–B6 are the <strong>horizontals</strong>
+(one primitive each, broad). The forecasting bench produces the trajectories and metrics that B1, B2,
+B3, and B5 can reuse — so the vertical de-risks the horizontals.</p></main>
+</body></html>
