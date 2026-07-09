@@ -1,9 +1,9 @@
 ---
 title:          "CORAL: Towards Autonomous Multi-Agent Evolution for Open-Ended Discovery"
-date:           2026-04-02 13:59:06 +0800
+date:           2026-07-08 00:01:00 +0800
 selected:       true
-pub:            "Conference on Language Modeling (COLM) 2025"
-pub_date:       "2025"
+pub:            "Conference on Language Modeling (COLM) 2026"
+pub_date:       "2026"
 
 cover:          /assets/images/covers/coral_cover.png
 authors:
