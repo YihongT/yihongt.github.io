@@ -7,9 +7,9 @@ pub_date:       "2026"
 
 cover:          /assets/images/covers/coral_cover.png
 authors:
-  - Ao Qu
-  - Han Zheng
-  - Zijian Zhou
+  - Ao Qu*
+  - Han Zheng*
+  - Zijian Zhou*
   - Yihao Yan
   - Yihong Tang
   - Shao Yong Ong
