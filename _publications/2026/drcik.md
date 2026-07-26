@@ -21,6 +21,9 @@ authors:
   - Valentina Zantedeschi
 links:
   Paper: https://arxiv.org/pdf/2605.27904
+  Code: https://github.com/ServiceNow/Dr-CiK
+  Project: https://servicenow.github.io/Dr-CiK/
+  Dataset: https://huggingface.co/datasets/ServiceNow/Dr-CiK
 
 topics:
   # - DS
