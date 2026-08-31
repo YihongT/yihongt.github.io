@@ -277,3 +277,26 @@
     year={2026},
     publisher={Elsevier}
   }
+
+2026-construction_robotics: |-
+  @article{jin7029004deep,
+    title={Deep Reinforcement Learning for Construction Robotics: A System-Level Taxonomy and Evidence Map toward Real-World Readiness},
+    author={Jin, Zekai and Wang, Huiguang and Tang, Yihong and Dong, Zhen and Feng, Chen and Shao, Yi},
+    journal={Available at SSRN 7029004}
+  }
+
+2026-worldcuparena: |-
+  @article{wang2026worldcuparena,
+    title={WorldCupArena: Fine-Grained Evaluation of Language Models and Deep-Research Agents on Football Forecasting},
+    author={Wang, Zhaokai and Gui, Tianlin and Rao, Jiayuan and Di, Shangzhe and Tang, Yihong and Liang, Dingli},
+    journal={arXiv preprint arXiv:2607.18084},
+    year={2026}
+  }
+
+2026-fars: |-
+  @article{tang2026fars,
+    title={FARS: A fully automated research system deployed at scale},
+    author={Tang, Qiong and Sun, Tianxiang and Hu, Xiangkun and Liu, Xiangyang and Chen, Yiran and Shao, Yunfan and Li, Bobo and Lv, Changze and Xu, Cheng and Huang, Chengsong and others},
+    journal={arXiv preprint arXiv:2606.31651},
+    year={2026}
+  }
