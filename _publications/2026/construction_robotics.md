@@ -8,6 +8,7 @@ pub_post:       'Preprint.'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
 pub_date:       "2026"
 
+cover:          /assets/images/covers/construction_robotics_cover.png
 authors:
   - Zekai Jin
   - Huiguang Wang
