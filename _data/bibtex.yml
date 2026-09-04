@@ -234,10 +234,10 @@
   }
 
 2026-evodrive: |-
-  @article{nie2026evodrive,
+  @inproceedings{nie2026evodrive,
     title={EvoDrive: Pareto Evolution for Safety-Critical Autonomous Driving via Self-Improving LLM Agents},
     author={Nie, Tong and Mei, Yuewen and Tang, Yihong and He, Junlin and Deng, Jie and Sun, Jian and Ma, Wei},
-    journal={arXiv preprint arXiv:2606.03678},
+    booktitle={Conference on Robot Learning (CoRL)},
     year={2026}
   }
 

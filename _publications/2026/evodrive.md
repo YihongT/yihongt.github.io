@@ -1,10 +1,10 @@
 ---
 title:          "EvoDrive: Pareto Evolution for Safety-Critical Autonomous Driving via Self-Improving LLM Agents"
-date:           2026-06-04 00:01:00 +0800
+date:           2026-09-04 00:01:00 +0800
 selected:       false
-# pub:            ""
+pub:            "Conference on Robot Learning (CoRL)"
 # pub_pre:        "Submitted to "
-pub_post:       'Under review.'
+# pub_post:       'Under review.'
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
 pub_date:       "2026"
 
