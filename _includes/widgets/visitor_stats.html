@@ -20,17 +20,8 @@
 </div> 
 -->
 
-<!-- Visitor counter kept ACTIVE but visually hidden.
-     Switched from ClustrMaps (which stopped rendering, see the commented-out
-     block above) to MapMyVisitors 2026-09. The script below still loads and
-     registers each visit; it is simply rendered off-screen so no visible
-     panel is shown. To bring the panel back, restore the markup that is now
-     commented out below. -->
-<div aria-hidden="true" style="position: absolute; left: -99999px; top: 0; width: 200px; height: 200px; overflow: hidden; opacity: 0; pointer-events: none;">
-    <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=zSaA8N6sEoG5w8GdhVRbSVofIApE_Kr-SmK4fQ17BxI&cl=ffffff&w=a"></script>
-</div>
-
-<!-- Original visible panel (hidden 2026-05; remove the surrounding comment to restore):
+<!-- Switched from ClustrMaps (which stopped rendering, see the commented-out
+     block above) to MapMyVisitors 2026-09. Visible panel restored 2026-09. -->
 <div class="my-3 bg-white shadow-sm rounded-sm" style="width: 100%; margin: 0 auto;">
     <h6 class="section-title p-3 mb-0 border-bottom border-gray"><i class="fa-solid fa-mug-hot"></i> Visitor Statistics </h6>
     <div class="px-3 pb-1">
@@ -38,11 +29,10 @@
             <tr>
                 <td style="text-align: center; width: 100%;">
                     <div style="margin-top: 25px;">
-                        [ mapmyvisitors script tag ]
+                        <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=zSaA8N6sEoG5w8GdhVRbSVofIApE_Kr-SmK4fQ17BxI&cl=ffffff&w=a"></script>
                     </div>
                 </td>
             </tr>
         </table>
     </div>
 </div>
--->
