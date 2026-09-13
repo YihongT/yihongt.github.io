@@ -21,11 +21,13 @@
 -->
 
 <!-- Visitor counter kept ACTIVE but visually hidden.
-     The ClustrMaps script below still loads and registers each visit; it is
-     simply rendered off-screen so no visible panel is shown. To bring the
-     panel back, restore the markup that is now commented out below. -->
+     Switched from ClustrMaps (which stopped rendering, see the commented-out
+     block above) to MapMyVisitors 2026-09. The script below still loads and
+     registers each visit; it is simply rendered off-screen so no visible
+     panel is shown. To bring the panel back, restore the markup that is now
+     commented out below. -->
 <div aria-hidden="true" style="position: absolute; left: -99999px; top: 0; width: 200px; height: 200px; overflow: hidden; opacity: 0; pointer-events: none;">
-    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=200&t=tt&d=wmkiwUpSiZT-wZmiBznL307pam0AqMIdWfpC7Fo0JXY&co=62a4d3&cmn=fea60c'></script>
+    <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=zSaA8N6sEoG5w8GdhVRbSVofIApE_Kr-SmK4fQ17BxI&cl=ffffff&w=a"></script>
 </div>
 
 <!-- Original visible panel (hidden 2026-05; remove the surrounding comment to restore):
@@ -36,7 +38,7 @@
             <tr>
                 <td style="text-align: center; width: 100%;">
                     <div style="margin-top: 25px;">
-                        [ clustrmaps script tag ]
+                        [ mapmyvisitors script tag ]
                     </div>
                 </td>
             </tr>
