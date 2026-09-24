@@ -8,6 +8,7 @@ pub:            "Conference on Neural Information Processing Systems (NeurIPS)"
 # pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
 pub_date:       "2026"
 
+cover:          /assets/images/covers/drivemind_cover.png
 authors:
   - Yan Shi
   - Kehua Chen
