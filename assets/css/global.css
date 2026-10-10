@@ -1534,3 +1534,119 @@ html[data-theme="dark"] .side-nav-left .nav-link.active {
 .pub-year-anchor {
     scroll-margin-top: 90px;
 }
+
+/* ---------------------------------------------------------------------
+   Selected Open-Source Projects -- deliberately styled after a classic
+   academic CV: serif type, hanging list, understated rules instead of
+   card chrome.
+   --------------------------------------------------------------------- */
+.projects-academic {
+    font-family: "Cormorant Garamond", "Playfair Display", "Times New Roman", serif;
+}
+
+.projects-academic .projects-list {
+    margin: 0;
+    padding: 0;
+}
+
+.projects-academic .projects-item {
+    padding: 1.1rem 0;
+}
+
+.projects-academic .projects-item + .projects-item {
+    border-top: 1px solid var(--border);
+}
+
+.projects-academic .projects-item:first-child {
+    padding-top: 0;
+}
+
+.projects-academic .projects-item:last-child {
+    padding-bottom: 0;
+}
+
+.projects-academic .projects-item-head {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.1rem 0.6rem;
+}
+
+.projects-academic .projects-star {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--text);
+    min-width: 3.4rem;
+}
+
+.projects-academic .projects-star i {
+    color: #c7971f;
+    font-size: 0.82rem;
+}
+
+html[data-theme="dark"] .projects-academic .projects-star i {
+    color: #e0b84a;
+}
+
+.projects-academic .projects-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.projects-academic .projects-name:hover {
+    color: var(--link);
+}
+
+.projects-academic .projects-role {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.projects-academic .projects-trending-badge {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: rgba(var(--link-rgb), 0.12);
+    color: var(--link);
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+}
+
+.projects-academic .projects-repo-path {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.15rem;
+}
+
+.projects-academic .projects-repo-path a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.projects-academic .projects-repo-path a:hover {
+    color: var(--link);
+}
+
+.projects-academic .projects-desc {
+    margin-top: 0.4rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.projects-academic .projects-note {
+    margin-top: 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+}

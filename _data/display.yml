@@ -2,6 +2,7 @@ homepage:
   show_experience: true
   show_news: true
   show_selected_publications: true
+  show_selected_projects: true
   show_visitor_statistics: true
   num_news: 8
 

@@ -1,0 +1,87 @@
+<div class="my-3 p-0 bg-white shadow-sm rounded-sm projects-panel" {% if include.anchor_id %}id="{{ include.anchor_id }}"{% endif %}>
+  <h6 class="section-title p-3 mb-0 border-bottom border-gray"><i class="fas fa-code-branch"></i> Selected Open-Source Projects</h6>
+
+  <div class="projects-academic p-4">
+    <ul class="projects-list list-unstyled mb-0">
+      {% for p in site.data.projects %}
+      <li class="projects-item">
+        <div class="projects-item-head">
+          <span class="projects-star" data-owner="{{ p.owner }}" data-repo="{{ p.repo }}" aria-label="GitHub stars">
+            <i class="fas fa-star"></i><span class="projects-star-count">&ndash;</span>
+          </span>
+          <a class="projects-name" href="https://github.com/{{ p.owner }}/{{ p.repo }}" target="_blank" rel="noopener">{{ p.name }}</a>
+          {% if p.role %}<span class="projects-role">{{ p.role }}</span>{% endif %}
+          {% if p.trending %}<span class="projects-trending-badge">Trending on GitHub</span>{% endif %}
+        </div>
+        <div class="projects-repo-path">
+          <a href="https://github.com/{{ p.owner }}/{{ p.repo }}" target="_blank" rel="noopener">{{ p.owner }}/{{ p.repo }}</a>
+        </div>
+        <div class="projects-desc">{{ p.description }}</div>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="projects-note">Star counts are fetched live from the GitHub API.</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  function formatStars(n) {
+    if (n >= 1000) {
+      return (n / 1000).toFixed(1).replace(/\.0$/, '.0') + 'k';
+    }
+    return String(n);
+  }
+
+  function loadFromCache(key) {
+    try {
+      var raw = sessionStorage.getItem(key);
+      if (!raw) return null;
+      var obj = JSON.parse(raw);
+      if (Date.now() - obj.t > 10 * 60 * 1000) return null; // 10 minute cache
+      return obj.v;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function saveToCache(key, v) {
+    try {
+      sessionStorage.setItem(key, JSON.stringify({ v: v, t: Date.now() }));
+    } catch (e) {
+      /* sessionStorage unavailable (private mode, etc.) -- ignore */
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".projects-star").forEach(function (el) {
+      var owner = el.getAttribute("data-owner");
+      var repo = el.getAttribute("data-repo");
+      var countEl = el.querySelector(".projects-star-count");
+      var cacheKey = "gh-stars:" + owner + "/" + repo;
+
+      var cached = loadFromCache(cacheKey);
+      if (cached !== null) {
+        countEl.textContent = formatStars(cached);
+      }
+
+      fetch("https://api.github.com/repos/" + owner + "/" + repo)
+        .then(function (res) {
+          if (!res.ok) throw new Error("GitHub API error " + res.status);
+          return res.json();
+        })
+        .then(function (data) {
+          if (typeof data.stargazers_count === "number") {
+            countEl.textContent = formatStars(data.stargazers_count);
+            saveToCache(cacheKey, data.stargazers_count);
+          }
+        })
+        .catch(function () {
+          if (cached === null) {
+            countEl.textContent = "–";
+          }
+        });
+    });
+  });
+})();
+</script>

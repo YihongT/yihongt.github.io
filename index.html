@@ -12,6 +12,9 @@ navbar_title: Home
     {% if site.data.display.homepage.show_experience %}
       <a class="nav-link d-block" href="#section-experience">Experience</a>
     {% endif %}
+    {% if site.data.display.homepage.show_selected_projects %}
+      <a class="nav-link d-block" href="#section-projects">Projects</a>
+    {% endif %}
     {% if site.data.display.homepage.show_selected_publications %}
       <a class="nav-link d-block" href="#section-publications">Publications</a>
     {% endif %}
@@ -43,6 +46,12 @@ navbar_title: Home
     {% if site.data.display.homepage.show_experience %}
         <div id="section-experience">
           {% include widgets/experience_card.html %}
+        </div>
+    {% endif %}
+
+    {% if site.data.display.homepage.show_selected_projects %}
+        <div id="section-projects">
+          {% include widgets/projects_card.html anchor_id="selected-projects" %}
         </div>
     {% endif %}
 
