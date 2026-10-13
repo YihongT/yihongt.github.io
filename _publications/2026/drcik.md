@@ -1,5 +1,5 @@
 ---
-title:          "Dr-CiK: A Testbed for Foresight-driven Agents"
+title:          "Dr-CiK: A Benchmark testing Deep Research for Context-Aided Forecasting"
 date:           2026-05-20 00:01:00 +0800
 selected:       true
 # pub:            "Conference on Neural Information Processing Systems (NeurIPS)"
@@ -14,6 +14,7 @@ authors:
   - Andrew Robert Williams
   - Arjun Ashok
   - Vincent Zhihao Zheng
+  - Shubham Gupta
   - Lijun Sun
   - Alexandre Drouin
   - Issam H. Laradji
