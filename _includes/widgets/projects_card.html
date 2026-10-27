@@ -7,7 +7,9 @@
       <li class="projects-item">
         <div class="projects-item-head">
           <span class="projects-star" data-owner="{{ p.owner }}" data-repo="{{ p.repo }}" aria-label="GitHub stars">
-            <i class="fas fa-star"></i><span class="projects-star-count">&ndash;</span>
+            {% assign star_key = p.owner | append: "/" | append: p.repo %}
+            {% assign baked = site.data.github_stars[star_key] %}
+            <i class="fas fa-star"></i><span class="projects-star-count">{% if baked %}{{ baked.display }}{% else %}&ndash;{% endif %}</span>
           </span>
           <a class="projects-name" href="https://github.com/{{ p.owner }}/{{ p.repo }}" target="_blank" rel="noopener">{{ p.name }}</a>
           {% if p.role %}<span class="projects-role">{{ p.role }}</span>{% endif %}
